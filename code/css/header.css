@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+}
+
+header {
+    background-color: #f5f3f3;
+}
+
+header ul {
+    list-style: none;
+
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    border-bottom: 0.3px solid lightgray;
+}
+
+.headerLink {
+    padding: 1%;
+    color: gray;
+    font-family: "Montserrat", calibri;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+#firstLink {
+    margin-left: 20%;
+}
+
+#userPhoto {
+    width: auto;
+    height: 40px;
+    padding-right: 40px;
+}
+
+#logoPhoto {
+    margin-left: 10px;
+    padding-top:5px;
+}
