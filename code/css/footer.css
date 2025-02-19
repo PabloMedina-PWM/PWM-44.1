@@ -1,35 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
 footer {
     background-color: #f5f3f3;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 0.1rem;
 }
 
 #links {
-    border-top: 1px solid lightgray;
+    border-top: 2px solid lightgray;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1.2rem;
+    padding-top: 1rem;
+    width: 90%;
+    height: 2rem;
 }
 
 #logo {
     height: auto;
     width: 10rem;
+    padding: 0;
+    display:flex;
+    align-items: center;
 }
 
 .footerLink {
     font-family: "Montserrat", calibri;
-    padding: 1%;
+    padding: .8rem;
     color: gray;
     font-size: 0.9rem;
     text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
 }
 
 #messages {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1.2rem;
+    height: 2rem;
+    align-items: center;
 }
