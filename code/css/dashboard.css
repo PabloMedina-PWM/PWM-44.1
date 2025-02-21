@@ -16,24 +16,9 @@ h2 {
     font-weight: 600;
 }
 
-.table, th, td {
-    border: 1px solid lightgray;
-    border-collapse: collapse;
-    padding: 0.4rem;
-    text-align: left;
-}
 
-th {
-    width: 33%;
-}
 
-tr:nth-child(even) {
-    background-color: #f3f3f3;
-}
 
-.table {
-    width: 50%;
-}
 
 .buttons {
     margin-top: 3rem;
