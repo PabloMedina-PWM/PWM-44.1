@@ -34,7 +34,6 @@ footer {
 }
 
 .footerLink {
-    font-family: "Montserrat", calibri;
     padding: .8rem;
     color: gray;
     font-size: 0.9rem;
@@ -52,3 +51,4 @@ footer {
     height: 2rem;
     align-items: center;
 }
+
