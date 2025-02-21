@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>content-viewer</title>
+    <link rel="stylesheet" href="../css/content-viewer.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <h1>Tareas</h1>
+        <div class="inputs-content">
+            <input type="search" placeholder="Buscar" class="search-filter" id="search">
+            <select place id="prioridad" class="search-filter">
+                <option value="" disabled selected> Prioridad</option>
+            </select>
+            <select place id="empleado" class="search-filter">
+                <option value="" disabled selected>Empleado</option>
+            </select>
+            <select place id="fecha" class="search-filter">
+                <option value="" disabled selected>Fecha</option>
+            </select>
+            <button class="search-filter" id="search-button"><img src="../resources/images/lupa.png"></button>
+        </div>
+        <div class="table-container">
+            <table class="table-viewer">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Prioridad</th>
+                        <th>Empleado</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Lorem Ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Lorem Ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Lorem Ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Lorem Ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Lorem Ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Lorem Ipsum</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="button-view">
+        <button id="add-button">Añadir tarea</button>
+    </div>
+
+</body>
+</html>
