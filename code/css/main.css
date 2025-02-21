@@ -1,11 +1,9 @@
 body {
-    font-family: Monospaced;
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 700px;
-    font-family: "Montserrat", sans-serif;
 }
 
 .login_container{
@@ -26,7 +24,7 @@ body {
 .img-container{
     position: absolute;
     right: 10px;
-    top: 85%;
+    top: 75%;
 }
 
 
