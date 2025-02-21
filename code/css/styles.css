@@ -27,6 +27,10 @@ thead th {
     z-index: 1;
 }
 
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
 th, td {
     padding: 10px;
     text-align: left;
