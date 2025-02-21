@@ -10,10 +10,9 @@
 }
 
 .table-container {
-    max-height: 300px;
+    max-height: 12rem;
     overflow-y: auto;
     border: 1px solid #ccc;
-    width: 50%;
     overflow-x: auto;
 }
 
