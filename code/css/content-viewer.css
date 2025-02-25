@@ -17,13 +17,16 @@ h1 {
     width: 80%;
 }
 
-.search-filter{
+.search-filter {
     font-size: 1.5rem;
     padding: 0.7rem;
+    border-radius: 0;
+    background-color: #f0f0f0;
 }
 
 #search {
     width: 60%;
+    border-radius: 10px 0 0 10px;
 }
 
 .table-container{
@@ -53,4 +56,11 @@ h1 {
 #search-button {
     background-color: var(--orange);
     width: 7%;
+    border-radius: 0 10px 10px 0;
+}
+
+#prioridad,
+#empleado,
+#fecha {
+    border-radius: 0; /* Sin redondeo */
 }
