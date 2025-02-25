@@ -1,0 +1,27 @@
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+}
+#wrapper1 {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    flex: 1;
+}
+
+header {
+    width: 100%;
+}
+
+#wrapper2 {
+    flex: 1;
+    margin-top: 5.5rem;
+}
+
+#main_section {
+    width: 100%;
+}

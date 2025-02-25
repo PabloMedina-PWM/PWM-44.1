@@ -59,6 +59,7 @@ button:hover{
 h2{
     text-align: left;
     font-size: 48px;
+    margin-bottom: 2rem;
 }
 
 input{
@@ -67,4 +68,5 @@ input{
     font-size: 38px;
     border-radius: 10px;
     border: gray solid 1px;
+    margin-bottom: 2rem;
 }
