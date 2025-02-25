@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Recinto</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/crud.css">
+</head>
+<body>
+
+<div class="container-box">
+    <div class="image-box">
+        <img src="../resources/images/add-photo.jpg" class="profile-photo">
+    </div>
+
+    <div class="form-box">
+        <h2 class="crudTitle">Recinto</h2>
+        <form>
+            <div class="c-n-task">
+                <label for="n-task" class="n-task-form-label">Nº de Tarea:</label>
+                <input type="text" class="n-task-form-control" id="n-task">
+            </div>
+            <div class="c-name">
+                <label for="name" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre">
+            </div>
+
+            <div class="c-email">
+                <label for="email" class="form-label">Email de contacto:</label>
+                <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+            </div>
+
+            <div class="c-phone">
+                <label for="telephone" class="form-label">Teléfono:</label>
+                <input type="tel" class="form-control" id="telephone" placeholder="Teléfono de contacto">
+            </div>
+
+            <div class="c-address">
+                <label for="address" class="form-label">Dirección:</label>
+                <input type="text" class="form-control" id="address" placeholder="Dirección del recinto" >
+            </div>
+
+            <div class="c-password">
+                <label for="em-password" class="form-label">Contraseña:</label>
+                <input type="password" class="form-control" id="em-password" placeholder="*******" >
+            </div>
+
+            <div class="c-province">
+                <label for="province" class="form-label">Provincia:</label>
+                <select class="form-select" id="province">
+                    <option selected>Provincia</option>
+                    <option value="1">Provincia 1</option>
+                    <option value="2">Provincia 2</option>
+                    <option value="3">Provincia 3</option>
+                </select>
+            </div>
+
+            <div class="c-group">
+                <label for="group" class="form-label">Grupo:</label>
+                <select class="form-select" id="group">
+                    <option selected>Grupo</option>
+                    <option value="1">Grupo 1</option>
+                    <option value="2">Grupo 2</option>
+                    <option value="3">Grupo 3</option>
+                </select>
+            </div>
+
+            <div class="buttons">
+                <button class="button">Confirmar</button>
+                <img id="delete-icon" class="delete-icon" src="../resources/images/delete-icon.png">
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
