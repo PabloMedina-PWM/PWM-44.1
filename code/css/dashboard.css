@@ -42,3 +42,7 @@ h2 {
     font-size: 1.2rem;
     margin: 1rem;
 }
+
+th, td {
+    width: 33%;
+}
