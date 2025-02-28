@@ -6,7 +6,11 @@
 - Pablo Medina Quintana  
 
 ## Descripción del proyecto
-_(Añadir una descripción del proyecto aquí)_  
+Página web enfocada a la gestión interna de eventos culturales.
+Permite la creación, edición y eliminación de Recintos, Artistas, Eventos y Tareas,
+con el principal objetivo de visualizar los detalles a simple vista, y gestionar
+de manera eficiente próximos eventos y planificar aquellos que aún no se han iniciado.
+
 
 ## Listado de requisitos funcionales
 _(Añadir los requisitos funcionales aquí)_  

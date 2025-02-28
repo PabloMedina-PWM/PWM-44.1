@@ -6,11 +6,11 @@ header {
     background-color: #f5f3f3;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 header ul {
     list-style: none;
-
 }
 
 #header {
