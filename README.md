@@ -45,7 +45,7 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
   - Todas las páginas html
 
 
-## Páginas HTML del proyecto
+## Páginas HTML del proyecto y el mockup que implementa
 - index.html
   - Login
 - correo_recuperacion.html 
