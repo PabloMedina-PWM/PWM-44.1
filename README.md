@@ -13,19 +13,74 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
 
 
 ## Listado de requisitos funcionales
-_(Añadir los requisitos funcionales aquí)_  
+  
 
 ## Mockups y Storyboard
 - **Archivo PDF:** [Ubicación del archivo PDF con los mockups y storyboard](https://github.com/PabloMedina-PWM/PWM-44.1/blob/master/PWM-MOCKUPS-GRUPO-44.1.pdf)
 
-## Listado de archivos templates
-_(Indicar los archivos templates utilizados y en qué archivo se cargan)_  
+## Listado de archivos templates y archivos en los que se cargan
+- main.html
+  - index.html
+  - correo_recuperacion.html
+  - restablecer_contrasena.html
+  - soporte_tecnico.html
+- content-viewer.html 
+  - artistas.html
+  - empleados.html
+  - recintos.html
+  - eventos.html
+  - tareas.html
+- crud.html
+  - crud_artista.html
+  - crud_empleado.html
+  - crud_evento.html
+  - crud_recinto.html
+  - crud_tarea.html
+  - cuenta_usuario.html
+- dashboard.html
+  - dashboard.html
+- footer.html
+  - Todas las páginas html
+- header.html
+  - Todas las páginas html
+
 
 ## Páginas HTML del proyecto
-_(Añadir las páginas HTML y el nombre del mockup que implementan)_  
+- index.html
+  - Login
+- correo_recuperacion.html 
+  - Recuperar contraseña
+- restablecer_contrasena.html
+  - Cambio de contraseña
+- soporte_tecnico.html
+  - Soporte técnico
+- artistas.html
+  - Artistas
+- empleados.html
+  - Empleados
+- recintos.html
+  - Recintos
+- eventos.html
+  - Eventos
+- tareas.html
+  - Tareas
+- crud_artista.html
+  - Añadir/Editar Artista
+- crud_empleado.html
+  - Añadir/Editar Empleado
+- crud_evento.html
+  - Añadir/Editar Evento
+- crud_recinto.html
+  - Añadir/Editar Recinto
+- crud_tarea.html
+  - Añadir/Editar Tarea
+- cuenta_usuario.html
+  - Cuenta de Empleado
+- dashboard.html
+  - Dashboard
 
 ### Página de inicio de la aplicación
-_(Indicar la página de inicio)_  
+- index.html
 
 ## Enlaces útiles
 - **Figma:** [Diseño en Figma](https://www.figma.com/design/O6NHH5X5xD8LPR7eL7aZba/PWM-Grupo-44.1?node-id=0-1&p=f&t=SiV9k2jwRxkNNQqw-0)  
