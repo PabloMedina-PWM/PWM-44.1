@@ -34,8 +34,10 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
 - Formularios de contacto para soporte técnico, en caso de existir alguna incidencia por parte del empleado.  
 
 ## Mockups, storyboard y templates
-- **Archivo PDF:** [Mockups y storyboard](https://github.com/PabloMedina-PWM/PWM-44.1/blob/9f8f0da622dcd490491d5b8e0450d1f6505f275d/pdfs/PWM%20-%20Mockups.pdf)
-- **Archivo PDF:** [Templates](https://github.com/PabloMedina-PWM/PWM-44.1/blob/9f8f0da622dcd490491d5b8e0450d1f6505f275d/pdfs/PWM%20-%20Templates.pdf)
+- **Archivo PDF:** [Mockups y storyboard](https://drive.google.com/file/d/1JzGE8Z98nW-HObK0eU7IEDxqI8KOqGVo/view)
+- **Archivo PDF:** [Templates](https://drive.google.com/file/d/1fF63HOjzUm8UOH_ISxyiZX9-TdlreM8n/view?usp=drive_link) 
+
+(También pueden encontrarse en la carpeta /pdfs de este mismo repositorio.)
 
 ## Listado de archivos templates y archivos en los que se cargan
 - main.html
