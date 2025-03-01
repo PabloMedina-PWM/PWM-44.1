@@ -33,8 +33,9 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
 - Sistema de notificaciones y alertas para informar al usuario sobre eventos importantes (mensajes, actualizaciones o recordatorios de próximos eventos y tareas).
 - Formularios de contacto para soporte técnico, en caso de existir alguna incidencia por parte del empleado.  
 
-## Mockups y Storyboard
-- **Archivo PDF:** [Ubicación del archivo PDF con los mockups y storyboard](https://github.com/PabloMedina-PWM/PWM-44.1/blob/master/PWM-MOCKUPS-STORYBOARD-GRUPO-44.1.pdf)
+## Mockups, storyboard y templates
+- **Archivo PDF:** [Mockups y storyboard](https://github.com/PabloMedina-PWM/PWM-44.1/blob/9f8f0da622dcd490491d5b8e0450d1f6505f275d/pdfs/PWM%20-%20Mockups.pdf)
+- **Archivo PDF:** [Templates](https://github.com/PabloMedina-PWM/PWM-44.1/blob/9f8f0da622dcd490491d5b8e0450d1f6505f275d/pdfs/PWM%20-%20Templates.pdf)
 
 ## Listado de archivos templates y archivos en los que se cargan
 - main.html
@@ -98,7 +99,7 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
   - Dashboard
 
 ### Página de inicio de la aplicación
-- index.html (Inicio de sesión, tras esta, irá a dashboard)
+- index.html (Inicio de sesión, tras autenticarse, irá a dashboard)
 
 ## Enlaces útiles
 - **Figma:** [Diseño en Figma](https://www.figma.com/design/O6NHH5X5xD8LPR7eL7aZba/PWM-Grupo-44.1?node-id=0-1&p=f&t=SiV9k2jwRxkNNQqw-0)  
