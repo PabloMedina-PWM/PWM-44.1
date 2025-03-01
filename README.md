@@ -16,7 +16,7 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
   
 
 ## Mockups y Storyboard
-- **Archivo PDF:** [Ubicación del archivo PDF con los mockups y storyboard](https://github.com/PabloMedina-PWM/PWM-44.1/blob/master/PWM-MOCKUPS-GRUPO-44.1.pdf)
+- **Archivo PDF:** [Ubicación del archivo PDF con los mockups y storyboard](https://github.com/PabloMedina-PWM/PWM-44.1/blob/master/PWM-MOCKUPS-STORYBOARD-GRUPO-44.1.pdf)
 
 ## Listado de archivos templates y archivos en los que se cargan
 - main.html
