@@ -40,8 +40,9 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
 
 (También pueden encontrarse en la carpeta /pdfs de este mismo repositorio.)
 
-## Presentación
+## Presentación y vídeo
 - **Archivo PDF:** [Presentación](https://drive.google.com/file/d/1dNxQBhGbq_D47FEYHuwpF0ThRdCUfiMQ/view?usp=sharing)
+- **Vídeo MP4:** [Vídeo](https://drive.google.com/file/d/1655nbYBS4x_qw2IuD5TyXoYkigKoo-kN/view?usp=sharing)
 
 ## Listado de archivos templates y archivos en los que se cargan
 - main.html
