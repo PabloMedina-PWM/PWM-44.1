@@ -35,9 +35,13 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
 
 ## Mockups, storyboard y templates
 - **Archivo PDF:** [Mockups y storyboard](https://drive.google.com/file/d/1JzGE8Z98nW-HObK0eU7IEDxqI8KOqGVo/view)
-- **Archivo PDF:** [Templates](https://drive.google.com/file/d/1fF63HOjzUm8UOH_ISxyiZX9-TdlreM8n/view?usp=drive_link) 
+- **Archivo PDF:** [Templates](https://drive.google.com/file/d/1fF63HOjzUm8UOH_ISxyiZX9-TdlreM8n/view?usp=drive_link)
+
 
 (También pueden encontrarse en la carpeta /pdfs de este mismo repositorio.)
+
+## Presentación
+- **Archivo PDF:** [Presentación](https://drive.google.com/file/d/1dNxQBhGbq_D47FEYHuwpF0ThRdCUfiMQ/view?usp=sharing)
 
 ## Listado de archivos templates y archivos en los que se cargan
 - main.html
