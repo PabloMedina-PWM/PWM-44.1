@@ -1,0 +1,10 @@
+{
+  "eventos": {
+    "titulo": "Eventos",
+    "columnas" : [".col2",".col3", ".col4", ".col5"],
+    "columnasAOcultar": [".col1"],
+    "nombreColumnas" : ["Nombre", "Recinto", "Contacto", "Artistas"],
+    "filtros" : 2,
+    "nombreFiltros" : ["Recinto", "Fecha", ""]
+  }
+}
