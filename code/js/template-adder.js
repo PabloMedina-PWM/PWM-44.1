@@ -10,7 +10,7 @@ function loadTemplate(fileName, id, callback) {
 }
 
 async function init(route, page) {
-    const url = "http://localhost:3000/eventos";
+    const url = "http://localhost:3000/" + page;
     let json;
 
     try {

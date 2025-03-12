@@ -3,8 +3,115 @@
     "titulo": "Eventos",
     "columnas" : [".col2",".col3", ".col4", ".col5"],
     "columnasAOcultar": [".col1"],
-    "nombreColumnas" : ["Nombre", "Recinto", "Contacto", "Artistas"],
+    "nombreColumnas" : ["","Nombre", "Recinto", "Contacto", "Artistas"],
     "filtros" : 2,
-    "nombreFiltros" : ["Recinto", "Fecha", ""]
+    "nombreFiltros" : ["Recinto", "Fecha", ""],
+    "textoBotonTabla" : "Ver artistas",
+    "enlaceBotonTabla" : "./artistas.html",
+    "textoBotonAñadir" : "Añadir evento",
+    "enlaceBotonAñadir" : "./crud_evento.html",
+    "fila1" : {
+      "col2" : "Granca Live Fest",
+      "col3" : "Estadio de Gran Canaria",
+      "col4" : "Jose Juan"
+    },
+    "fila2" : {
+      "col2" : "Boombastic",
+      "col3" : "Anexo Estadio Gran Canaria",
+      "col4" : "Alfredo"
+    },
+    "nFilas" : 2
+  },
+  "tareas": {
+    "titulo": "Tareas",
+    "columnas" : [".col1",".col2", ".col3", ".col4"],
+    "columnasAOcultar": [".col5"],
+    "nombreColumnas" : ["Nombre","Descripcion", "Prioridad", "Empleado", ""],
+    "filtros" : 3,
+    "nombreFiltros" : ["Prioridad", "Empleado", "Fecha"],
+    "textoBotonAñadir" : "Añadir tarea",
+    "enlaceBotonAñadir" : "./crud_tarea.html",
+    "fila1" : {
+      "col1" : "Planificar nuevo festival",
+      "col2" : "Comenzar el desarrollo del plan del nuevo festival, fecha límite: viernes 20",
+      "col3" : "Muy alta",
+      "col4" : "Pablo"
+    },
+    "fila2" : {
+      "col1" : "Hacer diseño cartel nuevo festival",
+      "col2" : "Cartel con diseño colorido para la puesta a la venta del nuevo festival, fecha límite: viernes 20",
+      "col3" : "Muy alta",
+      "col4" : "Pedro"
+    },
+    "nFilas" : 2
+  },
+  "empleados": {
+    "titulo": "Empleados",
+    "columnas" : [".col2",".col3", ".col4", ".col5"],
+    "columnasAOcultar": [".col1"],
+    "nombreColumnas" : ["","Nombre","Correo electrónico", "Rol", "Tareas"],
+    "filtros" : 1,
+    "nombreFiltros" : ["Rol", "", ""],
+    "textoBotonAñadir" : "Añadir empleado",
+    "enlaceBotonAñadir" : "./crud_empleado.html",
+    "textoBotonTabla" : "Ver tareas",
+    "enlaceBotonTabla" : "./tareas.html",
+    "fila1" : {
+      "col2" : "Pablo García",
+      "col3" : "pablo@pablo.com",
+      "col4" : "Administrador"
+    },
+    "fila2" : {
+      "col2" : "Pedro Pérez",
+      "col3" : "pedro@pedro.com",
+      "col4" : "Diseñador"
+    },
+    "nFilas" : 2
+  },
+  "recintos": {
+    "titulo": "Recintos",
+    "columnas" : [".col1",".col2", ".col3", ".col4"],
+    "columnasAOcultar": [".col5"],
+    "nombreColumnas" : ["Recinto","Dirección","Capacidad", "Contacto"],
+    "filtros" : 2,
+    "nombreFiltros" : ["Provincia", "Capacidad", ""],
+    "textoBotonAñadir" : "Añadir recinto",
+    "enlaceBotonAñadir" : "./crud_recinto.html",
+    "fila1" : {
+      "col1" : "Estadio de Gran Canaria",
+      "col2" : "C/ Fondos de Segura",
+      "col3" : 4000,
+      "col4" : "Pedro Pablo"
+    },
+    "fila2" : {
+      "col1" : "Anexo Estadio Gran Canaria",
+      "col2" : "C/ Fondos de Segura",
+      "col3" : 4000,
+      "col4" : "Pedro Pablo"
+    },
+    "nFilas" : 2
+  },
+  "artistas": {
+    "titulo": "Artistas",
+    "columnas" : [".col1",".col2", ".col3", ".col4"],
+    "columnasAOcultar": [".col5"],
+    "nombreColumnas" : ["Nombre y apellidos","Dirección","Grupo", "Teléfono"],
+    "filtros" : 2,
+    "nombreFiltros" : ["Grupo", "Evento", ""],
+    "textoBotonAñadir" : "Añadir artista",
+    "enlaceBotonAñadir" : "./crud_artista.html",
+    "fila1" : {
+      "col1" : "Cruz Cafuné",
+      "col2" : "Tacoronte",
+      "col3" : "-",
+      "col4" : "789456123"
+    },
+    "fila2" : {
+      "col1" : "Fito Cabrales",
+      "col2" : "Bilbao",
+      "col3" : "Fito y Fitipaldis",
+      "col4" : "123456789"
+    },
+    "nFilas" : 2
   }
 }
