@@ -75,3 +75,36 @@ h1 {
 #fecha {
     border-radius: 0; /* Sin redondeo */
 }
+
+#filter-button {
+    display: none;
+}
+
+
+@media (max-width: 767px) {
+    #filtro1, #filtro2, #filtro3 {
+        display: none;
+    }
+
+    #search-button {
+        width: 30%;
+        height: 100%;
+    }
+
+    .inputs-content {
+        height: 2rem;
+    }
+
+    #filter-button {
+        display: flex;
+        align-items: center;
+    }
+
+    #filter-image {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    #add-button {
+        width: 20%;
+    }
+}
