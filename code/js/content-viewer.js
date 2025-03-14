@@ -78,3 +78,19 @@ function configAddButton(json) {
         window.location.href = json.enlaceBotonAñadir;
     }
 }
+
+function hamburger() {
+        document.getElementById("menu").style.flexDirection = "Column";
+        let links = document.getElementById("menu").children;
+        for (let i = 0; i < links.length; i++) {
+            links[i].style.display = "block";
+        }
+}
+
+function toggleMenu() {
+    let menu = document.getElementById('menu');
+    document.querySelectorAll(".headerLink").forEach(e => {
+        e.classList.toggle("visible");
+    });
+    menu.classList.toggle('show');
+}

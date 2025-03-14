@@ -48,6 +48,7 @@ header ul {
     width: 100%;
     align-items: center;
     gap: 1.5rem;
+    margin-right: 1rem;
 }
 
 #hamburger {
@@ -56,22 +57,41 @@ header ul {
     display: none;
 }
 
-@media (max-width: 767px) {
-    .headerLink {
-        display: none;
-    }
-    #hamburger {
-        display: block;
-        font-size: 2rem;
-    }
-}
 
-@media (min-width: 767px) and (max-width: 900px) {
+@media (max-width: 900px) {
+    #menu.show .headerLink {
+        display: block;
+    }
+
     .headerLink {
         display: none;
     }
     #hamburger {
         display: block;
         font-size: 2rem;
+    }
+
+    #menu.show {
+        flex-direction: column;
+        justify-content: start;
+        border-bottom: 0.1rem solid lightgray;
+        background-color: #f5f3f3;
+        transition-duration: 0.8s;
+        padding: 1rem;
+    }
+
+    #menu {
+        position: absolute;
+        top: 100%; /* Despliega los enlaces debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 999;
+        transition: 0.4s;
+    }
+
+    #photo-hamburger {
+        display: flex;
+        gap: 1.5rem;
     }
 }
