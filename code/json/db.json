@@ -113,5 +113,16 @@
       "col4" : "123456789"
     },
     "nFilas" : 2
-  }
+  },
+  "index" : {},
+  "dashboard" : {},
+  "restablecer_contraseña": {},
+  "soporte_tecnico" : {},
+  "correo de recuperación": {},
+  "crud_artista" : {},
+  "crud_empleado" : {},
+  "crud_evento" : {},
+  "crud_recinto": {},
+  "crud_tarea": {},
+  "cuenta_usuario" : {}
 }
