@@ -65,3 +65,13 @@ header ul {
         font-size: 2rem;
     }
 }
+
+@media (min-width: 767px) and (max-width: 900px) {
+    .headerLink {
+        display: none;
+    }
+    #hamburger {
+        display: block;
+        font-size: 2rem;
+    }
+}
