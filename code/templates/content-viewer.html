@@ -15,19 +15,24 @@
         <h1 id="titulo1"></h1>
         <div class="inputs-content">
             <input type="search" placeholder="Buscar" class="search-filter" id="search">
-            <select place id="filtro1" class="search-filter">
-                <option value="" disabled selected>Prioridad</option>
-            </select>
-            <select place id="filtro2" class="search-filter">
-                <option value="" disabled selected>Empleado</option>
-            </select>
-            <select place id="filtro3" class="search-filter">
-                <option value="" disabled selected>Fecha</option>
-            </select>
-            <button id="filter-button"><img id="filter-image" src="../resources/images/filtro.png"></button>
+            <div id="filters">
+                <select id="filtro1" class="search-filter filtro">
+                    <option value="" disabled selected>Prioridad</option>
+                </select>
+                <select id="filtro2" class="search-filter filtro">
+                    <option value="" disabled selected>Empleado</option>
+                </select>
+                <select id="filtro3" class="search-filter filtro">
+                    <option value="" disabled selected>Fecha</option>
+                </select>
+            </div>
+            <button id="filter-button"><img id="filter-image" src="../resources/images/filtro.png" onclick="filters()"></button>
             <button id="search-button"><img src="../resources/images/lupa.png"></button>
         </div>
+
         <div class="table-container">
+            <div id="mobile-filters">
+            </div>
             <table id="table-viewer">
                 <thead>
                 <tr>

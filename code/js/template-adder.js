@@ -6,6 +6,9 @@ function loadTemplate(fileName, id, callback) {
         if (callback) {
             callback();
         }
+        let headerScript = document.createElement("script");
+        headerScript.src = "../js/header.js";
+        document.head.append(headerScript);
     });
 }
 

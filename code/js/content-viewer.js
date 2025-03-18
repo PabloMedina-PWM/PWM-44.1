@@ -60,6 +60,14 @@ function hideShowFilters(json) {
         let filtro = "filtro" + i;
         document.getElementById(filtro).style.display = "none";
     }
+    let filtrosMobile = document.getElementById("mobile-filters");
+    for (let i = 1; i <= json.filtros; i++) {
+        let filtro = document.getElementById("filtro" + i).cloneNode(true);
+        filtrosMobile.appendChild(filtro);
+        filtro.classList.add("hidden");
+        filtro.classList.add("mobile-filtro");
+        filtro.classList.remove("filtro");
+    }
 }
 
 
@@ -87,10 +95,21 @@ function hamburger() {
         }
 }
 
-function toggleMenu() {
-    let menu = document.getElementById('menu');
-    document.querySelectorAll(".headerLink").forEach(e => {
-        e.classList.toggle("visible");
+let active = false;
+
+function filters() {
+    document.querySelectorAll(".mobile-filtro").forEach(e => {
+        e.classList.toggle("hidden");
+        e.classList.toggle("visible-filter");
     });
-    menu.classList.toggle('show');
 }
+
+function checkFilters() {
+    if (window.innerWidth > 768) {
+        document.querySelectorAll(".mobile-filtro").forEach(e => {e.style.display = "none";});
+    } else {
+        document.querySelectorAll(".mobile-filtro").forEach(e => {e.style.display = "";});
+    }
+}
+
+window.addEventListener("resize", checkFilters)

@@ -72,21 +72,42 @@ h1 {
     border-radius: 0 10px 10px 0;
 }
 
-#prioridad,
-#empleado,
-#fecha {
+#filtro1,
+#filtro2,
+#filtro3 {
     border-radius: 0; /* Sin redondeo */
+    height: 100%;
 }
 
 #filter-button {
     display: none;
 }
 
+#filters {
+    display: flex;
+}
+
+.visible {
+    display: block;
+}
+
+.visible-filter {
+    display: block;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+#filtro-mobile {
+    display: none;
+}
+
 @media (max-width: 767px) {
-    #filtro1, #filtro2, #filtro3 {
+    .filtro {
         display: none;
     }
-
     #search-button {
         width: 30%;
         height: 100%;
@@ -108,6 +129,10 @@ h1 {
     #add-button {
         width: 40%;
         height: 40%;
+    }
+    #filtro-mobile {
+        display: block;
+        width: 100%;
     }
 }
 
