@@ -55,3 +55,16 @@ footer {
     align-items: center;
 }
 
+@media (max-width: 767px) {
+    #links {
+        flex-direction: column;
+        height:auto;
+    }
+    #messages {
+        height: auto;
+    }
+
+    .footerLink {
+        padding: 0.1rem;
+    }
+}

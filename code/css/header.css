@@ -19,7 +19,7 @@ header ul {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width:100%;
+    flex-wrap: nowrap;
     border-bottom: 0.3px solid lightgray;
 }
 
@@ -33,12 +33,65 @@ header ul {
 
 #userPhoto {
     width: auto;
-    height: 40px;
+    height: 100%;
     padding-right: 40px;
 }
 
 #logoPhoto {
     margin-left: 10px;
     padding-top:5px;
-    margin-right: 25rem;
+}
+
+#menu {
+    justify-content: flex-end;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 1rem;
+}
+
+#hamburger {
+    background: none;
+    border: none;
+    display: none;
+}
+
+
+@media (max-width: 900px) {
+    #menu.show .headerLink {
+        display: block;
+    }
+
+    .headerLink {
+        display: none;
+    }
+    #hamburger {
+        display: block;
+        font-size: 2rem;
+    }
+
+    #menu.show {
+        flex-direction: column;
+        justify-content: start;
+        border-bottom: 0.1rem solid lightgray;
+        background-color: #f5f3f3;
+        transition-duration: 0.8s;
+        padding: 1rem;
+    }
+
+    #menu {
+        position: absolute;
+        top: 100%; /* Despliega los enlaces debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 999;
+        transition: 0.4s;
+    }
+
+    #photo-hamburger {
+        display: flex;
+        gap: 1.5rem;
+    }
 }

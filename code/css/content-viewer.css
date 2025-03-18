@@ -25,7 +25,7 @@ h1 {
 }
 
 #search {
-    width: 60%;
+    width: 100%;
     border-radius: 10px 0 0 10px;
 }
 
@@ -51,6 +51,7 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     font-size: 1rem;
+    padding: 0.2rem;
 }
 
 #add-button {
@@ -62,6 +63,7 @@ h1 {
     border: none;
     font-size: 2rem;
     margin: 1rem;
+    width: 20%;
 }
 
 #search-button {
@@ -74,4 +76,43 @@ h1 {
 #empleado,
 #fecha {
     border-radius: 0; /* Sin redondeo */
+}
+
+#filter-button {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    #filtro1, #filtro2, #filtro3 {
+        display: none;
+    }
+
+    #search-button {
+        width: 30%;
+        height: 100%;
+    }
+
+    .inputs-content {
+        height: 2rem;
+    }
+
+    #filter-button {
+        display: flex;
+        align-items: center;
+    }
+
+    #filter-image {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    #add-button {
+        width: 40%;
+        height: 40%;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 900px) {
+    #search-button {
+        width: 20%;
+    }
 }
