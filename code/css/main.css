@@ -63,3 +63,71 @@ input{
     border: gray solid 1px;
     margin-bottom: 2rem;
 }
+
+@media (min-width: 450px) and (max-width: 767px) {
+    body {
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 700px;
+    }
+
+    .login_container{
+        text-align: center;
+        padding: 2.5rem;
+        background-color: white;
+        width: 30rem;
+        height: 25rem;
+    }
+
+    .input_container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .link_password{
+        margin-top: 0.1rem;
+        color: gray;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    .button-container {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    button{
+        background-color: #FFB52C;
+        color: white;
+        font-size: 2rem;
+        border-radius: 3rem;
+        height: 4.2rem;
+        font-weight: bold;
+        padding: 0.8rem;
+    }
+
+    button:hover{
+        transition: all ease-in-out 0.5s;
+        color: black;
+    }
+
+    h2{
+        text-align: left;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    input{
+        background-color: #eae9e9;
+        width: 99%;
+        font-size: 38px;
+        border-radius: 10px;
+        border: gray solid 1px;
+        margin-bottom: 2rem;
+    }
+}
