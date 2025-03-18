@@ -34,7 +34,7 @@ body {
     justify-content: flex-end;
 }
 
-button{
+#main-button{
     background-color: #FFB52C;
     color: white;
     font-size: 30px;
@@ -101,7 +101,7 @@ input{
         justify-content: center;
     }
 
-    button{
+    #main-button{
         background-color: #FFB52C;
         color: white;
         font-size: 2rem;
