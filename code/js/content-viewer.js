@@ -7,6 +7,8 @@ async function changeContent(page, json) {
     for (const [param, value] of urlParams.entries()) {
         if (param !== "_ijt" && param !== "_ij_reload" ) {
             await filter(json, param, value);
+            console.log(value);
+            document.getElementById(param).value = value;
         }
     }
     document.getElementById("search").addEventListener("keydown", async (event) => {
@@ -18,6 +20,14 @@ async function changeContent(page, json) {
     if (fecha) {
         fecha.addEventListener("change", async (event) => {
             await filter(json, "fecha", event.target.value);
+        });
+    }
+    let capacidad = document.getElementById("capacidad");
+    if (capacidad) {
+        capacidad.addEventListener("keydown", async (event) => {
+            if (event.key === "Enter") {
+                await filter(json, "capacidad", event.target.value);
+            }
         });
     }
 }
@@ -32,6 +42,14 @@ async function createFilters(json) {
             input.id = "fecha";
             document.getElementById("filters").appendChild(input);
             document.getElementById("filters").appendChild(input);
+        } else if (filtro === "Capacidad") {
+            let capacidad = document.createElement("input");
+            capacidad.type = "number";
+            capacidad.id = "capacidad";
+            capacidad.classList.add("search-filter");
+            capacidad.placeholder = "Capacidad máx.";
+            capacidad.style.width = "14.5rem";
+            document.getElementById("filters").appendChild(capacidad);
         } else {
             let sel = document.createElement("select");
             sel.innerHTML = "<option value=\"\" selected>"+ filtro + "</option>";
@@ -118,7 +136,7 @@ async function addData(json) {
 }
 
 async function addOptionToFilter(filterName, optionName) {
-    if (filterName === "fecha") return;
+    if (filterName === "fecha" || filterName === "capacidad") return;
     let filter = document.getElementById(filterName);
     if (!filter) {
         filterName = filterName.slice(0,-1);
@@ -133,12 +151,14 @@ async function addOptionToFilter(filterName, optionName) {
             if (valores.includes(option)) return;
             let opt = document.createElement("option");
             opt.innerText = option;
+            opt.value = option;
             document.getElementById(filterName).appendChild(opt);
             document.getElementById(filterName+"-mobile").appendChild(opt.cloneNode(true));
         }
     } else {
         let option = document.createElement("option");
         option.innerText = optionName;
+        option.value = optionName;
         document.getElementById(filterName).appendChild(option);
         document.getElementById(filterName+"-mobile").appendChild(option.cloneNode(true));
     }
@@ -164,6 +184,8 @@ function updateVisibility(datos) {
                 if (campo === filtro.field) {
                     if (filtro.field === "fecha" && !isNaN(Date.parse(datos[dato][campo]))) {
                         cumpleFiltro = new Date(datos[dato][campo]) <= new Date(filtro.equals);
+                    } else if (filtro.field === "capacidad") {
+                        cumpleFiltro = datos[dato][campo] <= filtro.equals;
                     } else {
                         cumpleFiltro = datos[dato][campo].toString() === filtro.equals.toString();
                     }

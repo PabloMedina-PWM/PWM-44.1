@@ -22,6 +22,7 @@ h1 {
     padding: 0.7rem;
     border-radius: 0;
     background-color: #f0f0f0;
+    width: 11rem;
 }
 
 #search {
@@ -104,6 +105,15 @@ h1 {
 #filtro-mobile {
     display: none;
 }
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+
+input[type=date] { color: transparent !important; }
+.active input[type=date] { color: inherit !important; }
+
+input[type=date] { width: 3.5rem; }
 
 @media (max-width: 767px) {
     .filtro {
