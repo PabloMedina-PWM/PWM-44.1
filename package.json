@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
+  },
+  "scripts": {
+    "postinstall": "npm run start:json",
+    "start:json": "json-server ./code/json/db.json"
   }
 }

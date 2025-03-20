@@ -1,124 +1,612 @@
 {
-  "eventos": {
-    "titulo": "Eventos",
-    "columnas" : [".col2",".col3", ".col4", ".col5"],
-    "columnasAOcultar": [".col1"],
-    "nombreColumnas" : ["","Nombre", "Recinto", "Contacto", "Artistas"],
-    "filtros" : 2,
-    "nombreFiltros" : ["Recinto", "Fecha", ""],
-    "textoBotonTabla" : "Ver artistas",
-    "enlaceBotonTabla" : "./artistas.html",
-    "textoBotonAñadir" : "Añadir evento",
-    "enlaceBotonAñadir" : "./crud_evento.html",
-    "fila1" : {
-      "col2" : "Granca Live Fest",
-      "col3" : "Estadio de Gran Canaria",
-      "col4" : "Jose Juan"
-    },
-    "fila2" : {
-      "col2" : "Boombastic",
-      "col3" : "Anexo Estadio Gran Canaria",
-      "col4" : "Alfredo"
-    },
-    "nFilas" : 2
+  "recintosPage": {
+    "titulo": "Recintos",
+    "nombreFiltros": ["Provincia", "Capacidad"],
+    "nombreColumnas": ["Recinto", "Dirección", "Capacidad", "Contacto"],
+    "nombreBoton": "Añadir recinto",
+    "enlaceBoton": "../html/crud_recinto.html"
   },
-  "tareas": {
+  "artistasPage": {
+    "titulo": "Artistas",
+    "nombreFiltros": ["Grupo", "Evento"],
+    "nombreColumnas": ["Nombre y apellidos", "Dirección", "Grupo", "Teléfono"],
+    "nombreBoton": "Añadir artista",
+    "enlaceBoton": "../html/crud_artista.html"
+  },
+  "tareasPage": {
     "titulo": "Tareas",
-    "columnas" : [".col1",".col2", ".col3", ".col4"],
-    "columnasAOcultar": [".col5"],
-    "nombreColumnas" : ["Nombre","Descripcion", "Prioridad", "Empleado", ""],
-    "filtros" : 3,
-    "nombreFiltros" : ["Prioridad", "Empleado", "Fecha"],
-    "textoBotonAñadir" : "Añadir tarea",
-    "enlaceBotonAñadir" : "./crud_tarea.html",
-    "fila1" : {
-      "col1" : "Planificar nuevo festival",
-      "col2" : "Comenzar el desarrollo del plan del nuevo festival, fecha límite: viernes 20",
-      "col3" : "Muy alta",
-      "col4" : "Pablo"
-    },
-    "fila2" : {
-      "col1" : "Hacer diseño cartel nuevo festival",
-      "col2" : "Cartel con diseño colorido para la puesta a la venta del nuevo festival, fecha límite: viernes 20",
-      "col3" : "Muy alta",
-      "col4" : "Pedro"
-    },
-    "nFilas" : 2
+    "nombreFiltros": ["Prioridad", "Empleado", "Fecha"],
+    "nombreColumnas": ["Nombre", "Descripción", "Prioridad", "Empleado"],
+    "nombreBoton": "Añadir tarea",
+    "enlaceBoton": "../html/crud_tarea.html"
   },
-  "empleados": {
+  "empleadosPage": {
     "titulo": "Empleados",
-    "columnas" : [".col2",".col3", ".col4", ".col5"],
-    "columnasAOcultar": [".col1"],
-    "nombreColumnas" : ["","Nombre","Correo electrónico", "Rol", "Tareas"],
-    "filtros" : 1,
-    "nombreFiltros" : ["Rol", "", ""],
-    "textoBotonAñadir" : "Añadir empleado",
-    "enlaceBotonAñadir" : "./crud_empleado.html",
-    "textoBotonTabla" : "Ver tareas",
-    "enlaceBotonTabla" : "./tareas.html",
-    "fila1" : {
-      "col2" : "Pablo García",
-      "col3" : "pablo@pablo.com",
-      "col4" : "Administrador"
-    },
-    "fila2" : {
-      "col2" : "Pedro Pérez",
-      "col3" : "pedro@pedro.com",
-      "col4" : "Diseñador"
-    },
-    "nFilas" : 2
+    "nombreFiltros": ["Rol"],
+    "nombreColumnas": ["Nombre", "Correo electrónico", "Rol", "Tareas"],
+    "nombreBoton": "Añadir empleado",
+    "enlaceBoton": "../html/crud_empleado.html",
+    "nombreBotonTabla": "Ver tareas"
+  },
+  "eventosPage": {
+    "titulo": "Eventos",
+    "nombreFiltros": ["Recinto", "Fecha"],
+    "nombreColumnas": ["Nombre", "Recinto", "Contacto", "Artistas"],
+    "nombreBoton": "Añadir evento",
+    "enlaceBoton": "../html/crud_evento.html",
+    "nombreBotonTabla": "Ver artistas"
   },
   "recintos": {
-    "titulo": "Recintos",
-    "columnas" : [".col1",".col2", ".col3", ".col4"],
-    "columnasAOcultar": [".col5"],
-    "nombreColumnas" : ["Recinto","Dirección","Capacidad", "Contacto"],
-    "filtros" : 2,
-    "nombreFiltros" : ["Provincia", "Capacidad", ""],
-    "textoBotonAñadir" : "Añadir recinto",
-    "enlaceBotonAñadir" : "./crud_recinto.html",
-    "fila1" : {
-      "col1" : "Estadio de Gran Canaria",
-      "col2" : "C/ Fondos de Segura",
-      "col3" : 4000,
-      "col4" : "Pedro Pablo"
+    "Infecar": {
+      "direccion": { "nombre": "La Feria", "provincia": "Las Palmas" },
+      "capacidad": 2000,
+      "contacto": "Jose Alfredo"
     },
-    "fila2" : {
-      "col1" : "Anexo Estadio Gran Canaria",
-      "col2" : "C/ Fondos de Segura",
-      "col3" : 4000,
-      "col4" : "Pedro Pablo"
+    "Gran Canaria Arena": {
+      "direccion": { "nombre": "Fondos de Segura", "provincia": "Las Palmas" },
+      "capacidad": 15000,
+      "contacto": "Pepe"
     },
-    "nFilas" : 2
+    "Estadio Insular": {
+      "direccion": { "nombre": "Fondos de Segura", "provincia": "Las Palmas" },
+      "capacidad": 15000,
+      "contacto": "Pepe"
+    },
+    "Auditorio Alfredo Kraus": {
+      "direccion": { "nombre": "Playa de las Canteras", "provincia": "Las Palmas" },
+      "capacidad": 1500,
+      "contacto": "Manuel López"
+    },
+    "Teatro Pérez Galdós": {
+      "direccion": { "nombre": "Triana", "provincia": "Las Palmas" },
+      "capacidad": 1000,
+      "contacto": "Isabel Martín"
+    },
+    "Parque Santa Catalina": {
+      "direccion": { "nombre": "Puerto", "provincia": "Las Palmas" },
+      "capacidad": 5000,
+      "contacto": "Carlos Ramírez"
+    },
+    "Estadio Gran Canaria": {
+      "direccion": { "nombre": "Siete Palmas", "provincia": "Las Palmas" },
+      "capacidad": 32000,
+      "contacto": "Luis Santana"
+    },
+    "Centro de Convenciones": {
+      "direccion": { "nombre": "Vecindario", "provincia": "Las Palmas" },
+      "capacidad": 12000,
+      "contacto": "Ana Gómez"
+    },
+    "Parque Doramas": {
+      "direccion": { "nombre": "Ciudad Jardín", "provincia": "Las Palmas" },
+      "capacidad": 3000,
+      "contacto": "María Hernández"
+    },
+    "Estadio Maspalomas": {
+      "direccion": { "nombre": "Maspalomas", "provincia": "Las Palmas" },
+      "capacidad": 8000,
+      "contacto": "Sergio Torres"
+    },
+    "Sala Elder": {
+      "direccion": { "nombre": "Parque Santa Catalina", "provincia": "Las Palmas" },
+      "capacidad": 1200,
+      "contacto": "Laura Pérez"
+    },
+    "Estadio Tenerife": {
+      "direccion": { "nombre": "Tenerife Norte", "provincia": "Santa Cruz de Tenerife" },
+      "capacidad": 25000,
+      "contacto": "Jorge Suárez"
+    },
+    "Teror Plaza": {
+      "direccion": { "nombre": "Teror", "provincia": "Las Palmas" },
+      "capacidad": 1000,
+      "contacto": "Elena Navarro"
+    },
+    "Campo Internacional": {
+      "direccion": { "nombre": "Maspalomas", "provincia": "Las Palmas" },
+      "capacidad": 3000,
+      "contacto": "Juan Carlos"
+    },
+    "Explanada Arucas": {
+      "direccion": { "nombre": "Arucas", "provincia": "Las Palmas" },
+      "capacidad": 5000,
+      "contacto": "Carmen Delgado"
+    },
+    "Teatro Cuyás": {
+      "direccion": { "nombre": "Triana", "provincia": "Las Palmas" },
+      "capacidad": 900,
+      "contacto": "Antonio Ruiz"
+    },
+    "Las Arenas": {
+      "direccion": { "nombre": "Mesa y López", "provincia": "Las Palmas" },
+      "capacidad": 2000,
+      "contacto": "Rosa López"
+    },
+    "Palacio de Congresos": {
+      "direccion": { "nombre": "Vecindario", "provincia": "Las Palmas" },
+      "capacidad": 4000,
+      "contacto": "Pedro García"
+    },
+    "El Pajar": {
+      "direccion": { "nombre": "Arguineguín", "provincia": "Las Palmas" },
+      "capacidad": 2000,
+      "contacto": "Miguel Fernández"
+    }
   },
   "artistas": {
-    "titulo": "Artistas",
-    "columnas" : [".col1",".col2", ".col3", ".col4"],
-    "columnasAOcultar": [".col5"],
-    "nombreColumnas" : ["Nombre y apellidos","Dirección","Grupo", "Teléfono"],
-    "filtros" : 2,
-    "nombreFiltros" : ["Grupo", "Evento", ""],
-    "textoBotonAñadir" : "Añadir artista",
-    "enlaceBotonAñadir" : "./crud_artista.html",
-    "fila1" : {
-      "col1" : "Cruz Cafuné",
-      "col2" : "Tacoronte",
-      "col3" : "-",
-      "col4" : "789456123"
+    "Fito Cabrales": {
+      "dirección": "Bilbao",
+      "grupo": "Fito y Fitipaldis",
+      "teléfono": "123456789",
+      "eventos": ["Granca Live Fest", "Rock & Roll Night"]
     },
-    "fila2" : {
-      "col1" : "Fito Cabrales",
-      "col2" : "Bilbao",
-      "col3" : "Fito y Fitipaldis",
-      "col4" : "123456789"
+    "Cruz Cafuné": {
+      "dirección": "Tacoronte",
+      "grupo": "Locoplaya",
+      "teléfono": "987654321",
+      "eventos": ["Boombastic Gran Canaria"]
     },
-    "nFilas" : 2
+    "Fernando Olvera": {
+      "dirección": "Puebla",
+      "grupo": "Maná",
+      "teléfono": "546789123",
+      "eventos": ["Granca Live Fest"]
+    },
+    "Rosalía": {
+      "dirección": "Sant Esteve Sesrovires",
+      "grupo": "-",
+      "teléfono": "876543219",
+      "eventos": ["Granca Music Stars", "Boombastic Gran Canaria"]
+    },
+    "Bad Bunny": {
+      "dirección": "San Juan",
+      "grupo": "-",
+      "teléfono": "654321987",
+      "eventos": ["Boombastic Gran Canaria"]
+    },
+    "Coldplay": {
+      "dirección": "Londres",
+      "grupo": "Coldplay",
+      "teléfono": "321987654",
+      "eventos": ["World Tour Gran Canaria"]
+    },
+    "J Balvin": {
+      "dirección": "Medellín",
+      "grupo": "-",
+      "teléfono": "456123789",
+      "eventos": ["Granca Live Fest"]
+    },
+    "Shakira": {
+      "dirección": "Barranquilla",
+      "grupo": "-",
+      "teléfono": "852741963",
+      "eventos": ["Granca Music Stars"]
+    },
+    "Alejandro Sanz": {
+      "dirección": "Madrid",
+      "grupo": "-",
+      "teléfono": "963258741",
+      "eventos": ["Granca Live Fest"]
+    },
+    "Adele": {
+      "dirección": "Londres",
+      "grupo": "-",
+      "teléfono": "147258369",
+      "eventos": ["World Tour Gran Canaria"]
+    },
+    "Ed Sheeran": {
+      "dirección": "Halifax",
+      "grupo": "-",
+      "teléfono": "951753456",
+      "eventos": ["Boombastic Gran Canaria"]
+    },
+    "The Weeknd": {
+      "dirección": "Toronto",
+      "grupo": "-",
+      "teléfono": "123789456",
+      "eventos": ["Granca Music Stars"]
+    },
+    "Drake": {
+      "dirección": "Toronto",
+      "grupo": "-",
+      "teléfono": "321654987",
+      "eventos": ["Boombastic Gran Canaria"]
+    },
+    "Beyoncé": {
+      "dirección": "Houston",
+      "grupo": "-",
+      "teléfono": "789456123",
+      "eventos": ["Granca Music Stars"]
+    },
+    "Bruno Mars": {
+      "dirección": "Honolulu",
+      "grupo": "Silk Sonic",
+      "teléfono": "456987123",
+      "eventos": ["Granca Live Fest"]
+    },
+    "Taylor Swift": {
+      "dirección": "Nashville",
+      "grupo": "-",
+      "teléfono": "789123456",
+      "eventos": ["World Tour Gran Canaria"]
+    },
+    "Harry Styles": {
+      "dirección": "Redditch",
+      "grupo": "One Direction",
+      "teléfono": "951753852",
+      "eventos": ["Boombastic Gran Canaria"]
+    },
+    "Rihanna": {
+      "dirección": "Barbados",
+      "grupo": "-",
+      "teléfono": "654852963",
+      "eventos": ["Granca Music Stars"]
+    },
+    "Maluma": {
+      "dirección": "Medellín",
+      "grupo": "-",
+      "teléfono": "987654321",
+      "eventos": ["Boombastic Gran Canaria"]
+    },
+    "Luis Fonsi": {
+      "dirección": "San Juan",
+      "grupo": "-",
+      "teléfono": "123123123",
+      "eventos": ["Granca Live Fest"]
+    }
   },
+  "tareas": {
+    "Planificar": {
+      "descripcion": "Brainstorming sobre el nuevo festival",
+      "prioridad": "Muy alta",
+      "empleado": "Marcos",
+      "fecha": "2025-03-01"
+    },
+    "Diseñar los carteles": {
+      "descripcion": "Diseñar los carteles sobre el nuevo festival",
+      "prioridad": "Muy alta",
+      "empleado": "Juan",
+      "fecha": "2025-03-02"
+    },
+    "Contactar artistas": {
+      "descripcion": "Gestionar los contratos con los artistas principales",
+      "prioridad": "Alta",
+      "empleado": "Juan Pedro",
+      "fecha": "2025-03-05"
+    },
+    "Organizar logística": {
+      "descripcion": "Coordinar transporte y alojamiento de artistas",
+      "prioridad": "Media",
+      "empleado": "Alfredo",
+      "fecha": "2025-03-08"
+    },
+    "Vender entradas": {
+      "descripcion": "Configurar la plataforma de venta de tickets",
+      "prioridad": "Alta",
+      "empleado": "Marcos",
+      "fecha": "2025-03-10"
+    },
+    "Montar escenario": {
+      "descripcion": "Supervisar el montaje de los escenarios",
+      "prioridad": "Alta",
+      "empleado": "Juan Pedro",
+      "fecha": "2025-03-12"
+    },
+    "Coordinar seguridad": {
+      "descripcion": "Revisar el plan de seguridad para el evento",
+      "prioridad": "Media",
+      "empleado": "Luis",
+      "fecha": "2025-03-15"
+    },
+    "Revisar presupuesto": {
+      "descripcion": "Actualizar el presupuesto final del festival",
+      "prioridad": "Alta",
+      "empleado": "Ana",
+      "fecha": "2025-03-18"
+    },
+    "Contratar personal": {
+      "descripcion": "Seleccionar y contratar el staff temporal",
+      "prioridad": "Media",
+      "empleado": "Carlos",
+      "fecha": "2025-03-20"
+    },
+    "Gestionar catering": {
+      "descripcion": "Contratar el servicio de catering para artistas y staff",
+      "prioridad": "Baja",
+      "empleado": "Laura",
+      "fecha": "2025-03-22"
+    },
+    "Promoción en redes sociales": {
+      "descripcion": "Planificar la estrategia de redes sociales",
+      "prioridad": "Muy alta",
+      "empleado": "Rosa",
+      "fecha": "2025-03-25"
+    },
+    "Gestionar acreditaciones": {
+      "descripcion": "Emitir las acreditaciones para el equipo y prensa",
+      "prioridad": "Alta",
+      "empleado": "Pedro",
+      "fecha": "2025-03-28"
+    },
+    "Confirmar horarios": {
+      "descripcion": "Coordinar los horarios de los artistas",
+      "prioridad": "Media",
+      "empleado": "Sergio",
+      "fecha": "2025-03-30"
+    },
+    "Inspeccionar recintos": {
+      "descripcion": "Verificar las condiciones de los recintos",
+      "prioridad": "Alta",
+      "empleado": "Elena",
+      "fecha": "2025-04-02"
+    },
+    "Verificar contratos": {
+      "descripcion": "Revisar los contratos legales",
+      "prioridad": "Muy alta",
+      "empleado": "Antonio",
+      "fecha": "2025-04-05"
+    },
+    "Control de ingresos": {
+      "descripcion": "Registrar los ingresos de venta de tickets",
+      "prioridad": "Alta",
+      "empleado": "Luis",
+      "fecha": "2025-04-08"
+    },
+    "Configurar iluminación": {
+      "descripcion": "Coordinar la instalación de luces y efectos",
+      "prioridad": "Media",
+      "empleado": "Marcos",
+      "fecha": "2025-04-10"
+    },
+    "Diseñar sitio web": {
+      "descripcion": "Actualizar la web oficial del evento",
+      "prioridad": "Alta",
+      "empleado": "Juan",
+      "fecha": "2025-03-06"
+    },
+    "Reservar transporte": {
+      "descripcion": "Gestionar autobuses para el equipo y asistentes",
+      "prioridad": "Media",
+      "empleado": "Ana",
+      "fecha": "2025-04-12"
+    },
+    "Realizar pruebas de sonido": {
+      "descripcion": "Coordinar pruebas con los técnicos de sonido",
+      "prioridad": "Muy alta",
+      "empleado": "Carlos",
+      "fecha": "2025-04-15"
+    }
+  },
+  "empleados": {
+    "Juan Pedro": {
+      "correo electrónico": "juanpedro@prodandfests.com",
+      "rol": "Administrador",
+      "tareas": "../html/tareas.html?empleado=Juan%20Pedro"
+    },
+    "Marcos": {
+      "correo electrónico": "marcos@prodandfests.com",
+      "rol": "Diseñador",
+      "tareas": "../html/tareas.html?empleado=Marcos"
+    },
+    "Juan": {
+      "correo electrónico": "juan@prodandfests.com",
+      "rol": "Programador",
+      "tareas": "../html/tareas.html?empleado=Juan"
+    },
+    "Alfredo": {
+      "correo electrónico": "alfredo@prodandfests.com",
+      "rol": "Logística",
+      "tareas": "../html/tareas.html?empleado=Alfredo"
+    },
+    "Luis": {
+      "correo electrónico": "luis@prodandfests.com",
+      "rol": "Seguridad",
+      "tareas": "../html/tareas.html?empleado=Luis"
+    },
+    "Ana": {
+      "correo electrónico": "ana@prodandfests.com",
+      "rol": "Administrador",
+      "tareas": "../html/tareas.html?empleado=Ana"
+    },
+    "Carlos": {
+      "correo electrónico": "carlos@prodandfests.com",
+      "rol": "Recursos humanos",
+      "tareas": "../html/tareas.html?empleado=Carlos"
+    },
+    "Laura": {
+      "correo electrónico": "laura@prodandfests.com",
+      "rol": "Catering",
+      "tareas": "../html/tareas.html?empleado=Laura"
+    },
+    "Rosa": {
+      "correo electrónico": "rosa@prodandfests.com",
+      "rol": "Catering",
+      "tareas": "../html/tareas.html?empleado=Rosa"
+    },
+    "Pedro": {
+      "correo electrónico": "pedro@prodandfests.com",
+      "rol": "Coordinador",
+      "tareas": "../html/tareas.html?empleado=Pedro"
+    },
+    "Sergio": {
+      "correo electrónico": "sergio@prodandfests.com",
+      "rol": "Producción",
+      "tareas": "../html/tareas.html?empleado=Sergio"
+    },
+    "Elena": {
+      "correo electrónico": "elena@prodandfests.com",
+      "rol": "Inspección",
+      "tareas": "../html/tareas.html?empleado=Elena"
+    },
+    "Antonio": {
+      "correo electrónico": "antonio@prodandfests.com",
+      "rol": "Legal",
+      "tareas": "../html/tareas.html?empleado=Antonio"
+    },
+    "Carmen": {
+      "correo electrónico": "carmen@prodandfests.com",
+      "rol": "Asistente",
+      "tareas": "../html/tareas.html?empleado=Carmen"
+    },
+    "Miguel": {
+      "correo electrónico": "miguel@prodandfests.com",
+      "rol": "Montaje",
+      "tareas": "../html/tareas.html?empleado=Miguel"
+    },
+    "Francisco": {
+      "correo electrónico": "francisco@prodandfests.com",
+      "rol": "Logística",
+      "tareas": "../html/tareas.html?empleado=Francisco"
+    },
+    "José": {
+      "correo electrónico": "jose@prodandfests.com",
+      "rol": "Supervisor",
+      "tareas": "../html/tareas.html?empleado=José"
+    },
+    "Jorge": {
+      "correo electrónico": "jorge@prodandfests.com",
+      "rol": "Recursos Humanos",
+      "tareas": "../html/tareas.html?empleado=Jorge"
+    },
+    "Isabel": {
+      "correo electrónico": "isabel@prodandfests.com",
+      "rol": "Coordinador",
+      "tareas": "../html/tareas.html?empleado=Isabel"
+    },
+    "Manuel": {
+      "correo electrónico": "manuel@prodandfests.com",
+      "rol": "Técnico",
+      "tareas": "../html/tareas.html?empleado=Manuel"
+    }
+  },
+  "eventos": {
+    "Boombastic Gran Canaria": {
+      "recinto": "Estadio Insular",
+      "contacto": "José Joaquín",
+      "artistas": "../html/artistas.html?evento=Boombastic%20Gran%20Canaria",
+      "fecha": "2025-06-15"
+    },
+    "Granca Live Fest": {
+      "recinto": "Estadio Gran Canaria",
+      "contacto": "Alberto Medina",
+      "artistas": "../html/artistas.html?evento=Granca%20Live%20Fest",
+      "fecha": "2025-07-20"
+    },
+    "Granca Music Stars": {
+      "recinto": "Gran Canaria Arena",
+      "contacto": "Manuel Pérez",
+      "artistas": "../html/artistas.html?evento=Granca%20Music%20Stars",
+      "fecha": "2025-05-10"
+    },
+    "World Tour Gran Canaria": {
+      "recinto": "Auditorio Alfredo Kraus",
+      "contacto": "Luis Santana",
+      "artistas": "../html/artistas.html?evento=World%20Tour%20Gran%20Canaria",
+      "fecha": "2025-08-25"
+    },
+    "ElectroBeach Party": {
+      "recinto": "Parque Santa Catalina",
+      "contacto": "María López",
+      "artistas": "../html/artistas.html?evento=ElectroBeach%20Party",
+      "fecha": "2025-06-30"
+    },
+    "Jazz in the Park": {
+      "recinto": "Parque Doramas",
+      "contacto": "Carlos Ramírez",
+      "artistas": "../html/artistas.html?evento=Jazz%20in%20the%20Park",
+      "fecha": "2025-04-20"
+    },
+    "Rock & Roll Night": {
+      "recinto": "Teatro Pérez Galdós",
+      "contacto": "Isabel Martín",
+      "artistas": "../html/artistas.html?evento=Rock%20&%20Roll%20Night",
+      "fecha": "2025-09-15"
+    },
+    "Indie Sunset Festival": {
+      "recinto": "Campo Internacional",
+      "contacto": "Juan Carlos",
+      "artistas": "../html/artistas.html?evento=Indie%20Sunset%20Festival",
+      "fecha": "2025-07-05"
+    },
+    "Pop Explosion": {
+      "recinto": "Palacio de Congresos",
+      "contacto": "Pedro García",
+      "artistas": "../html/artistas.html?evento=Pop%20Explosion",
+      "fecha": "2025-08-01"
+    },
+    "Latin Beats Festival": {
+      "recinto": "Estadio Maspalomas",
+      "contacto": "Sergio Torres",
+      "artistas": "../html/artistas.html?evento=Latin%20Beats%20Festival",
+      "fecha": "2025-05-25"
+    },
+    "Urban Vibes": {
+      "recinto": "Centro de Convenciones",
+      "contacto": "Ana Gómez",
+      "artistas": "../html/artistas.html?evento=Urban%20Vibes",
+      "fecha": "2025-06-10"
+    },
+    "Classical Gala Night": {
+      "recinto": "Auditorio Alfredo Kraus",
+      "contacto": "Manuel López",
+      "artistas": "../html/artistas.html?evento=Classical%20Gala%20Night",
+      "fecha": "2025-11-20"
+    },
+    "Summer Reggae Fest": {
+      "recinto": "Explanada Arucas",
+      "contacto": "Carmen Delgado",
+      "artistas": "../html/artistas.html?evento=Summer%20Reggae%20Fest",
+      "fecha": "2025-07-15"
+    },
+    "Electronic Island Festival": {
+      "recinto": "Estadio Tenerife",
+      "contacto": "Jorge Suárez",
+      "artistas": "../html/artistas.html?evento=Electronic%20Island%20Festival",
+      "fecha": "2025-05-18"
+    },
+    "The Big Fiesta": {
+      "recinto": "Estadio Gran Canaria",
+      "contacto": "Luis Santana",
+      "artistas": "../html/artistas.html?evento=The%20Big%20Fiesta",
+      "fecha": "2025-09-10"
+    },
+    "Night of Flamenco": {
+      "recinto": "Teatro Cuyás",
+      "contacto": "Antonio Ruiz",
+      "artistas": "../html/artistas.html?evento=Night%20of%20Flamenco",
+      "fecha": "2025-04-12"
+    },
+    "Beach Party Maspalomas": {
+      "recinto": "Campo Internacional",
+      "contacto": "Miguel Fernández",
+      "artistas": "../html/artistas.html?evento=Beach%20Party%20Maspalomas",
+      "fecha": "2025-08-12"
+    },
+    "Canary Rock Fest": {
+      "recinto": "Las Arenas",
+      "contacto": "Rosa López",
+      "artistas": "../html/artistas.html?evento=Canary%20Rock%20Fest",
+      "fecha": "2025-06-25"
+    },
+    "Sunset Jazz Evenings": {
+      "recinto": "Teror Plaza",
+      "contacto": "Elena Navarro",
+      "artistas": "../html/artistas.html?evento=Sunset%20Jazz%20Evenings",
+      "fecha": "2025-05-15"
+    },
+    "Winter Wonderland Festival": {
+      "recinto": "El Pajar",
+      "contacto": "Francisco Mena",
+      "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival",
+      "fecha": "2025-12-10"
+    }
+  },
+
   "index" : {},
   "dashboard" : {},
   "restablecer_contraseña": {},
   "soporte_tecnico" : {},
-  "correo de recuperación": {},
+  "correo_de_recuperación": {},
   "crud_artista" : {},
   "crud_empleado" : {},
   "crud_evento" : {},
