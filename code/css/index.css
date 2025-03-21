@@ -28,7 +28,7 @@ header {
     margin-top: 10rem;
 }
 
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 250px) and (max-width: 767px) {
     #main_section {
         width: 100%;
         padding-bottom: 11rem;
