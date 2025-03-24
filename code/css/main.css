@@ -14,6 +14,13 @@ body {
     height: 450px;
 }
 
+#support-title {
+    display: none;
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 6rem;
+}
+
 .input_container{
     position: relative;
     display: flex;

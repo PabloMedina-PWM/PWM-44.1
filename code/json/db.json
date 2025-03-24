@@ -602,11 +602,35 @@
     }
   },
 
-  "index" : {},
+  "index" : {
+    "Titulo1": "Correo electrónico",
+    "Titulo2": "Contraseña",
+    "Place1": "Correo electrónico",
+    "Place2": "Contraseña",
+    "Button": "Iniciar sesión"
+  },
   "dashboard" : {},
-  "restablecer_contraseña": {},
-  "soporte_tecnico" : {},
-  "correo_de_recuperación": {},
+  "restablecer_contraseña": {
+    "Titulo1": "Nueva contraseña",
+    "Titulo2": "Confirmar contraseña",
+    "Place1": "Nueva contraseña",
+    "Place2": "Nueva contraseña",
+    "Button": "Confirmar"
+  },
+  "soporte_tecnico" : {
+    "Titulo1": "Asunto:",
+    "Titulo2": "Descripción:",
+    "Place1": "Indique el problema que tiene",
+    "Place2": "Breve descripción del problema",
+    "Button": "Enviar"
+  },
+  "correo_de_recuperacion": {
+    "Titulo1": "Introduce la dirección de correo electrónico de tu cuenta. \nTe enviaremos un enlace para recuperar la cuenta.",
+    "Titulo2": "Correo de recuperación:",
+    "Place1": "Indique el problema que tiene",
+    "Place2": "Correo electrónico",
+    "Button": "Enviar enlace"
+  },
   "crud_artista" : {},
   "crud_empleado" : {},
   "crud_evento" : {},
