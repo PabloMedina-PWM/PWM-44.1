@@ -670,6 +670,12 @@
       "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival"
     }
   },
+  "usuarios": {
+    "prueba": {
+      "correo": "prueba@prodandfests.es",
+      "password": "prueba1234-"
+    }
+  },
 
 
   "index" : {
