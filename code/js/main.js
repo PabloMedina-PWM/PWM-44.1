@@ -16,10 +16,18 @@ async function changeContent(page, json) {
         document.querySelector(".link_password").style.display = "none";
     }
 
+    if (currentPage.includes("restablecer_contrasena.html")) {
+        document.querySelector(".link_password").style.display = "none";
+        document.getElementById("email/newpassword").type = 'password';
+        document.getElementById("password/description").type = 'password';
+    }
+
     if (currentPage.includes("soporte_tecnico.html")) {
         document.querySelector("#support-title").style.display = "block";
         document.getElementById("text-main-superior").style.fontSize = '1.5rem';
         document.getElementById("text-main-inferior").style.fontSize = '1.5rem';
+        document.getElementById("email/newpassword").type = 'text';
+        document.getElementById("password/description").type = 'text';
         const buttonContainer = document.querySelector('.button-container');
         buttonContainer.style.display = 'flex';
         input.style.height = '7rem';
@@ -34,9 +42,12 @@ async function changeContent(page, json) {
     }
 
     if (currentPage.includes("correo_recuperacion.html")) {
+        document.getElementById("password/description").type = 'email';
         document.getElementById("email/newpassword").style.display = "none";
         document.getElementById("text-main-superior").style.fontSize = '1.45rem'
         document.getElementById("text-main-superior").style.marginBottom = '3rem';
         document.getElementById("main-button").style.width = '100%';
+        input2.type = "password"
     }
+
 }
