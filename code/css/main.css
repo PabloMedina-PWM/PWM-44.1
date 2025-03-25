@@ -14,6 +14,13 @@ body {
     height: 450px;
 }
 
+#support-title {
+    display: none;
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 6rem;
+}
+
 .input_container{
     position: relative;
     display: flex;
@@ -64,13 +71,13 @@ input{
     margin-bottom: 2rem;
 }
 
-@media (min-width: 450px) and (max-width: 767px) {
+@media (max-width: 767px) {
     body {
-        font-size: 10px;
+        font-size: 0.625rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 700px;
+        height: 43.75rem;
     }
 
     .login_container{
@@ -91,13 +98,13 @@ input{
     .link_password{
         margin-top: 0.1rem;
         color: gray;
-        font-size: 15px;
+        font-size: 0.938rem;
         text-decoration: none;
     }
 
     .button-container {
         display: flex;
-        margin-top: 30px;
+        margin-top: 1.875rem;
         justify-content: center;
     }
 
@@ -125,9 +132,9 @@ input{
     input{
         background-color: #eae9e9;
         width: 99%;
-        font-size: 38px;
-        border-radius: 10px;
-        border: gray solid 1px;
+        font-size: 2.375rem;
+        border-radius: 0.625rem;
+        border: gray solid 0.063rem;
         margin-bottom: 2rem;
     }
 }
