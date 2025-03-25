@@ -27,7 +27,6 @@ body {
     padding: 10px;
 }
 
-
 .crudTitle {
     text-align: center;
     font-size: 22px;
@@ -43,8 +42,6 @@ body {
     font-weight: bold;
     color: #333;
 }
-
-
 
 .c-n-task {
     display: flex;
@@ -71,8 +68,6 @@ body {
     min-width: 150px;
 }
 
-
-
 .form-control, .form-select {
     background-color: #f8f9fa;
     border: 1px solid #e0e0e0;
@@ -84,12 +79,9 @@ body {
     margin-bottom: 0.7rem;
 }
 
-
-
 .form-control::placeholder {
     color: #b0b0b0;
 }
-
 
 .button {
     width: 100%;
@@ -110,14 +102,12 @@ body {
     background-color: #e8a21a;
 }
 
-
 .buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
-
 
 .delete-icon {
     width: 45px;
@@ -126,7 +116,6 @@ body {
     margin-left: 1rem;
     cursor: pointer;
 }
-
 
 .profile-photo {
     width: 100%;
@@ -137,6 +126,45 @@ body {
     cursor: pointer;
 }
 
+/* Media Queries para Responsividad */
 
+@media (max-width: 1024px) {
+    .container-box {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .image-box, .form-box {
+        max-width: 80%;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
+@media (max-width: 768px) {
+    .container-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image-box, .form-box {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .form-box {
+        margin-bottom: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .form-label, .n-task-form-label {
+        font-size: 14px;
+    }
+}

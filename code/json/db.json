@@ -704,33 +704,91 @@
   "crud_artista" : {
     "titulo": "Artista",
     "cambiar": [2,"surnames", "Apellidos:"],
-    "placeholders": [2, "address", "Apellidos"],
-    "ocultar": [4, ".c-n-task", ".c-password", ".c-group",".c-province"]
+    "placeholders": [0],
+    "ocultar": [4, ".c-n-task", ".c-password", ".c-group",".c-province"],
+    "especial": [0]
   },
   "crud_empleado" : {
     "titulo": "Empleado",
-    "cambiar": [6, "surnames", "Apellidos:", "grupo", "Rol:", "buscar grupo", "Rol"],
-    "placeholders": [2, "address", "Apellidos"],
-    "ocultar": [3, ".c-n-task", ".c-province", ".c-input"]
+    "cambiar": [4, "surnames", "Apellidos:", "Rol", "Rol:"],
+    "placeholders": [4, "address", "Apellidos", "RolPlaceh", "Rol"],
+    "ocultar": [3, ".c-n-task", ".c-province", ".c-group"],
+    "especial": [0]
 
   },
   "crud_evento" : {
     "titulo": "Evento",
     "cambiar": [10, "surnames", "Estilo de música:", "provincia", "Tipo de evento:", "buscar provincia", "Festival/Gira/Concierto único", "grupo", "Recinto:", "buscar grupo", "Recinto"],
     "placeholders": [2, "address", "Tipo de música que se usará"],
-    "ocultar": [5, ".c-n-task", ".c-phone", ".c-email", ".c-password", ".c-input"]
+    "ocultar": [5, ".c-n-task", ".c-phone", ".c-email", ".c-password", ".c-input"],
+    "especial": [1, "recintos"],
+    "placeholderSelector": "Bucar recinto"
   },
   "crud_recinto": {
     "titulo": "Recinto",
-    "cambiar": [0],
-    "placeholders": [0],
-    "ocultar": [5, ".c-n-task", ".c-phone", ".c-password", ".c-group", ".c-input"]
+    "cambiar": [2, "grupo", "Provincia:"],
+    "placeholders": [2, "buscar grupo", "Buscar provincia"],
+    "ocultar": [5, ".c-n-task", ".c-phone", ".c-password", ".c-province", ".c-input"],
+    "especial": [1, "provincias"],
+    "placeholderSelector": "Bucar provincia"
   },
   "crud_tarea": {
     "titulo": "Tarea",
     "cambiar": [10,"surnames", "Descripción:","provincia", "Tipo de tarea:", "buscar provincia", "Tipo", "grupo", "Empleado a asignar:", "buscar grupo", "Empleado"],
     "placeholders": [2, "address", "Descripción de la tarea"],
-    "ocultar": [4, ".c-phone", ".c-password", ".c-email", ".c-input"]
+    "ocultar": [4, ".c-phone", ".c-password", ".c-email", ".c-input"],
+    "especial": [0]
   },
-  "cuenta_usuario" : {}
+  "cuenta_usuario" : {},
+  "provincias": {
+    "A Coruña" : {},
+    "Álava" : {},
+    "Albacete" : {},
+    "Alicante" : {},
+    "Almería" : {},
+    "Asturias" : {},
+    "Ávila" : {},
+    "Badajoz" : {},
+    "Barcelona" : {},
+    "Burgos" : {},
+    "Cáceres" : {},
+    "Cádiz" : {},
+    "Cantabria" : {},
+    "Castellón" : {},
+    "Ciudad Real" : {},
+    "Córdoba" : {},
+    "Cuenca" : {},
+    "Girona" : {},
+    "Granada" : {},
+    "Guadalajara" : {},
+    "Gipuzkoa" : {},
+    "Huelva" : {},
+    "Huesca" : {},
+    "Illes Balears" : {},
+    "Jaén" : {},
+    "La Rioja" : {},
+    "Las Palmas" : {},
+    "León" : {},
+    "Lleida" : {},
+    "Lugo" : {},
+    "Madrid" : {},
+    "Málaga" : {},
+    "Murcia" : {},
+    "Navarra" : {},
+    "Ourense" : {},
+    "Palencia" : {},
+    "Pontevedra" : {},
+    "Salamanca" : {},
+    "Santa Cruz de Tenerife" : {},
+    "Segovia" : {},
+    "Sevilla" : {},
+    "Soria" : {},
+    "Tarragona" : {},
+    "Teruel" : {},
+    "Toledo" : {},
+    "Valencia" : {},
+    "Valladolid" : {},
+    "Zamora" : {},
+    "Zaragoza" : {}
+  }
 }
