@@ -4,21 +4,24 @@
     "nombreFiltros": ["Provincia", "Capacidad"],
     "nombreColumnas": ["Recinto", "Dirección", "Capacidad", "Contacto"],
     "nombreBoton": "Añadir recinto",
-    "enlaceBoton": "../html/crud_recinto.html"
+    "enlaceBoton": "../html/crud_recinto.html",
+    "ordenarPor": "campo"
   },
   "artistasPage": {
     "titulo": "Artistas",
     "nombreFiltros": ["Grupo", "Evento"],
     "nombreColumnas": ["Nombre y apellidos", "Dirección", "Grupo", "Teléfono"],
     "nombreBoton": "Añadir artista",
-    "enlaceBoton": "../html/crud_artista.html"
+    "enlaceBoton": "../html/crud_artista.html",
+    "ordenarPor": "campo"
   },
   "tareasPage": {
     "titulo": "Tareas",
     "nombreFiltros": ["Prioridad", "Empleado", "Fecha"],
-    "nombreColumnas": ["Nombre", "Descripción", "Prioridad", "Empleado"],
+    "nombreColumnas": ["Nombre", "Descripción", "Prioridad", "Empleado", "Fecha"],
     "nombreBoton": "Añadir tarea",
-    "enlaceBoton": "../html/crud_tarea.html"
+    "enlaceBoton": "../html/crud_tarea.html",
+    "ordenarPor": "fecha"
   },
   "empleadosPage": {
     "titulo": "Empleados",
@@ -26,15 +29,21 @@
     "nombreColumnas": ["Nombre", "Correo electrónico", "Rol", "Tareas"],
     "nombreBoton": "Añadir empleado",
     "enlaceBoton": "../html/crud_empleado.html",
-    "nombreBotonTabla": "Ver tareas"
+    "nombreBotonTabla": "Ver tareas",
+    "ordenarPor": "campo"
   },
   "eventosPage": {
     "titulo": "Eventos",
-    "nombreFiltros": ["Recinto", "Fecha"],
-    "nombreColumnas": ["Nombre", "Recinto", "Contacto", "Artistas"],
+    "nombreFiltros": ["Recinto", "Provincia", "Fecha"],
+    "nombreColumnas": ["Nombre", "Recinto", "Contacto", "Fecha", "Artistas"],
     "nombreBoton": "Añadir evento",
     "enlaceBoton": "../html/crud_evento.html",
-    "nombreBotonTabla": "Ver artistas"
+    "nombreBotonTabla": "Ver artistas",
+    "ordenarPor": "fecha"
+  },
+  "dashboardPage": {
+    "titulo": "Dashboard",
+    "nombreColumnas": ["Tarea", "Descripción", "Prioridad", "Fecha"]
   },
   "recintos": {
     "Infecar": {
@@ -410,7 +419,7 @@
     },
     "Carlos": {
       "correo electrónico": "carlos@prodandfests.com",
-      "rol": "Recursos humanos",
+      "rol": "Recursos Humanos",
       "tareas": "../html/tareas.html?empleado=Carlos"
     },
     "Laura": {
@@ -481,126 +490,187 @@
   },
   "eventos": {
     "Boombastic Gran Canaria": {
-      "recinto": "Estadio Insular",
+      "recinto": {
+        "nombre": "Estadio Insular",
+        "provincia": "Las Palmas"
+      },
       "contacto": "José Joaquín",
-      "artistas": "../html/artistas.html?evento=Boombastic%20Gran%20Canaria",
-      "fecha": "2025-06-15"
+      "fecha": "2025-06-15",
+      "artistas": "../html/artistas.html?evento=Boombastic%20Gran%20Canaria"
     },
     "Granca Live Fest": {
-      "recinto": "Estadio Gran Canaria",
+      "recinto": {
+        "nombre": "Estadio Gran Canaria",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Alberto Medina",
-      "artistas": "../html/artistas.html?evento=Granca%20Live%20Fest",
-      "fecha": "2025-07-20"
+      "fecha": "2025-07-20",
+      "artistas": "../html/artistas.html?evento=Granca%20Live%20Fest"
     },
     "Granca Music Stars": {
-      "recinto": "Gran Canaria Arena",
+      "recinto": {
+        "nombre": "Gran Canaria Arena",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Manuel Pérez",
-      "artistas": "../html/artistas.html?evento=Granca%20Music%20Stars",
-      "fecha": "2025-05-10"
+      "fecha": "2025-05-10",
+      "artistas": "../html/artistas.html?evento=Granca%20Music%20Stars"
     },
     "World Tour Gran Canaria": {
-      "recinto": "Auditorio Alfredo Kraus",
+      "recinto": {
+        "nombre": "Auditorio Alfredo Kraus",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Luis Santana",
-      "artistas": "../html/artistas.html?evento=World%20Tour%20Gran%20Canaria",
-      "fecha": "2025-08-25"
+      "fecha": "2025-08-25",
+      "artistas": "../html/artistas.html?evento=World%20Tour%20Gran%20Canaria"
     },
     "ElectroBeach Party": {
-      "recinto": "Parque Santa Catalina",
+      "recinto": {
+        "nombre": "Parque Santa Catalina",
+        "provincia": "Las Palmas"
+      },
       "contacto": "María López",
-      "artistas": "../html/artistas.html?evento=ElectroBeach%20Party",
-      "fecha": "2025-06-30"
+      "fecha": "2025-06-30",
+      "artistas": "../html/artistas.html?evento=ElectroBeach%20Party"
     },
     "Jazz in the Park": {
-      "recinto": "Parque Doramas",
+      "recinto": {
+        "nombre": "Parque Doramas",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Carlos Ramírez",
-      "artistas": "../html/artistas.html?evento=Jazz%20in%20the%20Park",
-      "fecha": "2025-04-20"
+      "fecha": "2025-04-20",
+      "artistas": "../html/artistas.html?evento=Jazz%20in%20the%20Park"
     },
     "Rock & Roll Night": {
-      "recinto": "Teatro Pérez Galdós",
+      "recinto": {
+        "nombre": "Teatro Pérez Galdós",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Isabel Martín",
-      "artistas": "../html/artistas.html?evento=Rock%20&%20Roll%20Night",
-      "fecha": "2025-09-15"
+      "fecha": "2025-09-15",
+      "artistas": "../html/artistas.html?evento=Rock%20&%20Roll%20Night"
     },
     "Indie Sunset Festival": {
-      "recinto": "Campo Internacional",
+      "recinto": {
+        "nombre": "Campo Internacional",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Juan Carlos",
-      "artistas": "../html/artistas.html?evento=Indie%20Sunset%20Festival",
-      "fecha": "2025-07-05"
+      "fecha": "2025-07-05",
+      "artistas": "../html/artistas.html?evento=Indie%20Sunset%20Festival"
     },
     "Pop Explosion": {
-      "recinto": "Palacio de Congresos",
+      "recinto": {
+        "nombre": "Palacio de Congresos",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Pedro García",
-      "artistas": "../html/artistas.html?evento=Pop%20Explosion",
-      "fecha": "2025-08-01"
+      "fecha": "2025-08-01",
+      "artistas": "../html/artistas.html?evento=Pop%20Explosion"
     },
     "Latin Beats Festival": {
-      "recinto": "Estadio Maspalomas",
+      "recinto": {
+        "nombre": "Estadio Maspalomas",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Sergio Torres",
-      "artistas": "../html/artistas.html?evento=Latin%20Beats%20Festival",
-      "fecha": "2025-05-25"
+      "fecha": "2025-05-25",
+      "artistas": "../html/artistas.html?evento=Latin%20Beats%20Festival"
     },
     "Urban Vibes": {
-      "recinto": "Centro de Convenciones",
+      "recinto": {
+        "nombre": "Centro de Convenciones",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Ana Gómez",
-      "artistas": "../html/artistas.html?evento=Urban%20Vibes",
-      "fecha": "2025-06-10"
+      "fecha": "2025-06-10",
+      "artistas": "../html/artistas.html?evento=Urban%20Vibes"
     },
     "Classical Gala Night": {
-      "recinto": "Auditorio Alfredo Kraus",
+      "recinto": {
+        "nombre": "Auditorio Alfredo Kraus",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Manuel López",
-      "artistas": "../html/artistas.html?evento=Classical%20Gala%20Night",
-      "fecha": "2025-11-20"
+      "fecha": "2025-11-20",
+      "artistas": "../html/artistas.html?evento=Classical%20Gala%20Night"
     },
     "Summer Reggae Fest": {
-      "recinto": "Explanada Arucas",
+      "recinto": {
+        "nombre": "Explanada Arucas",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Carmen Delgado",
-      "artistas": "../html/artistas.html?evento=Summer%20Reggae%20Fest",
-      "fecha": "2025-07-15"
+      "fecha": "2025-07-15",
+      "artistas": "../html/artistas.html?evento=Summer%20Reggae%20Fest"
     },
     "Electronic Island Festival": {
-      "recinto": "Estadio Tenerife",
+      "recinto": {
+        "nombre": "Estadio Tenerife",
+        "provincia": "Santa Cruz de Tenerife"
+      },
       "contacto": "Jorge Suárez",
-      "artistas": "../html/artistas.html?evento=Electronic%20Island%20Festival",
-      "fecha": "2025-05-18"
+      "fecha": "2025-05-18",
+      "artistas": "../html/artistas.html?evento=Electronic%20Island%20Festival"
     },
     "The Big Fiesta": {
-      "recinto": "Estadio Gran Canaria",
+      "recinto": {
+        "nombre": "Estadio Gran Canaria",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Luis Santana",
-      "artistas": "../html/artistas.html?evento=The%20Big%20Fiesta",
-      "fecha": "2025-09-10"
+      "fecha": "2025-09-10",
+      "artistas": "../html/artistas.html?evento=The%20Big%20Fiesta"
     },
     "Night of Flamenco": {
-      "recinto": "Teatro Cuyás",
+      "recinto": {
+        "nombre": "Teatro Cuyás",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Antonio Ruiz",
-      "artistas": "../html/artistas.html?evento=Night%20of%20Flamenco",
-      "fecha": "2025-04-12"
+      "fecha": "2025-04-12",
+      "artistas": "../html/artistas.html?evento=Night%20of%20Flamenco"
     },
     "Beach Party Maspalomas": {
-      "recinto": "Campo Internacional",
+      "recinto": {
+        "nombre": "Campo Internacional",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Miguel Fernández",
-      "artistas": "../html/artistas.html?evento=Beach%20Party%20Maspalomas",
-      "fecha": "2025-08-12"
+      "fecha": "2025-08-12",
+      "artistas": "../html/artistas.html?evento=Beach%20Party%20Maspalomas"
     },
     "Canary Rock Fest": {
-      "recinto": "Las Arenas",
+      "recinto": {
+        "nombre": "Las Arenas",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Rosa López",
-      "artistas": "../html/artistas.html?evento=Canary%20Rock%20Fest",
-      "fecha": "2025-06-25"
+      "fecha": "2025-06-25",
+      "artistas": "../html/artistas.html?evento=Canary%20Rock%20Fest"
     },
     "Sunset Jazz Evenings": {
-      "recinto": "Teror Plaza",
+      "recinto": {
+        "nombre": "Teror Plaza",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Elena Navarro",
-      "artistas": "../html/artistas.html?evento=Sunset%20Jazz%20Evenings",
-      "fecha": "2025-05-15"
+      "fecha": "2025-05-15",
+      "artistas": "../html/artistas.html?evento=Sunset%20Jazz%20Evenings"
     },
     "Winter Wonderland Festival": {
-      "recinto": "El Pajar",
+      "recinto": {
+        "nombre": "El Pajar",
+        "provincia": "Las Palmas"
+      },
       "contacto": "Francisco Mena",
-      "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival",
-      "fecha": "2025-12-10"
+      "fecha": "2025-12-10",
+      "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival"
     }
   },
+
 
   "index" : {
     "Titulo1": "Correo electrónico",
@@ -631,10 +701,36 @@
     "Place2": "Correo electrónico",
     "Button": "Enviar enlace"
   },
-  "crud_artista" : {},
-  "crud_empleado" : {},
-  "crud_evento" : {},
-  "crud_recinto": {},
-  "crud_tarea": {},
+  "crud_artista" : {
+    "titulo": "Artista",
+    "cambiar": [2,"surnames", "Apellidos:"],
+    "placeholders": [2, "address", "Apellidos"],
+    "ocultar": [4, ".c-n-task", ".c-password", ".c-group",".c-province"]
+  },
+  "crud_empleado" : {
+    "titulo": "Empleado",
+    "cambiar": [6, "surnames", "Apellidos:", "grupo", "Rol:", "buscar grupo", "Rol"],
+    "placeholders": [2, "address", "Apellidos"],
+    "ocultar": [3, ".c-n-task", ".c-province", ".c-input"]
+
+  },
+  "crud_evento" : {
+    "titulo": "Evento",
+    "cambiar": [10, "surnames", "Estilo de música:", "provincia", "Tipo de evento:", "buscar provincia", "Festival/Gira/Concierto único", "grupo", "Recinto:", "buscar grupo", "Recinto"],
+    "placeholders": [2, "address", "Tipo de música que se usará"],
+    "ocultar": [5, ".c-n-task", ".c-phone", ".c-email", ".c-password", ".c-input"]
+  },
+  "crud_recinto": {
+    "titulo": "Recinto",
+    "cambiar": [0],
+    "placeholders": [0],
+    "ocultar": [5, ".c-n-task", ".c-phone", ".c-password", ".c-group", ".c-input"]
+  },
+  "crud_tarea": {
+    "titulo": "Tarea",
+    "cambiar": [10,"surnames", "Descripción:","provincia", "Tipo de tarea:", "buscar provincia", "Tipo", "grupo", "Empleado a asignar:", "buscar grupo", "Empleado"],
+    "placeholders": [2, "address", "Descripción de la tarea"],
+    "ocultar": [4, ".c-phone", ".c-password", ".c-email", ".c-input"]
+  },
   "cuenta_usuario" : {}
 }
