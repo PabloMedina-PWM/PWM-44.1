@@ -18,11 +18,12 @@ h1 {
 }
 
 .search-filter {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0.7rem;
+    font-weight: 500;
     border-radius: 0;
     background-color: #f0f0f0;
-    width: 11rem;
+    width: 13rem;
 }
 
 #search {
@@ -113,7 +114,9 @@ input[type=date]:required:invalid::-webkit-datetime-edit {
 input[type=date] { color: transparent !important; }
 .active input[type=date] { color: inherit !important; }
 
-input[type=date] { width: 3.5rem; }
+input[type=date] {
+    width: 2.9rem;
+}
 
 @media (max-width: 767px) {
     .filtro {
