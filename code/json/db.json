@@ -631,10 +631,36 @@
     "Place2": "Correo electrónico",
     "Button": "Enviar enlace"
   },
-  "crud_artista" : {},
-  "crud_empleado" : {},
-  "crud_evento" : {},
-  "crud_recinto": {},
-  "crud_tarea": {},
+  "crud_artista" : {
+    "titulo": "Artista",
+    "cambiar": [2,"surnames", "Apellidos:"],
+    "placeholders": [2, "address", "Apellidos"],
+    "ocultar": [4, ".c-n-task", ".c-password", ".c-group",".c-province"]
+  },
+  "crud_empleado" : {
+    "titulo": "Empleado",
+    "cambiar": [6, "surnames", "Apellidos:", "grupo", "Rol:", "buscar grupo", "Rol"],
+    "placeholders": [2, "address", "Apellidos"],
+    "ocultar": [3, ".c-n-task", ".c-province", ".c-input"]
+
+  },
+  "crud_evento" : {
+    "titulo": "Evento",
+    "cambiar": [10, "surnames", "Estilo de música:", "provincia", "Tipo de evento:", "buscar provincia", "Festival/Gira/Concierto único", "grupo", "Recinto:", "buscar grupo", "Recinto"],
+    "placeholders": [2, "address", "Tipo de música que se usará"],
+    "ocultar": [5, ".c-n-task", ".c-phone", ".c-email", ".c-password", ".c-input"]
+  },
+  "crud_recinto": {
+    "titulo": "Recinto",
+    "cambiar": [0],
+    "placeholders": [0],
+    "ocultar": [5, ".c-n-task", ".c-phone", ".c-password", ".c-group", ".c-input"]
+  },
+  "crud_tarea": {
+    "titulo": "Tarea",
+    "cambiar": [10,"surnames", "Descripción:","provincia", "Tipo de tarea:", "buscar provincia", "Tipo", "grupo", "Empleado a asignar:", "buscar grupo", "Empleado"],
+    "placeholders": [2, "address", "Descripción de la tarea"],
+    "ocultar": [4, ".c-phone", ".c-password", ".c-email", ".c-input"]
+  },
   "cuenta_usuario" : {}
 }
