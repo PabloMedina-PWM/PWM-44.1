@@ -670,12 +670,169 @@
       "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival"
     }
   },
-  "usuarios": {
-    "prueba": {
-      "correo": "prueba@prodandfests.es",
+  "usuarios": [
+    {
+      "nombre": "Juan",
+      "apellido": "Pedro",
+      "correo": "juanpedro@prodandfests.com",
+      "telefono": "123-456-789",
+      "rol": "Administrador",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Marcos",
+      "apellido": "Gómez",
+      "correo": "marcos@prodandfests.com",
+      "telefono": "234-567-890",
+      "rol": "Diseñador",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Juan",
+      "apellido": "López",
+      "correo": "juan@prodandfests.com",
+      "telefono": "345-678-901",
+      "rol": "Programador",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Alfredo",
+      "apellido": "Martínez",
+      "correo": "alfredo@prodandfests.com",
+      "telefono": "456-789-012",
+      "rol": "Logística",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Luis",
+      "apellido": "Pérez",
+      "correo": "luis@prodandfests.com",
+      "telefono": "567-890-123",
+      "rol": "Seguridad",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Ana",
+      "apellido": "Moreno",
+      "correo": "ana@prodandfests.com",
+      "telefono": "678-901-234",
+      "rol": "Administrador",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Carlos",
+      "apellido": "Díaz",
+      "correo": "carlos@prodandfests.com",
+      "telefono": "789-012-345",
+      "rol": "Recursos Humanos",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Laura",
+      "apellido": "Fernández",
+      "correo": "laura@prodandfests.com",
+      "telefono": "890-123-456",
+      "rol": "Catering",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Rosa",
+      "apellido": "Sánchez",
+      "correo": "rosa@prodandfests.com",
+      "telefono": "901-234-567",
+      "rol": "Catering",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Pedro",
+      "apellido": "Hernández",
+      "correo": "pedro@prodandfests.com",
+      "telefono": "012-345-678",
+      "rol": "Coordinador",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Sergio",
+      "apellido": "Castro",
+      "correo": "sergio@prodandfests.com",
+      "telefono": "123-456-789",
+      "rol": "Producción",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Elena",
+      "apellido": "Ruiz",
+      "correo": "elena@prodandfests.com",
+      "telefono": "234-567-890",
+      "rol": "Inspección",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Antonio",
+      "apellido": "Jiménez",
+      "correo": "antonio@prodandfests.com",
+      "telefono": "345-678-901",
+      "rol": "Legal",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Carmen",
+      "apellido": "Vega",
+      "correo": "carmen@prodandfests.com",
+      "telefono": "456-789-012",
+      "rol": "Asistente",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Miguel",
+      "apellido": "Ortiz",
+      "correo": "miguel@prodandfests.com",
+      "telefono": "567-890-123",
+      "rol": "Montaje",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Francisco",
+      "apellido": "Iglesias",
+      "correo": "francisco@prodandfests.com",
+      "telefono": "678-901-234",
+      "rol": "Logística",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "José",
+      "apellido": "Navarro",
+      "correo": "jose@prodandfests.com",
+      "telefono": "789-012-345",
+      "rol": "Supervisor",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Jorge",
+      "apellido": "Molina",
+      "correo": "jorge@prodandfests.com",
+      "telefono": "890-123-456",
+      "rol": "Recursos Humanos",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Isabel",
+      "apellido": "Ferrer",
+      "correo": "isabel@prodandfests.com",
+      "telefono": "901-234-567",
+      "rol": "Coordinador",
+      "password": "prueba1234-"
+    },
+    {
+      "nombre": "Manuel",
+      "apellido": "Cabrera",
+      "correo": "manuel@prodandfests.com",
+      "telefono": "012-345-678",
+      "rol": "Técnico",
       "password": "prueba1234-"
     }
-  },
+  ],
+
 
 
   "index" : {
