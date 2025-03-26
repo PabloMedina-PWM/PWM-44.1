@@ -740,10 +740,11 @@
   },
   "crud_tarea": {
     "titulo": "Tarea",
-    "cambiar": [10,"surnames", "Descripción:","provincia", "Tipo de tarea:", "buscar provincia", "Tipo", "grupo", "Empleado a asignar:", "buscar grupo", "Empleado"],
-    "placeholders": [2, "address", "Descripción de la tarea"],
-    "ocultar": [4, ".c-phone", ".c-password", ".c-email", ".c-input"],
-    "especial": [0]
+    "cambiar": [10,"surnames", "Descripción:","provincia", "Tipo de tarea:", "buscar provincia", "Tipo", "Rol", "Tipo de tarea:", "grupo", "Empleado:"],
+    "placeholders": [4, "address", "Descripción de la tarea", "RolPlaceh", "Tipo"],
+    "ocultar": [4, ".c-phone", ".c-password", ".c-email", ".c-province"],
+    "especial": [1, "empleados"],
+    "placeholderSelector": "Bucar empleado"
   },
   "cuenta_usuario" : {},
   "provincias": {
