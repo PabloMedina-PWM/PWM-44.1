@@ -75,12 +75,14 @@ async function login(email, password) {
     let datos = await getData("usuarios");
     for (let account in datos) {
         if (email === datos[account].correo && password === datos[account].password) {
+            let datosUsuario = datos[account];
+            datosUsuario.password = "";
             sessionStorage.setItem("currentUser", JSON.stringify({[account]:datos[account]}));
             window.location.href = "../html/dashboard.html";
-        } else {
-            alert("El correo o la contraseña no son correctos.")
+            return
         }
     }
+    alert("El correo o la contraseña no son correctos.");
 }
 
 async function getData(page){
