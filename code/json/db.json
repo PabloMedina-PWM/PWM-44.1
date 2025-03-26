@@ -10,7 +10,7 @@
   "artistasPage": {
     "titulo": "Artistas",
     "nombreFiltros": ["Grupo", "Evento"],
-    "nombreColumnas": ["Nombre y apellidos", "Dirección", "Grupo", "Teléfono"],
+    "nombreColumnas": ["Nombre y apellidos", "Dirección", "Grupo", "Teléfono", "Email"],
     "nombreBoton": "Añadir artista",
     "enlaceBoton": "../html/crud_artista.html",
     "ordenarPor": "campo"
@@ -147,120 +147,140 @@
       "dirección": "Bilbao",
       "grupo": "Fito y Fitipaldis",
       "teléfono": "123456789",
+      "email": "fito.cabrales@example.com",
       "eventos": ["Granca Live Fest", "Rock & Roll Night"]
     },
     "Cruz Cafuné": {
       "dirección": "Tacoronte",
       "grupo": "Locoplaya",
       "teléfono": "987654321",
+      "email": "cruz.cafune@example.com",
       "eventos": ["Boombastic Gran Canaria"]
     },
     "Fernando Olvera": {
       "dirección": "Puebla",
       "grupo": "Maná",
       "teléfono": "546789123",
+      "email": "fernando.olvera@example.com",
       "eventos": ["Granca Live Fest"]
     },
     "Rosalía": {
       "dirección": "Sant Esteve Sesrovires",
       "grupo": "-",
       "teléfono": "876543219",
+      "email": "rosalia@example.com",
       "eventos": ["Granca Music Stars", "Boombastic Gran Canaria"]
     },
     "Bad Bunny": {
       "dirección": "San Juan",
       "grupo": "-",
       "teléfono": "654321987",
+      "email": "bad.bunny@example.com",
       "eventos": ["Boombastic Gran Canaria"]
     },
     "Coldplay": {
       "dirección": "Londres",
       "grupo": "Coldplay",
       "teléfono": "321987654",
+      "email": "coldplay@example.com",
       "eventos": ["World Tour Gran Canaria"]
     },
     "J Balvin": {
       "dirección": "Medellín",
       "grupo": "-",
       "teléfono": "456123789",
+      "email": "j.balvin@example.com",
       "eventos": ["Granca Live Fest"]
     },
     "Shakira": {
       "dirección": "Barranquilla",
       "grupo": "-",
       "teléfono": "852741963",
+      "email": "shakira@example.com",
       "eventos": ["Granca Music Stars"]
     },
     "Alejandro Sanz": {
       "dirección": "Madrid",
       "grupo": "-",
       "teléfono": "963258741",
+      "email": "alejandro.sanz@example.com",
       "eventos": ["Granca Live Fest"]
     },
     "Adele": {
       "dirección": "Londres",
       "grupo": "-",
       "teléfono": "147258369",
+      "email": "adele@example.com",
       "eventos": ["World Tour Gran Canaria"]
     },
     "Ed Sheeran": {
       "dirección": "Halifax",
       "grupo": "-",
       "teléfono": "951753456",
+      "email": "ed.sheeran@example.com",
       "eventos": ["Boombastic Gran Canaria"]
     },
     "The Weeknd": {
       "dirección": "Toronto",
       "grupo": "-",
       "teléfono": "123789456",
+      "email": "the.weeknd@example.com",
       "eventos": ["Granca Music Stars"]
     },
     "Drake": {
       "dirección": "Toronto",
       "grupo": "-",
       "teléfono": "321654987",
+      "email": "drake@example.com",
       "eventos": ["Boombastic Gran Canaria"]
     },
     "Beyoncé": {
       "dirección": "Houston",
       "grupo": "-",
       "teléfono": "789456123",
+      "email": "beyonce@example.com",
       "eventos": ["Granca Music Stars"]
     },
     "Bruno Mars": {
       "dirección": "Honolulu",
       "grupo": "Silk Sonic",
       "teléfono": "456987123",
+      "email": "bruno.mars@example.com",
       "eventos": ["Granca Live Fest"]
     },
     "Taylor Swift": {
       "dirección": "Nashville",
       "grupo": "-",
       "teléfono": "789123456",
+      "email": "taylor.swift@example.com",
       "eventos": ["World Tour Gran Canaria"]
     },
     "Harry Styles": {
       "dirección": "Redditch",
       "grupo": "One Direction",
       "teléfono": "951753852",
+      "email": "harry.styles@example.com",
       "eventos": ["Boombastic Gran Canaria"]
     },
     "Rihanna": {
       "dirección": "Barbados",
       "grupo": "-",
       "teléfono": "654852963",
+      "email": "rihanna@example.com",
       "eventos": ["Granca Music Stars"]
     },
     "Maluma": {
       "dirección": "Medellín",
       "grupo": "-",
       "teléfono": "987654321",
+      "email": "maluma@example.com",
       "eventos": ["Boombastic Gran Canaria"]
     },
     "Luis Fonsi": {
       "dirección": "San Juan",
       "grupo": "-",
       "teléfono": "123123123",
+      "email": "luis.fonsi@example.com",
       "eventos": ["Granca Live Fest"]
     }
   },
@@ -866,17 +886,21 @@
   },
   "crud_artista" : {
     "titulo": "Artista",
-    "cambiar": [2,"surnames", "Apellidos:"],
-    "placeholders": [0],
+    "cambiar": [2,"surnames", "Dirección:"],
+    "placeholders": [2, "address", "Procedencia del artista"],
     "ocultar": [4, ".c-n-task", ".c-password", ".c-group",".c-province"],
-    "especial": [0]
+    "especial": [0],
+    "fills": ["address", "RolPlaceh", "telephone", "email"],
+    "path": [0, "artistas?nombre="]
   },
   "crud_empleado" : {
     "titulo": "Empleado",
     "cambiar": [4, "surnames", "Apellidos:", "Rol", "Rol:"],
     "placeholders": [4, "address", "Apellidos", "RolPlaceh", "Rol"],
     "ocultar": [3, ".c-n-task", ".c-province", ".c-group"],
-    "especial": [0]
+    "especial": [0],
+    "fills": ["name", "address","email", "telephone", "RolPlaceh", "em-password"],
+    "path": [0, "usuarios?nombre="]
 
   },
   "crud_evento" : {
@@ -885,15 +909,18 @@
     "placeholders": [2, "address", "Tipo de música que se usará"],
     "ocultar": [5, ".c-n-task", ".c-phone", ".c-email", ".c-password", ".c-input"],
     "especial": [1, "recintos"],
-    "placeholderSelector": "Bucar recinto"
+    "placeholderSelector": "Bucar recinto",
+    "path": [0, "eventos?nombre="]
   },
   "crud_recinto": {
     "titulo": "Recinto",
-    "cambiar": [2, "grupo", "Provincia:"],
-    "placeholders": [2, "buscar grupo", "Buscar provincia"],
-    "ocultar": [5, ".c-n-task", ".c-phone", ".c-password", ".c-province", ".c-input"],
+    "cambiar": [4, "grupo", "Provincia:", "Rol", "Capacidad:"],
+    "placeholders": [4, "buscar grupo", "Buscar provincia", "RolPlaceh", "Selecciona la capacidad"],
+    "ocultar": [4, ".c-n-task", ".c-phone", ".c-password", ".c-province"],
     "especial": [1, "provincias"],
-    "placeholderSelector": "Bucar provincia"
+    "placeholderSelector": "Bucar provincia",
+    "fills": ["address", "buscar grupo","RolPlaceh", "email"],
+    "path": [0, "recintos?nombre="]
   },
   "crud_tarea": {
     "titulo": "Tarea",
@@ -901,9 +928,18 @@
     "placeholders": [4, "address", "Descripción de la tarea", "RolPlaceh", "Tipo"],
     "ocultar": [4, ".c-phone", ".c-password", ".c-email", ".c-province"],
     "especial": [1, "empleados"],
-    "placeholderSelector": "Bucar empleado"
+    "placeholderSelector": "Bucar empleado",
+    "path": [0, "tareas?nombre="]
   },
-  "cuenta_usuario" : {},
+  "cuenta_usuario" : {
+    "titulo": "Tu perfil",
+    "cambiar": [4, "surnames", "Apellidos:", "Rol", "Rol:"],
+    "placeholders": [4, "address", "Apellidos", "RolPlaceh", "Rol"],
+    "ocultar": [4, ".c-n-task", ".c-province", ".c-group", ".delete-icon"],
+    "especial": [0],
+    "fills": ["name", "address","email", "telephone", "RolPlaceh", "em-password"],
+    "path": ["miperfil","usuarios?nombre="]
+  },
   "provincias": {
     "A Coruña" : {},
     "Álava" : {},
