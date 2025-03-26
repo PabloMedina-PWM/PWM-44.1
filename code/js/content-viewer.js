@@ -142,6 +142,22 @@ async function addData(json) {
             }
             index++;
         }
+        tr.addEventListener("click", async () => {
+            let url = "../html/crud_";
+            url += json.titulo.slice(0,-1).toLowerCase() + ".html";
+            url += "?" + json.titulo.slice(0,-1).toLowerCase() + "=";
+            url += encodeURIComponent(tr.firstChild.textContent);
+            window.open(url, '_blank');
+        });
+        tr.addEventListener('mouseover', () => {
+            tr.style.backgroundColor = 'lightgray';
+            tr.title = "Abrir en nueva pestaña";
+        });
+
+        tr.addEventListener('mouseout', () => {
+            tr.style.backgroundColor = '';
+        });
+        tr.style.cursor = "pointer";
         document.getElementById("table-viewer").appendChild(tr);
     }
 }
