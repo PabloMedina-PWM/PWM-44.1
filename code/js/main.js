@@ -1,4 +1,8 @@
 async function changeContent(page, json) {
+    if (sessionStorage.getItem("currentUser") !== null) {
+        window.location.href = "../html/dashboard.html";
+        return
+    }
     document.getElementById("text-main-superior").innerHTML = json.Titulo1;
     document.getElementById("text-main-inferior").innerHTML = json.Titulo2;
     document.getElementById("email/newpassword").placeholder = json.Place1;
@@ -62,7 +66,6 @@ async function changeContent(page, json) {
             let password = document.getElementById("password/description").value;
             await login(email, password);
         });
-
     }
 
 }
@@ -72,7 +75,7 @@ async function login(email, password) {
     let datos = await getData("usuarios");
     for (let account in datos) {
         if (email === datos[account].correo && password === datos[account].password) {
-            console.log(account);
+            sessionStorage.setItem("currentUser", JSON.stringify({[account]:datos[account]}));
             window.location.href = "../html/dashboard.html";
         } else {
             alert("El correo o la contraseña no son correctos.")

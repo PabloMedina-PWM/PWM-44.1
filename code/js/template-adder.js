@@ -13,6 +13,9 @@ function loadTemplate(fileName, id, callback) {
 }
 
 async function init(route, page) {
+    if (page !== "index" && sessionStorage.getItem("currentUser") === null) {
+        window.location.href = "../html/index.html";
+    }
     const url = "http://localhost:3000/" + page;
     let json;
 
