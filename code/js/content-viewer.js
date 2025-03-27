@@ -309,7 +309,15 @@ async function getData(page){
         console.error("Hubo un error:", error);
         return;
     }
-    return json;
+    const resultado = {};
+    let jsonArray = Array.of(json);
+    //console.log(jsonArray);
+    jsonArray[0].forEach(elemento => {
+        resultado[elemento.nombre] = elemento;
+        delete resultado[elemento.nombre]["nombre"];
+    });
+    console.log(resultado);
+    return resultado;
 }
 
 function filters() {

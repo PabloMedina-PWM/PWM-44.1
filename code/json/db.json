@@ -1,32 +1,66 @@
 {
   "recintosPage": {
     "titulo": "Recintos",
-    "nombreFiltros": ["Provincia", "Capacidad"],
-    "nombreColumnas": ["Recinto", "Dirección", "Capacidad", "Contacto"],
+    "nombreFiltros": [
+      "Provincia",
+      "Capacidad"
+    ],
+    "nombreColumnas": [
+      "Recinto",
+      "Dirección",
+      "Capacidad",
+      "Contacto"
+    ],
     "nombreBoton": "Añadir recinto",
     "enlaceBoton": "../html/crud_recinto.html",
     "ordenarPor": "campo"
   },
   "artistasPage": {
     "titulo": "Artistas",
-    "nombreFiltros": ["Grupo", "Evento"],
-    "nombreColumnas": ["Nombre y apellidos", "Dirección", "Grupo", "Teléfono", "Email"],
+    "nombreFiltros": [
+      "Grupo",
+      "Evento"
+    ],
+    "nombreColumnas": [
+      "Nombre y apellidos",
+      "Dirección",
+      "Grupo",
+      "Teléfono",
+      "Email"
+    ],
     "nombreBoton": "Añadir artista",
     "enlaceBoton": "../html/crud_artista.html",
     "ordenarPor": "campo"
   },
   "tareasPage": {
     "titulo": "Tareas",
-    "nombreFiltros": ["Prioridad", "Empleado", "Fecha"],
-    "nombreColumnas": ["Nombre", "Descripción", "Prioridad", "Empleado", "Fecha"],
+    "nombreFiltros": [
+      "Prioridad",
+      "Empleado",
+      "Fecha"
+    ],
+    "nombreColumnas": [
+      "Nombre",
+      "Descripción",
+      "Prioridad",
+      "Empleado",
+      "Fecha"
+    ],
     "nombreBoton": "Añadir tarea",
     "enlaceBoton": "../html/crud_tarea.html",
     "ordenarPor": "fecha"
   },
   "empleadosPage": {
     "titulo": "Empleados",
-    "nombreFiltros": ["Rol"],
-    "nombreColumnas": ["Nombre", "Correo electrónico", "Rol", "Tareas"],
+    "nombreFiltros": [
+      "Rol"
+    ],
+    "nombreColumnas": [
+      "Nombre",
+      "Correo electrónico",
+      "Rol",
+      "Tareas"
+    ],
     "nombreBoton": "Añadir empleado",
     "enlaceBoton": "../html/crud_empleado.html",
     "nombreBotonTabla": "Ver tareas",
@@ -34,8 +68,18 @@
   },
   "eventosPage": {
     "titulo": "Eventos",
-    "nombreFiltros": ["Recinto", "Provincia", "Fecha"],
-    "nombreColumnas": ["Nombre", "Recinto", "Contacto", "Fecha", "Artistas"],
+    "nombreFiltros": [
+      "Recinto",
+      "Provincia",
+      "Fecha"
+    ],
+    "nombreColumnas": [
+      "Nombre",
+      "Recinto",
+      "Contacto",
+      "Fecha",
+      "Artistas"
+    ],
     "nombreBoton": "Añadir evento",
     "enlaceBoton": "../html/crud_evento.html",
     "nombreBotonTabla": "Ver artistas",
@@ -43,249 +87,393 @@
   },
   "dashboardPage": {
     "titulo": "Dashboard",
-    "nombreColumnas": ["Tarea", "Descripción", "Prioridad", "Fecha"]
+    "nombreColumnas": [
+      "Tarea",
+      "Descripción",
+      "Prioridad",
+      "Fecha"
+    ]
   },
-  "recintos": {
-    "Infecar": {
-      "direccion": { "nombre": "La Feria", "provincia": "Las Palmas" },
+  "recintos": [
+    {
+      "nombre": "Infecar",
+      "direccion": {
+        "nombre": "La Feria",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 2000,
       "contacto": "Jose Alfredo"
     },
-    "Gran Canaria Arena": {
-      "direccion": { "nombre": "Fondos de Segura", "provincia": "Las Palmas" },
+    {
+      "nombre": "Gran Canaria Arena",
+      "direccion": {
+        "nombre": "Fondos de Segura",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 15000,
       "contacto": "Pepe"
     },
-    "Estadio Insular": {
-      "direccion": { "nombre": "Fondos de Segura", "provincia": "Las Palmas" },
+    {
+      "nombre": "Estadio Insular",
+      "direccion": {
+        "nombre": "Fondos de Segura",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 15000,
       "contacto": "Pepe"
     },
-    "Auditorio Alfredo Kraus": {
-      "direccion": { "nombre": "Playa de las Canteras", "provincia": "Las Palmas" },
+    {
+      "nombre": "Auditorio Alfredo Kraus",
+      "direccion": {
+        "nombre": "Playa de las Canteras",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 1500,
       "contacto": "Manuel López"
     },
-    "Teatro Pérez Galdós": {
-      "direccion": { "nombre": "Triana", "provincia": "Las Palmas" },
+    {
+      "nombre": "Teatro Pérez Galdós",
+      "direccion": {
+        "nombre": "Triana",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 1000,
       "contacto": "Isabel Martín"
     },
-    "Parque Santa Catalina": {
-      "direccion": { "nombre": "Puerto", "provincia": "Las Palmas" },
+    {
+      "nombre": "Parque Santa Catalina",
+      "direccion": {
+        "nombre": "Puerto",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 5000,
       "contacto": "Carlos Ramírez"
     },
-    "Estadio Gran Canaria": {
-      "direccion": { "nombre": "Siete Palmas", "provincia": "Las Palmas" },
+    {
+      "nombre": "Estadio Gran Canaria",
+      "direccion": {
+        "nombre": "Siete Palmas",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 32000,
       "contacto": "Luis Santana"
     },
-    "Centro de Convenciones": {
-      "direccion": { "nombre": "Vecindario", "provincia": "Las Palmas" },
+    {
+      "nombre": "Centro de Convenciones",
+      "direccion": {
+        "nombre": "Vecindario",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 12000,
       "contacto": "Ana Gómez"
     },
-    "Parque Doramas": {
-      "direccion": { "nombre": "Ciudad Jardín", "provincia": "Las Palmas" },
+    {
+      "nombre": "Parque Doramas",
+      "direccion": {
+        "nombre": "Ciudad Jardín",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 3000,
       "contacto": "María Hernández"
     },
-    "Estadio Maspalomas": {
-      "direccion": { "nombre": "Maspalomas", "provincia": "Las Palmas" },
+    {
+      "nombre": "Estadio Maspalomas",
+      "direccion": {
+        "nombre": "Maspalomas",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 8000,
       "contacto": "Sergio Torres"
     },
-    "Sala Elder": {
-      "direccion": { "nombre": "Parque Santa Catalina", "provincia": "Las Palmas" },
+    {
+      "nombre": "Sala Elder",
+      "direccion": {
+        "nombre": "Parque Santa Catalina",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 1200,
       "contacto": "Laura Pérez"
     },
-    "Estadio Tenerife": {
-      "direccion": { "nombre": "Tenerife Norte", "provincia": "Santa Cruz de Tenerife" },
+    {
+      "nombre": "Estadio Tenerife",
+      "direccion": {
+        "nombre": "Tenerife Norte",
+        "provincia": "Santa Cruz de Tenerife"
+      },
       "capacidad": 25000,
       "contacto": "Jorge Suárez"
     },
-    "Teror Plaza": {
-      "direccion": { "nombre": "Teror", "provincia": "Las Palmas" },
+    {
+      "nombre": "Teror Plaza",
+      "direccion": {
+        "nombre": "Teror",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 1000,
       "contacto": "Elena Navarro"
     },
-    "Campo Internacional": {
-      "direccion": { "nombre": "Maspalomas", "provincia": "Las Palmas" },
+    {
+      "nombre": "Campo Internacional",
+      "direccion": {
+        "nombre": "Maspalomas",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 3000,
       "contacto": "Juan Carlos"
     },
-    "Explanada Arucas": {
-      "direccion": { "nombre": "Arucas", "provincia": "Las Palmas" },
+    {
+      "nombre": "Explanada Arucas",
+      "direccion": {
+        "nombre": "Arucas",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 5000,
       "contacto": "Carmen Delgado"
     },
-    "Teatro Cuyás": {
-      "direccion": { "nombre": "Triana", "provincia": "Las Palmas" },
+    {
+      "nombre": "Teatro Cuyás",
+      "direccion": {
+        "nombre": "Triana",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 900,
       "contacto": "Antonio Ruiz"
     },
-    "Las Arenas": {
-      "direccion": { "nombre": "Mesa y López", "provincia": "Las Palmas" },
+    {
+      "nombre": "Las Arenas",
+      "direccion": {
+        "nombre": "Mesa y López",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 2000,
       "contacto": "Rosa López"
     },
-    "Palacio de Congresos": {
-      "direccion": { "nombre": "Vecindario", "provincia": "Las Palmas" },
+    {
+      "nombre": "Palacio de Congresos",
+      "direccion": {
+        "nombre": "Vecindario",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 4000,
       "contacto": "Pedro García"
     },
-    "El Pajar": {
-      "direccion": { "nombre": "Arguineguín", "provincia": "Las Palmas" },
+    {
+      "nombre": "El Pajar",
+      "direccion": {
+        "nombre": "Arguineguín",
+        "provincia": "Las Palmas"
+      },
       "capacidad": 2000,
       "contacto": "Miguel Fernández"
     }
-  },
-  "artistas": {
-    "Fito Cabrales": {
+  ],
+  "artistas": [
+    {
+      "nombre": "Fito Cabrales",
       "dirección": "Bilbao",
       "grupo": "Fito y Fitipaldis",
       "teléfono": "123456789",
       "email": "fito.cabrales@example.com",
-      "eventos": ["Granca Live Fest", "Rock & Roll Night"]
+      "eventos": [
+        "Granca Live Fest",
+        "Rock & Roll Night"
+      ]
     },
-    "Cruz Cafuné": {
+    {
+      "nombre": "Cruz Cafuné",
       "dirección": "Tacoronte",
       "grupo": "Locoplaya",
       "teléfono": "987654321",
       "email": "cruz.cafune@example.com",
-      "eventos": ["Boombastic Gran Canaria"]
+      "eventos": [
+        "Boombastic Gran Canaria"
+      ]
     },
-    "Fernando Olvera": {
+    {
+      "nombre": "Fernando Olvera",
       "dirección": "Puebla",
       "grupo": "Maná",
       "teléfono": "546789123",
       "email": "fernando.olvera@example.com",
-      "eventos": ["Granca Live Fest"]
+      "eventos": [
+        "Granca Live Fest"
+      ]
     },
-    "Rosalía": {
+    {
+      "nombre": "Rosalía",
       "dirección": "Sant Esteve Sesrovires",
       "grupo": "-",
       "teléfono": "876543219",
       "email": "rosalia@example.com",
-      "eventos": ["Granca Music Stars", "Boombastic Gran Canaria"]
+      "eventos": [
+        "Granca Music Stars",
+        "Boombastic Gran Canaria"
+      ]
     },
-    "Bad Bunny": {
+    {
+      "nombre": "Bad Bunny",
       "dirección": "San Juan",
       "grupo": "-",
       "teléfono": "654321987",
       "email": "bad.bunny@example.com",
-      "eventos": ["Boombastic Gran Canaria"]
+      "eventos": [
+        "Boombastic Gran Canaria"
+      ]
     },
-    "Coldplay": {
+    {
+      "nombre": "Coldplay",
       "dirección": "Londres",
       "grupo": "Coldplay",
       "teléfono": "321987654",
       "email": "coldplay@example.com",
-      "eventos": ["World Tour Gran Canaria"]
+      "eventos": [
+        "World Tour Gran Canaria"
+      ]
     },
-    "J Balvin": {
+    {
+      "nombre": "J Balvin",
       "dirección": "Medellín",
       "grupo": "-",
       "teléfono": "456123789",
       "email": "j.balvin@example.com",
-      "eventos": ["Granca Live Fest"]
+      "eventos": [
+        "Granca Live Fest"
+      ]
     },
-    "Shakira": {
+    {
+      "nombre": "Shakira",
       "dirección": "Barranquilla",
       "grupo": "-",
       "teléfono": "852741963",
       "email": "shakira@example.com",
-      "eventos": ["Granca Music Stars"]
+      "eventos": [
+        "Granca Music Stars"
+      ]
     },
-    "Alejandro Sanz": {
+    {
+      "nombre": "Alejandro Sanz",
       "dirección": "Madrid",
       "grupo": "-",
       "teléfono": "963258741",
       "email": "alejandro.sanz@example.com",
-      "eventos": ["Granca Live Fest"]
+      "eventos": [
+        "Granca Live Fest"
+      ]
     },
-    "Adele": {
+    {
+      "nombre": "Adele",
       "dirección": "Londres",
       "grupo": "-",
       "teléfono": "147258369",
       "email": "adele@example.com",
-      "eventos": ["World Tour Gran Canaria"]
+      "eventos": [
+        "World Tour Gran Canaria"
+      ]
     },
-    "Ed Sheeran": {
+    {
+      "nombre": "Ed Sheeran",
       "dirección": "Halifax",
       "grupo": "-",
       "teléfono": "951753456",
       "email": "ed.sheeran@example.com",
-      "eventos": ["Boombastic Gran Canaria"]
+      "eventos": [
+        "Boombastic Gran Canaria"
+      ]
     },
-    "The Weeknd": {
+    {
+      "nombre": "The Weeknd",
       "dirección": "Toronto",
       "grupo": "-",
       "teléfono": "123789456",
       "email": "the.weeknd@example.com",
-      "eventos": ["Granca Music Stars"]
+      "eventos": [
+        "Granca Music Stars"
+      ]
     },
-    "Drake": {
+    {
+      "nombre": "Drake",
       "dirección": "Toronto",
       "grupo": "-",
       "teléfono": "321654987",
       "email": "drake@example.com",
-      "eventos": ["Boombastic Gran Canaria"]
+      "eventos": [
+        "Boombastic Gran Canaria"
+      ]
     },
-    "Beyoncé": {
+    {
+      "nombre": "Beyoncé",
       "dirección": "Houston",
       "grupo": "-",
       "teléfono": "789456123",
       "email": "beyonce@example.com",
-      "eventos": ["Granca Music Stars"]
+      "eventos": [
+        "Granca Music Stars"
+      ]
     },
-    "Bruno Mars": {
+    {
+      "nombre": "Bruno Mars",
       "dirección": "Honolulu",
       "grupo": "Silk Sonic",
       "teléfono": "456987123",
       "email": "bruno.mars@example.com",
-      "eventos": ["Granca Live Fest"]
+      "eventos": [
+        "Granca Live Fest"
+      ]
     },
-    "Taylor Swift": {
+    {
+      "nombre": "Taylor Swift",
       "dirección": "Nashville",
       "grupo": "-",
       "teléfono": "789123456",
       "email": "taylor.swift@example.com",
-      "eventos": ["World Tour Gran Canaria"]
+      "eventos": [
+        "World Tour Gran Canaria"
+      ]
     },
-    "Harry Styles": {
+    {
+      "nombre": "Harry Styles",
       "dirección": "Redditch",
       "grupo": "One Direction",
       "teléfono": "951753852",
       "email": "harry.styles@example.com",
-      "eventos": ["Boombastic Gran Canaria"]
+      "eventos": [
+        "Boombastic Gran Canaria"
+      ]
     },
-    "Rihanna": {
+    {
+      "nombre": "Rihanna",
       "dirección": "Barbados",
       "grupo": "-",
       "teléfono": "654852963",
       "email": "rihanna@example.com",
-      "eventos": ["Granca Music Stars"]
+      "eventos": [
+        "Granca Music Stars"
+      ]
     },
-    "Maluma": {
+    {
+      "nombre": "Maluma",
       "dirección": "Medellín",
       "grupo": "-",
       "teléfono": "987654321",
       "email": "maluma@example.com",
-      "eventos": ["Boombastic Gran Canaria"]
+      "eventos": [
+        "Boombastic Gran Canaria"
+      ]
     },
-    "Luis Fonsi": {
+    {
+      "nombre": "Luis Fonsi",
       "dirección": "San Juan",
       "grupo": "-",
       "teléfono": "123123123",
       "email": "luis.fonsi@example.com",
-      "eventos": ["Granca Live Fest"]
+      "eventos": [
+        "Granca Live Fest"
+      ]
     }
-  },
-  "tareas": {
-    "Planificar": {
+  ],
+  "tareas": [
+    {
+      "nombre": "Planificar",
       "descripcion": "Brainstorming sobre el nuevo festival",
       "prioridad": "Muy alta",
       "empleado": "Marcos",
@@ -293,7 +481,8 @@
       "emailEmpleado": "marcos@prodandfests.com",
       "idTarea": "A1B2C"
     },
-    "Diseñar los carteles": {
+    {
+      "nombre": "Diseñar los carteles",
       "descripcion": "Diseñar los carteles sobre el nuevo festival",
       "prioridad": "Muy alta",
       "empleado": "Juan",
@@ -301,7 +490,8 @@
       "emailEmpleado": "juan@prodandfests.com",
       "idTarea": "D3E4F"
     },
-    "Contactar artistas": {
+    {
+      "nombre": "Contactar artistas",
       "descripcion": "Gestionar los contratos con los artistas principales",
       "prioridad": "Alta",
       "empleado": "Juan Pedro",
@@ -309,7 +499,8 @@
       "emailEmpleado": "juanpedro@prodandfests.com",
       "idTarea": "G5H6I"
     },
-    "Organizar logística": {
+    {
+      "nombre": "Organizar logística",
       "descripcion": "Coordinar transporte y alojamiento de artistas",
       "prioridad": "Media",
       "empleado": "Alfredo",
@@ -317,7 +508,8 @@
       "emailEmpleado": "alfredo@prodandfests.com",
       "idTarea": "J7K8L"
     },
-    "Vender entradas": {
+    {
+      "nombre": "Vender entradas",
       "descripcion": "Configurar la plataforma de venta de tickets",
       "prioridad": "Alta",
       "empleado": "Marcos",
@@ -325,7 +517,8 @@
       "emailEmpleado": "marcos@prodandfests.com",
       "idTarea": "M9N0O"
     },
-    "Montar escenario": {
+    {
+      "nombre": "Montar escenario",
       "descripcion": "Supervisar el montaje de los escenarios",
       "prioridad": "Alta",
       "empleado": "Juan Pedro",
@@ -333,7 +526,8 @@
       "emailEmpleado": "juanpedro@prodandfests.com",
       "idTarea": "P1Q2R"
     },
-    "Coordinar seguridad": {
+    {
+      "nombre": "Coordinar seguridad",
       "descripcion": "Revisar el plan de seguridad para el evento",
       "prioridad": "Media",
       "empleado": "Luis",
@@ -341,7 +535,8 @@
       "emailEmpleado": "luis@prodandfests.com",
       "idTarea": "S3T4U"
     },
-    "Revisar presupuesto": {
+    {
+      "nombre": "Revisar presupuesto",
       "descripcion": "Actualizar el presupuesto final del festival",
       "prioridad": "Alta",
       "empleado": "Ana",
@@ -349,7 +544,8 @@
       "emailEmpleado": "ana@prodandfests.com",
       "idTarea": "V5W6X"
     },
-    "Contratar personal": {
+    {
+      "nombre": "Contratar personal",
       "descripcion": "Seleccionar y contratar el staff temporal",
       "prioridad": "Media",
       "empleado": "Carlos",
@@ -357,7 +553,8 @@
       "emailEmpleado": "carlos@prodandfests.com",
       "idTarea": "Y7Z8A"
     },
-    "Gestionar catering": {
+    {
+      "nombre": "Gestionar catering",
       "descripcion": "Contratar el servicio de catering para artistas y staff",
       "prioridad": "Baja",
       "empleado": "Laura",
@@ -365,7 +562,8 @@
       "emailEmpleado": "laura@prodandfests.com",
       "idTarea": "B9C0D"
     },
-    "Promoción en redes sociales": {
+    {
+      "nombre": "Promoción en redes sociales",
       "descripcion": "Planificar la estrategia de redes sociales",
       "prioridad": "Muy alta",
       "empleado": "Rosa",
@@ -373,7 +571,8 @@
       "emailEmpleado": "rosa@prodandfests.com",
       "idTarea": "E1F2G"
     },
-    "Gestionar acreditaciones": {
+    {
+      "nombre": "Gestionar acreditaciones",
       "descripcion": "Emitir las acreditaciones para el equipo y prensa",
       "prioridad": "Alta",
       "empleado": "Pedro",
@@ -381,7 +580,8 @@
       "emailEmpleado": "pedro@prodandfests.com",
       "idTarea": "H3I4J"
     },
-    "Confirmar horarios": {
+    {
+      "nombre": "Confirmar horarios",
       "descripcion": "Coordinar los horarios de los artistas",
       "prioridad": "Media",
       "empleado": "Sergio",
@@ -389,7 +589,8 @@
       "emailEmpleado": "sergio@prodandfests.com",
       "idTarea": "K5L6M"
     },
-    "Inspeccionar recintos": {
+    {
+      "nombre": "Inspeccionar recintos",
       "descripcion": "Verificar las condiciones de los recintos",
       "prioridad": "Alta",
       "empleado": "Elena",
@@ -397,7 +598,8 @@
       "emailEmpleado": "elena@prodandfests.com",
       "idTarea": "N7O8P"
     },
-    "Verificar contratos": {
+    {
+      "nombre": "Verificar contratos",
       "descripcion": "Revisar los contratos legales",
       "prioridad": "Muy alta",
       "empleado": "Antonio",
@@ -405,7 +607,8 @@
       "emailEmpleado": "antonio@prodandfests.com",
       "idTarea": "Q9R0S"
     },
-    "Control de ingresos": {
+    {
+      "nombre": "Control de ingresos",
       "descripcion": "Registrar los ingresos de venta de tickets",
       "prioridad": "Alta",
       "empleado": "Luis",
@@ -413,7 +616,8 @@
       "emailEmpleado": "luis@prodandfests.com",
       "idTarea": "T1U2V"
     },
-    "Configurar iluminación": {
+    {
+      "nombre": "Configurar iluminación",
       "descripcion": "Coordinar la instalación de luces y efectos",
       "prioridad": "Media",
       "empleado": "Marcos",
@@ -421,7 +625,8 @@
       "emailEmpleado": "marcos@prodandfests.com",
       "idTarea": "W3X4Y"
     },
-    "Diseñar sitio web": {
+    {
+      "nombre": "Diseñar sitio web",
       "descripcion": "Actualizar la web oficial del evento",
       "prioridad": "Alta",
       "empleado": "Juan",
@@ -429,7 +634,8 @@
       "emailEmpleado": "juan@prodandfests.com",
       "idTarea": "Z5A6B"
     },
-    "Reservar transporte": {
+    {
+      "nombre": "Reservar transporte",
       "descripcion": "Gestionar autobuses para el equipo y asistentes",
       "prioridad": "Media",
       "empleado": "Ana",
@@ -437,7 +643,8 @@
       "emailEmpleado": "ana@prodandfests.com",
       "idTarea": "C7D8E"
     },
-    "Realizar pruebas de sonido": {
+    {
+      "nombre": "Realizar pruebas de sonido",
       "descripcion": "Coordinar pruebas con los técnicos de sonido",
       "prioridad": "Muy alta",
       "empleado": "Carlos",
@@ -445,111 +652,133 @@
       "emailEmpleado": "carlos@prodandfests.com",
       "idTarea": "F9G0H"
     }
-  },
-  "empleados": {
-    "Juan Pedro": {
+  ],
+  "empleados": [
+    {
+      "nombre": "Juan Pedro",
       "correo electrónico": "juanpedro@prodandfests.com",
       "rol": "Administrador",
       "tareas": "../html/tareas.html?empleado=Juan%20Pedro"
     },
-    "Marcos": {
+    {
+      "nombre": "Marcos",
       "correo electrónico": "marcos@prodandfests.com",
       "rol": "Diseñador",
       "tareas": "../html/tareas.html?empleado=Marcos"
     },
-    "Juan": {
+    {
+      "nombre": "Juan",
       "correo electrónico": "juan@prodandfests.com",
       "rol": "Programador",
       "tareas": "../html/tareas.html?empleado=Juan"
     },
-    "Alfredo": {
+    {
+      "nombre": "Alfredo",
       "correo electrónico": "alfredo@prodandfests.com",
       "rol": "Logística",
       "tareas": "../html/tareas.html?empleado=Alfredo"
     },
-    "Luis": {
+    {
+      "nombre": "Luis",
       "correo electrónico": "luis@prodandfests.com",
       "rol": "Seguridad",
       "tareas": "../html/tareas.html?empleado=Luis"
     },
-    "Ana": {
+    {
+      "nombre": "Ana",
       "correo electrónico": "ana@prodandfests.com",
       "rol": "Administrador",
       "tareas": "../html/tareas.html?empleado=Ana"
     },
-    "Carlos": {
+    {
+      "nombre": "Carlos",
       "correo electrónico": "carlos@prodandfests.com",
       "rol": "Recursos Humanos",
       "tareas": "../html/tareas.html?empleado=Carlos"
     },
-    "Laura": {
+    {
+      "nombre": "Laura",
       "correo electrónico": "laura@prodandfests.com",
       "rol": "Catering",
       "tareas": "../html/tareas.html?empleado=Laura"
     },
-    "Rosa": {
+    {
+      "nombre": "Rosa",
       "correo electrónico": "rosa@prodandfests.com",
       "rol": "Catering",
       "tareas": "../html/tareas.html?empleado=Rosa"
     },
-    "Pedro": {
+    {
+      "nombre": "Pedro",
       "correo electrónico": "pedro@prodandfests.com",
       "rol": "Coordinador",
       "tareas": "../html/tareas.html?empleado=Pedro"
     },
-    "Sergio": {
+    {
+      "nombre": "Sergio",
       "correo electrónico": "sergio@prodandfests.com",
       "rol": "Producción",
       "tareas": "../html/tareas.html?empleado=Sergio"
     },
-    "Elena": {
+    {
+      "nombre": "Elena",
       "correo electrónico": "elena@prodandfests.com",
       "rol": "Inspección",
       "tareas": "../html/tareas.html?empleado=Elena"
     },
-    "Antonio": {
+    {
+      "nombre": "Antonio",
       "correo electrónico": "antonio@prodandfests.com",
       "rol": "Legal",
       "tareas": "../html/tareas.html?empleado=Antonio"
     },
-    "Carmen": {
+    {
+      "nombre": "Carmen",
       "correo electrónico": "carmen@prodandfests.com",
       "rol": "Asistente",
       "tareas": "../html/tareas.html?empleado=Carmen"
     },
-    "Miguel": {
+    {
+      "nombre": "Miguel",
       "correo electrónico": "miguel@prodandfests.com",
       "rol": "Montaje",
       "tareas": "../html/tareas.html?empleado=Miguel"
     },
-    "Francisco": {
+    {
+      "nombre": "Francisco",
       "correo electrónico": "francisco@prodandfests.com",
       "rol": "Logística",
       "tareas": "../html/tareas.html?empleado=Francisco"
     },
-    "José": {
+    {
+      "nombre": "José",
       "correo electrónico": "jose@prodandfests.com",
       "rol": "Supervisor",
       "tareas": "../html/tareas.html?empleado=José"
     },
-    "Jorge": {
+    {
+      "nombre": "Jorge",
       "correo electrónico": "jorge@prodandfests.com",
       "rol": "Recursos Humanos",
       "tareas": "../html/tareas.html?empleado=Jorge"
     },
-    "Isabel": {
+    {
+      "nombre": "Isabel",
       "correo electrónico": "isabel@prodandfests.com",
       "rol": "Coordinador",
       "tareas": "../html/tareas.html?empleado=Isabel"
     },
-    "Manuel": {
+    {
+      "nombre": "Manuel",
       "correo electrónico": "manuel@prodandfests.com",
       "rol": "Técnico",
       "tareas": "../html/tareas.html?empleado=Manuel"
     }
-  },
-  "eventos": {
-    "Boombastic Gran Canaria": {
+  ],
+
+  "eventos": [
+    {
+      "nombre": "Boombastic Gran Canaria",
       "recinto": {
         "nombre": "Estadio Insular",
         "provincia": "Las Palmas"
@@ -558,7 +787,8 @@
       "fecha": "2025-06-15",
       "artistas": "../html/artistas.html?evento=Boombastic%20Gran%20Canaria"
     },
-    "Granca Live Fest": {
+    {
+      "nombre": "Granca Live Fest",
       "recinto": {
         "nombre": "Estadio Gran Canaria",
         "provincia": "Las Palmas"
@@ -567,7 +797,8 @@
       "fecha": "2025-07-20",
       "artistas": "../html/artistas.html?evento=Granca%20Live%20Fest"
     },
-    "Granca Music Stars": {
+    {
+      "nombre": "Granca Music Stars",
       "recinto": {
         "nombre": "Gran Canaria Arena",
         "provincia": "Las Palmas"
@@ -576,7 +807,8 @@
       "fecha": "2025-05-10",
       "artistas": "../html/artistas.html?evento=Granca%20Music%20Stars"
     },
-    "World Tour Gran Canaria": {
+    {
+      "nombre": "World Tour Gran Canaria",
       "recinto": {
         "nombre": "Auditorio Alfredo Kraus",
         "provincia": "Las Palmas"
@@ -585,7 +817,8 @@
       "fecha": "2025-08-25",
       "artistas": "../html/artistas.html?evento=World%20Tour%20Gran%20Canaria"
     },
-    "ElectroBeach Party": {
+    {
+      "nombre": "ElectroBeach Party",
       "recinto": {
         "nombre": "Parque Santa Catalina",
         "provincia": "Las Palmas"
@@ -594,7 +827,8 @@
       "fecha": "2025-06-30",
       "artistas": "../html/artistas.html?evento=ElectroBeach%20Party"
     },
-    "Jazz in the Park": {
+    {
+      "nombre": "Jazz in the Park",
       "recinto": {
         "nombre": "Parque Doramas",
         "provincia": "Las Palmas"
@@ -603,7 +837,8 @@
       "fecha": "2025-04-20",
       "artistas": "../html/artistas.html?evento=Jazz%20in%20the%20Park"
     },
-    "Rock & Roll Night": {
+    {
+      "nombre": "Rock & Roll Night",
       "recinto": {
         "nombre": "Teatro Pérez Galdós",
         "provincia": "Las Palmas"
@@ -612,7 +847,8 @@
       "fecha": "2025-09-15",
       "artistas": "../html/artistas.html?evento=Rock%20&%20Roll%20Night"
     },
-    "Indie Sunset Festival": {
+    {
+      "nombre": "Indie Sunset Festival",
       "recinto": {
         "nombre": "Campo Internacional",
         "provincia": "Las Palmas"
@@ -621,7 +857,8 @@
       "fecha": "2025-07-05",
       "artistas": "../html/artistas.html?evento=Indie%20Sunset%20Festival"
     },
-    "Pop Explosion": {
+    {
+      "nombre": "Pop Explosion",
       "recinto": {
         "nombre": "Palacio de Congresos",
         "provincia": "Las Palmas"
@@ -630,7 +867,8 @@
       "fecha": "2025-08-01",
       "artistas": "../html/artistas.html?evento=Pop%20Explosion"
     },
-    "Latin Beats Festival": {
+    {
+      "nombre": "Latin Beats Festival",
       "recinto": {
         "nombre": "Estadio Maspalomas",
         "provincia": "Las Palmas"
@@ -639,7 +877,8 @@
       "fecha": "2025-05-25",
       "artistas": "../html/artistas.html?evento=Latin%20Beats%20Festival"
     },
-    "Urban Vibes": {
+    {
+      "nombre": "Urban Vibes",
       "recinto": {
         "nombre": "Centro de Convenciones",
         "provincia": "Las Palmas"
@@ -648,7 +887,8 @@
       "fecha": "2025-06-10",
       "artistas": "../html/artistas.html?evento=Urban%20Vibes"
     },
-    "Classical Gala Night": {
+    {
+      "nombre": "Classical Gala Night",
       "recinto": {
         "nombre": "Auditorio Alfredo Kraus",
         "provincia": "Las Palmas"
@@ -657,7 +897,8 @@
       "fecha": "2025-11-20",
       "artistas": "../html/artistas.html?evento=Classical%20Gala%20Night"
     },
-    "Summer Reggae Fest": {
+    {
+      "nombre": "Summer Reggae Fest",
       "recinto": {
         "nombre": "Explanada Arucas",
         "provincia": "Las Palmas"
@@ -666,7 +907,8 @@
       "fecha": "2025-07-15",
       "artistas": "../html/artistas.html?evento=Summer%20Reggae%20Fest"
     },
-    "Electronic Island Festival": {
+    {
+      "nombre": "Electronic Island Festival",
       "recinto": {
         "nombre": "Estadio Tenerife",
         "provincia": "Santa Cruz de Tenerife"
@@ -675,7 +917,8 @@
       "fecha": "2025-05-18",
       "artistas": "../html/artistas.html?evento=Electronic%20Island%20Festival"
     },
-    "The Big Fiesta": {
+    {
+      "nombre": "The Big Fiesta",
       "recinto": {
         "nombre": "Estadio Gran Canaria",
         "provincia": "Las Palmas"
@@ -684,7 +927,8 @@
       "fecha": "2025-09-10",
       "artistas": "../html/artistas.html?evento=The%20Big%20Fiesta"
     },
-    "Night of Flamenco": {
+    {
+      "nombre": "Night of Flamenco",
       "recinto": {
         "nombre": "Teatro Cuyás",
         "provincia": "Las Palmas"
@@ -693,7 +937,8 @@
       "fecha": "2025-04-12",
       "artistas": "../html/artistas.html?evento=Night%20of%20Flamenco"
     },
-    "Beach Party Maspalomas": {
+    {
+      "nombre": "Beach Party Maspalomas",
       "recinto": {
         "nombre": "Campo Internacional",
         "provincia": "Las Palmas"
@@ -702,7 +947,8 @@
       "fecha": "2025-08-12",
       "artistas": "../html/artistas.html?evento=Beach%20Party%20Maspalomas"
     },
-    "Canary Rock Fest": {
+    {
+      "nombre": "Canary Rock Fest",
       "recinto": {
         "nombre": "Las Arenas",
         "provincia": "Las Palmas"
@@ -711,7 +957,8 @@
       "fecha": "2025-06-25",
       "artistas": "../html/artistas.html?evento=Canary%20Rock%20Fest"
     },
-    "Sunset Jazz Evenings": {
+    {
+      "nombre": "Sunset Jazz Evenings",
       "recinto": {
         "nombre": "Teror Plaza",
         "provincia": "Las Palmas"
@@ -720,7 +967,8 @@
       "fecha": "2025-05-15",
       "artistas": "../html/artistas.html?evento=Sunset%20Jazz%20Evenings"
     },
-    "Winter Wonderland Festival": {
+    {
+      "nombre": "Winter Wonderland Festival",
       "recinto": {
         "nombre": "El Pajar",
         "provincia": "Las Palmas"
@@ -729,7 +977,7 @@
       "fecha": "2025-12-10",
       "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival"
     }
-  },
+  ],
   "usuarios": [
     {
       "nombre": "Juan",
@@ -737,7 +985,8 @@
       "correo": "juanpedro@prodandfests.com",
       "telefono": "123-456-789",
       "rol": "Administrador",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "e006"
     },
     {
       "nombre": "Marcos",
@@ -745,7 +994,8 @@
       "correo": "marcos@prodandfests.com",
       "telefono": "234-567-890",
       "rol": "Diseñador",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "f737"
     },
     {
       "nombre": "Juan",
@@ -753,7 +1003,8 @@
       "correo": "juan@prodandfests.com",
       "telefono": "345-678-901",
       "rol": "Programador",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "13d0"
     },
     {
       "nombre": "Alfredo",
@@ -761,7 +1012,8 @@
       "correo": "alfredo@prodandfests.com",
       "telefono": "456-789-012",
       "rol": "Logística",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "bf57"
     },
     {
       "nombre": "Luis",
@@ -769,7 +1021,8 @@
       "correo": "luis@prodandfests.com",
       "telefono": "567-890-123",
       "rol": "Seguridad",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "277c"
     },
     {
       "nombre": "Ana",
@@ -777,7 +1030,8 @@
       "correo": "ana@prodandfests.com",
       "telefono": "678-901-234",
       "rol": "Administrador",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "7eae"
     },
     {
       "nombre": "Carlos",
@@ -785,7 +1039,8 @@
       "correo": "carlos@prodandfests.com",
       "telefono": "789-012-345",
       "rol": "Recursos Humanos",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "b1d5"
     },
     {
       "nombre": "Laura",
@@ -793,7 +1048,8 @@
       "correo": "laura@prodandfests.com",
       "telefono": "890-123-456",
       "rol": "Catering",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "bec1"
     },
     {
       "nombre": "Rosa",
@@ -801,7 +1057,8 @@
       "correo": "rosa@prodandfests.com",
       "telefono": "901-234-567",
       "rol": "Catering",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "dd01"
     },
     {
       "nombre": "Pedro",
@@ -809,7 +1066,8 @@
       "correo": "pedro@prodandfests.com",
       "telefono": "012-345-678",
       "rol": "Coordinador",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "60bb"
     },
     {
       "nombre": "Sergio",
@@ -817,7 +1075,8 @@
       "correo": "sergio@prodandfests.com",
       "telefono": "123-456-789",
       "rol": "Producción",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "ce36"
     },
     {
       "nombre": "Elena",
@@ -825,7 +1084,8 @@
       "correo": "elena@prodandfests.com",
       "telefono": "234-567-890",
       "rol": "Inspección",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "8870"
     },
     {
       "nombre": "Antonio",
@@ -833,7 +1093,8 @@
       "correo": "antonio@prodandfests.com",
       "telefono": "345-678-901",
       "rol": "Legal",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "8be0"
     },
     {
       "nombre": "Carmen",
@@ -841,7 +1102,8 @@
       "correo": "carmen@prodandfests.com",
       "telefono": "456-789-012",
       "rol": "Asistente",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "39a2"
     },
     {
       "nombre": "Miguel",
@@ -849,7 +1111,8 @@
       "correo": "miguel@prodandfests.com",
       "telefono": "567-890-123",
       "rol": "Montaje",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "6c8e"
     },
     {
       "nombre": "Francisco",
@@ -857,7 +1120,8 @@
       "correo": "francisco@prodandfests.com",
       "telefono": "678-901-234",
       "rol": "Logística",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "1fc6"
     },
     {
       "nombre": "José",
@@ -865,7 +1129,8 @@
       "correo": "jose@prodandfests.com",
       "telefono": "789-012-345",
       "rol": "Supervisor",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "babd"
     },
     {
       "nombre": "Jorge",
@@ -873,7 +1138,8 @@
       "correo": "jorge@prodandfests.com",
       "telefono": "890-123-456",
       "rol": "Recursos Humanos",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "b400"
     },
     {
       "nombre": "Isabel",
@@ -881,7 +1147,8 @@
       "correo": "isabel@prodandfests.com",
       "telefono": "901-234-567",
       "rol": "Coordinador",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "02ff"
     },
     {
       "nombre": "Manuel",
@@ -892,17 +1159,14 @@
       "password": "prueba1234-"
     }
   ],
-
-
-
-  "index" : {
+  "index": {
     "Titulo1": "Correo electrónico",
     "Titulo2": "Contraseña",
     "Place1": "Correo electrónico",
     "Place2": "Contraseña",
     "Button": "Iniciar sesión"
   },
-  "dashboard" : {},
+  "dashboard": {},
   "restablecer_contraseña": {
     "Titulo1": "Nueva contraseña",
     "Titulo2": "Confirmar contraseña",
@@ -910,7 +1174,7 @@
     "Place2": "Nueva contraseña",
     "Button": "Confirmar"
   },
-  "soporte_tecnico" : {
+  "soporte_tecnico": {
     "Titulo1": "Asunto:",
     "Titulo2": "Descripción:",
     "Place1": "Indique el problema que tiene",
@@ -924,111 +1188,281 @@
     "Place2": "Correo electrónico",
     "Button": "Enviar enlace"
   },
-  "crud_artista" : {
+  "crud_artista": {
     "titulo": "Artista",
-    "cambiar": [2,"surnames", "Dirección:"],
-    "placeholders": [2, "address", "Procedencia del artista"],
-    "ocultar": [4, ".c-n-task", ".c-password", ".c-group",".c-province"],
-    "especial": [0],
-    "fills": ["address", "RolPlaceh", "telephone", "email"],
-    "path": [0, "artistas?nombre="]
+    "cambiar": [
+      2,
+      "surnames",
+      "Dirección:"
+    ],
+    "placeholders": [
+      2,
+      "address",
+      "Procedencia del artista"
+    ],
+    "ocultar": [
+      4,
+      ".c-n-task",
+      ".c-password",
+      ".c-group",
+      ".c-province"
+    ],
+    "especial": [
+      0
+    ],
+    "fills": [
+      "address",
+      "RolPlaceh",
+      "telephone",
+      "email"
+    ],
+    "path": [
+      0,
+      "artistas?nombre="
+    ]
   },
-  "crud_empleado" : {
+  "crud_empleado": {
     "titulo": "Empleado",
-    "cambiar": [4, "surnames", "Apellidos:", "Rol", "Rol:"],
-    "placeholders": [4, "address", "Apellidos", "RolPlaceh", "Rol"],
-    "ocultar": [3, ".c-n-task", ".c-province", ".c-group"],
-    "especial": [0],
-    "fills": ["name", "address","email", "telephone", "RolPlaceh", "em-password"],
-    "path": [0, "usuarios?nombre="]
-
+    "cambiar": [
+      4,
+      "surnames",
+      "Apellidos:",
+      "Rol",
+      "Rol:"
+    ],
+    "placeholders": [
+      4,
+      "address",
+      "Apellidos",
+      "RolPlaceh",
+      "Rol"
+    ],
+    "ocultar": [
+      3,
+      ".c-n-task",
+      ".c-province",
+      ".c-group"
+    ],
+    "especial": [
+      0
+    ],
+    "fills": [
+      "name",
+      "address",
+      "email",
+      "telephone",
+      "RolPlaceh",
+      "em-password"
+    ],
+    "path": [
+      0,
+      "usuarios?nombre="
+    ]
   },
-  "crud_evento" : {
+  "crud_evento": {
     "titulo": "Evento",
-    "cambiar": [10, "surnames", "Estilo de música:", "provincia", "Tipo de evento:", "buscar provincia", "Festival/Gira/Concierto único", "grupo", "Recinto:", "buscar grupo", "Recinto"],
-    "placeholders": [2, "address", "Tipo de música que se usará"],
-    "ocultar": [5, ".c-n-task", ".c-phone", ".c-email", ".c-password", ".c-input"],
-    "especial": [1, "recintos"],
+    "cambiar": [
+      10,
+      "surnames",
+      "Estilo de música:",
+      "provincia",
+      "Tipo de evento:",
+      "buscar provincia",
+      "Festival/Gira/Concierto único",
+      "grupo",
+      "Recinto:",
+      "buscar grupo",
+      "Recinto"
+    ],
+    "placeholders": [
+      2,
+      "address",
+      "Tipo de música que se usará"
+    ],
+    "ocultar": [
+      5,
+      ".c-n-task",
+      ".c-phone",
+      ".c-email",
+      ".c-password",
+      ".c-input"
+    ],
+    "especial": [
+      1,
+      "recintos"
+    ],
     "placeholderSelector": "Bucar recinto",
-    "path": [0, "eventos?nombre="]
+    "path": [
+      0,
+      "eventos?nombre="
+    ]
   },
   "crud_recinto": {
     "titulo": "Recinto",
-    "cambiar": [4, "grupo", "Provincia:", "Rol", "Capacidad:"],
-    "placeholders": [4, "buscar grupo", "Buscar provincia", "RolPlaceh", "Selecciona la capacidad"],
-    "ocultar": [4, ".c-n-task", ".c-phone", ".c-password", ".c-province"],
-    "especial": [1, "provincias"],
+    "cambiar": [
+      4,
+      "grupo",
+      "Provincia:",
+      "Rol",
+      "Capacidad:"
+    ],
+    "placeholders": [
+      4,
+      "buscar grupo",
+      "Buscar provincia",
+      "RolPlaceh",
+      "Selecciona la capacidad"
+    ],
+    "ocultar": [
+      4,
+      ".c-n-task",
+      ".c-phone",
+      ".c-password",
+      ".c-province"
+    ],
+    "especial": [
+      1,
+      "provincias"
+    ],
     "placeholderSelector": "Bucar provincia",
-    "fills": ["address", "buscar grupo","RolPlaceh", "email"],
-    "path": [0, "recintos?nombre="]
+    "fills": [
+      "address",
+      "buscar grupo",
+      "RolPlaceh",
+      "email"
+    ],
+    "path": [
+      0,
+      "recintos?nombre="
+    ]
   },
   "crud_tarea": {
     "titulo": "Tarea",
-    "cambiar": [10,"surnames", "Descripción:","provincia", "Tipo de tarea:", "buscar provincia", "Tipo", "Rol", "Tipo de tarea:", "grupo", "Empleado:"],
-    "placeholders": [4, "address", "Descripción de la tarea", "RolPlaceh", "Tipo"],
-    "ocultar": [4, ".c-phone", ".c-password", ".c-email", ".c-province"],
-    "especial": [1, "empleados"],
+    "cambiar": [
+      10,
+      "surnames",
+      "Descripción:",
+      "provincia",
+      "Tipo de tarea:",
+      "buscar provincia",
+      "Tipo",
+      "Rol",
+      "Tipo de tarea:",
+      "grupo",
+      "Empleado:"
+    ],
+    "placeholders": [
+      4,
+      "address",
+      "Descripción de la tarea",
+      "RolPlaceh",
+      "Tipo"
+    ],
+    "ocultar": [
+      4,
+      ".c-phone",
+      ".c-password",
+      ".c-email",
+      ".c-province"
+    ],
+    "especial": [
+      1,
+      "empleados"
+    ],
     "placeholderSelector": "Bucar empleado",
-    "path": [0, "tareas?nombre="]
+    "path": [
+      0,
+      "tareas?nombre="
+    ]
   },
-  "cuenta_usuario" : {
+  "cuenta_usuario": {
     "titulo": "Tu perfil",
-    "cambiar": [4, "surnames", "Apellidos:", "Rol", "Rol:"],
-    "placeholders": [4, "address", "Apellidos", "RolPlaceh", "Rol"],
-    "ocultar": [4, ".c-n-task", ".c-province", ".c-group", ".delete-icon"],
-    "especial": [0],
-    "fills": ["name", "address","email", "telephone", "RolPlaceh", "em-password"],
-    "path": ["miperfil","usuarios?nombre="]
+    "cambiar": [
+      4,
+      "surnames",
+      "Apellidos:",
+      "Rol",
+      "Rol:"
+    ],
+    "placeholders": [
+      4,
+      "address",
+      "Apellidos",
+      "RolPlaceh",
+      "Rol"
+    ],
+    "ocultar": [
+      4,
+      ".c-n-task",
+      ".c-province",
+      ".c-group",
+      ".delete-icon"
+    ],
+    "especial": [
+      0
+    ],
+    "fills": [
+      "name",
+      "address",
+      "email",
+      "telephone",
+      "RolPlaceh",
+      "em-password"
+    ],
+    "path": [
+      "miperfil",
+      "usuarios?nombre="
+    ]
   },
   "provincias": {
-    "A Coruña" : {},
-    "Álava" : {},
-    "Albacete" : {},
-    "Alicante" : {},
-    "Almería" : {},
-    "Asturias" : {},
-    "Ávila" : {},
-    "Badajoz" : {},
-    "Barcelona" : {},
-    "Burgos" : {},
-    "Cáceres" : {},
-    "Cádiz" : {},
-    "Cantabria" : {},
-    "Castellón" : {},
-    "Ciudad Real" : {},
-    "Córdoba" : {},
-    "Cuenca" : {},
-    "Girona" : {},
-    "Granada" : {},
-    "Guadalajara" : {},
-    "Gipuzkoa" : {},
-    "Huelva" : {},
-    "Huesca" : {},
-    "Illes Balears" : {},
-    "Jaén" : {},
-    "La Rioja" : {},
-    "Las Palmas" : {},
-    "León" : {},
-    "Lleida" : {},
-    "Lugo" : {},
-    "Madrid" : {},
-    "Málaga" : {},
-    "Murcia" : {},
-    "Navarra" : {},
-    "Ourense" : {},
-    "Palencia" : {},
-    "Pontevedra" : {},
-    "Salamanca" : {},
-    "Santa Cruz de Tenerife" : {},
-    "Segovia" : {},
-    "Sevilla" : {},
-    "Soria" : {},
-    "Tarragona" : {},
-    "Teruel" : {},
-    "Toledo" : {},
-    "Valencia" : {},
-    "Valladolid" : {},
-    "Zamora" : {},
-    "Zaragoza" : {}
+    "A Coruña": {},
+    "Álava": {},
+    "Albacete": {},
+    "Alicante": {},
+    "Almería": {},
+    "Asturias": {},
+    "Ávila": {},
+    "Badajoz": {},
+    "Barcelona": {},
+    "Burgos": {},
+    "Cáceres": {},
+    "Cádiz": {},
+    "Cantabria": {},
+    "Castellón": {},
+    "Ciudad Real": {},
+    "Córdoba": {},
+    "Cuenca": {},
+    "Girona": {},
+    "Granada": {},
+    "Guadalajara": {},
+    "Gipuzkoa": {},
+    "Huelva": {},
+    "Huesca": {},
+    "Illes Balears": {},
+    "Jaén": {},
+    "La Rioja": {},
+    "Las Palmas": {},
+    "León": {},
+    "Lleida": {},
+    "Lugo": {},
+    "Madrid": {},
+    "Málaga": {},
+    "Murcia": {},
+    "Navarra": {},
+    "Ourense": {},
+    "Palencia": {},
+    "Pontevedra": {},
+    "Salamanca": {},
+    "Santa Cruz de Tenerife": {},
+    "Segovia": {},
+    "Sevilla": {},
+    "Soria": {},
+    "Tarragona": {},
+    "Teruel": {},
+    "Toledo": {},
+    "Valencia": {},
+    "Valladolid": {},
+    "Zamora": {},
+    "Zaragoza": {}
   }
 }
