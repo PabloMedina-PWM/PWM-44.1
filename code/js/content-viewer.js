@@ -163,7 +163,7 @@ async function addData(json) {
 }
 
 async function addOptionToFilter(filterName, optionName) {
-    if (filterName === "fecha" || filterName === "capacidad") return;
+    if (filterName === "fecha" || filterName === "capacidad" || filterName === "emailEmpleado" || filterName === "idTarea") return;
     if (filterName === "direccion") return;
     let filter = document.getElementById(filterName);
     if (!filter) {

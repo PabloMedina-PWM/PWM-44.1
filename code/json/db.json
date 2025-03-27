@@ -289,121 +289,161 @@
       "descripcion": "Brainstorming sobre el nuevo festival",
       "prioridad": "Muy alta",
       "empleado": "Marcos",
-      "fecha": "2025-03-01"
+      "fecha": "2025-03-01",
+      "emailEmpleado": "marcos@prodandfests.com",
+      "idTarea": "A1B2C"
     },
     "Diseñar los carteles": {
       "descripcion": "Diseñar los carteles sobre el nuevo festival",
       "prioridad": "Muy alta",
       "empleado": "Juan",
-      "fecha": "2025-03-02"
+      "fecha": "2025-03-02",
+      "emailEmpleado": "juan@prodandfests.com",
+      "idTarea": "D3E4F"
     },
     "Contactar artistas": {
       "descripcion": "Gestionar los contratos con los artistas principales",
       "prioridad": "Alta",
       "empleado": "Juan Pedro",
-      "fecha": "2025-03-05"
+      "fecha": "2025-03-05",
+      "emailEmpleado": "juanpedro@prodandfests.com",
+      "idTarea": "G5H6I"
     },
     "Organizar logística": {
       "descripcion": "Coordinar transporte y alojamiento de artistas",
       "prioridad": "Media",
       "empleado": "Alfredo",
-      "fecha": "2025-03-08"
+      "fecha": "2025-03-08",
+      "emailEmpleado": "alfredo@prodandfests.com",
+      "idTarea": "J7K8L"
     },
     "Vender entradas": {
       "descripcion": "Configurar la plataforma de venta de tickets",
       "prioridad": "Alta",
       "empleado": "Marcos",
-      "fecha": "2025-03-10"
+      "fecha": "2025-03-10",
+      "emailEmpleado": "marcos@prodandfests.com",
+      "idTarea": "M9N0O"
     },
     "Montar escenario": {
       "descripcion": "Supervisar el montaje de los escenarios",
       "prioridad": "Alta",
       "empleado": "Juan Pedro",
-      "fecha": "2025-03-12"
+      "fecha": "2025-03-12",
+      "emailEmpleado": "juanpedro@prodandfests.com",
+      "idTarea": "P1Q2R"
     },
     "Coordinar seguridad": {
       "descripcion": "Revisar el plan de seguridad para el evento",
       "prioridad": "Media",
       "empleado": "Luis",
-      "fecha": "2025-03-15"
+      "fecha": "2025-03-15",
+      "emailEmpleado": "luis@prodandfests.com",
+      "idTarea": "S3T4U"
     },
     "Revisar presupuesto": {
       "descripcion": "Actualizar el presupuesto final del festival",
       "prioridad": "Alta",
       "empleado": "Ana",
-      "fecha": "2025-03-18"
+      "fecha": "2025-03-18",
+      "emailEmpleado": "ana@prodandfests.com",
+      "idTarea": "V5W6X"
     },
     "Contratar personal": {
       "descripcion": "Seleccionar y contratar el staff temporal",
       "prioridad": "Media",
       "empleado": "Carlos",
-      "fecha": "2025-03-20"
+      "fecha": "2025-03-20",
+      "emailEmpleado": "carlos@prodandfests.com",
+      "idTarea": "Y7Z8A"
     },
     "Gestionar catering": {
       "descripcion": "Contratar el servicio de catering para artistas y staff",
       "prioridad": "Baja",
       "empleado": "Laura",
-      "fecha": "2025-03-22"
+      "fecha": "2025-03-22",
+      "emailEmpleado": "laura@prodandfests.com",
+      "idTarea": "B9C0D"
     },
     "Promoción en redes sociales": {
       "descripcion": "Planificar la estrategia de redes sociales",
       "prioridad": "Muy alta",
       "empleado": "Rosa",
-      "fecha": "2025-03-25"
+      "fecha": "2025-03-25",
+      "emailEmpleado": "rosa@prodandfests.com",
+      "idTarea": "E1F2G"
     },
     "Gestionar acreditaciones": {
       "descripcion": "Emitir las acreditaciones para el equipo y prensa",
       "prioridad": "Alta",
       "empleado": "Pedro",
-      "fecha": "2025-03-28"
+      "fecha": "2025-03-28",
+      "emailEmpleado": "pedro@prodandfests.com",
+      "idTarea": "H3I4J"
     },
     "Confirmar horarios": {
       "descripcion": "Coordinar los horarios de los artistas",
       "prioridad": "Media",
       "empleado": "Sergio",
-      "fecha": "2025-03-30"
+      "fecha": "2025-03-30",
+      "emailEmpleado": "sergio@prodandfests.com",
+      "idTarea": "K5L6M"
     },
     "Inspeccionar recintos": {
       "descripcion": "Verificar las condiciones de los recintos",
       "prioridad": "Alta",
       "empleado": "Elena",
-      "fecha": "2025-04-02"
+      "fecha": "2025-04-02",
+      "emailEmpleado": "elena@prodandfests.com",
+      "idTarea": "N7O8P"
     },
     "Verificar contratos": {
       "descripcion": "Revisar los contratos legales",
       "prioridad": "Muy alta",
       "empleado": "Antonio",
-      "fecha": "2025-04-05"
+      "fecha": "2025-04-05",
+      "emailEmpleado": "antonio@prodandfests.com",
+      "idTarea": "Q9R0S"
     },
     "Control de ingresos": {
       "descripcion": "Registrar los ingresos de venta de tickets",
       "prioridad": "Alta",
       "empleado": "Luis",
-      "fecha": "2025-04-08"
+      "fecha": "2025-04-08",
+      "emailEmpleado": "luis@prodandfests.com",
+      "idTarea": "T1U2V"
     },
     "Configurar iluminación": {
       "descripcion": "Coordinar la instalación de luces y efectos",
       "prioridad": "Media",
       "empleado": "Marcos",
-      "fecha": "2025-04-10"
+      "fecha": "2025-04-10",
+      "emailEmpleado": "marcos@prodandfests.com",
+      "idTarea": "W3X4Y"
     },
     "Diseñar sitio web": {
       "descripcion": "Actualizar la web oficial del evento",
       "prioridad": "Alta",
       "empleado": "Juan",
-      "fecha": "2025-03-06"
+      "fecha": "2025-03-06",
+      "emailEmpleado": "juan@prodandfests.com",
+      "idTarea": "Z5A6B"
     },
     "Reservar transporte": {
       "descripcion": "Gestionar autobuses para el equipo y asistentes",
       "prioridad": "Media",
       "empleado": "Ana",
-      "fecha": "2025-04-12"
+      "fecha": "2025-04-12",
+      "emailEmpleado": "ana@prodandfests.com",
+      "idTarea": "C7D8E"
     },
     "Realizar pruebas de sonido": {
       "descripcion": "Coordinar pruebas con los técnicos de sonido",
       "prioridad": "Muy alta",
       "empleado": "Carlos",
-      "fecha": "2025-04-15"
+      "fecha": "2025-04-15",
+      "emailEmpleado": "carlos@prodandfests.com",
+      "idTarea": "F9G0H"
     }
   },
   "empleados": {
