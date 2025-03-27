@@ -1188,7 +1188,11 @@
     "Place2": "Contraseña",
     "Button": "Iniciar sesión"
   },
-  "dashboard": {},
+  "dashboard": {
+    "Titulo1": "Dashboard",
+    "Titulo2": "Tareas pendientes",
+    "Titulo3": "Proximos eventos"
+  },
   "restablecer_contraseña": {
     "Titulo1": "Nueva contraseña",
     "Titulo2": "Confirmar contraseña",

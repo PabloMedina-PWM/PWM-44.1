@@ -21,7 +21,15 @@ h2 {
     max-height: 12rem;
 }
 
+.table-container table {
+    width: 100%;
+    table-layout: fixed;  /* Esto hace que las columnas tengan un ancho uniforme */
+}
 
+.table-container th, .table-container td {
+    word-wrap: break-word;  /* Permite que el texto se ajuste dentro de las celdas */
+    padding: 10px;  /* Ajusta el padding para que las celdas sean más grandes o pequeñas */
+}
 
 .buttons {
     margin-top: 3rem;
