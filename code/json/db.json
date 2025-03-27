@@ -1223,12 +1223,13 @@
       "Procedencia del artista"
     ],
     "ocultar": [
-      5,
+      6,
       ".c-n-task",
       ".c-password",
       ".c-group",
       ".c-province",
-      ".date-div"
+      ".date-div",
+      ".c-new-selector"
     ],
     "especial": [
       0
@@ -1262,11 +1263,12 @@
       "Rol"
     ],
     "ocultar": [
-      4,
+      5,
       ".c-n-task",
       ".c-province",
       ".c-group",
-      ".date-div"
+      ".date-div",
+      ".c-new-selector"
     ],
     "especial": [
       0
@@ -1313,8 +1315,8 @@
       ".c-input"
     ],
     "especial": [
-      1,
-      "recintos"
+      2,
+      "recintos", "artistas"
     ],
     "placeholderSelector": "Bucar recinto",
     "fills": [
@@ -1345,16 +1347,17 @@
       "Selecciona la capacidad"
     ],
     "ocultar": [
-      5,
+      6,
       ".c-n-task",
       ".c-phone",
       ".c-password",
       ".c-province",
-      ".date-div"
+      ".date-div",
+      ".c-new-selector"
     ],
     "especial": [
       1,
-      "provincias"
+      "provincias", 0
     ],
     "placeholderSelector": "Bucar provincia",
     "fills": [
@@ -1390,16 +1393,17 @@
       "Prioridad"
     ],
     "ocultar": [
-      5,
+      6,
       ".c-phone",
       ".c-password",
       ".c-email",
       ".c-province",
-      ".date-div"
+      ".date-div",
+      ".c-new-selector"
     ],
     "especial": [
       1,
-      "empleados"
+      "empleados", 0
     ],
     "placeholderSelector": "Bucar empleado",
     "fills": [
@@ -1431,12 +1435,13 @@
       "Rol"
     ],
     "ocultar": [
-      5,
+      6,
       ".c-n-task",
       ".c-province",
       ".c-group",
       ".delete-icon",
-      ".date-div"
+      ".date-div",
+      ".c-new-selector"
     ],
     "especial": [
       0

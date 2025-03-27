@@ -8,6 +8,7 @@ async function changeContent(page, json) {
     hideRows(json);
 
     await specialChanges(json.especial[1], json);
+
     if (json.path[1] === "usuarios?nombre=") {
         await chargeUserData(json);
     } else if (json.path[1] === "recintos?nombre=") {
@@ -67,6 +68,7 @@ async function specialChanges(page, json) {
     if (json.especial[0] === 0) return;
 
     let newJson = await getData(page);
+    let newJson2 = await getData(json.especial[2]);
 
     if (!newJson || Object.keys(newJson).length === 0) {
         console.log("El JSON está vacío o es undefined.");
@@ -86,6 +88,7 @@ async function specialChanges(page, json) {
 
     // Agregar nuevas opciones desde newJson
     for (let i in newJson) {
+
         let option = document.createElement("option");
         option.value = newJson[i].id;
         if (json.especial[1] === "provincias") {
@@ -93,14 +96,43 @@ async function specialChanges(page, json) {
         }else{
             option.textContent = newJson[i].nombre;
         }
-
         select.appendChild(option);
     }
+
+    if (json.especial[2] === "artistas") {
+        let select2 = document.getElementById("new-select");
+        if (!select2) return;
+
+        // Asegúrate de que newJson2 tenga datos
+        if (!newJson2 || !Array.isArray(newJson2) || newJson2.length === 0) return;
+
+        // Recupera la instancia ya existente de Choices
+        let choicesInstance = select2.choicesInstance || select2._choices;
+        if (!choicesInstance) {
+            console.error("No se encontró la instancia de Choices en new-select");
+            return;
+        }
+
+        // Limpia las opciones previas
+        choicesInstance.clearChoices();
+
+        // Crea las nuevas opciones
+        let newOptions = newJson2.map(item => ({
+            value: item.id,
+            label: item.nombre
+        }));
+
+        // Agrega las opciones a la instancia existente
+        choicesInstance.setChoices(newOptions, "value", "label", true);
+
+    }
+
 
     // Asegurar que el select tenga una opción válida seleccionada
     if (!select.value) {
         select.selectedIndex = 0;
     }
+    return true;
 }
 
 
@@ -145,9 +177,12 @@ async function chargeEnclosureData(json){
     try {
         let name;
 
+
         name = getUrlName('recinto');
 
         let newJson = await getData(json.path[1]+name);
+
+
 
         let n = 0;
         for (let i in newJson[0]) {
@@ -231,10 +266,44 @@ async function chargeEventData(json){
 
         let newJson = await getData(json.path[1]+name);
 
+        let newJson2 = await getData("artistas");
+
+        for (let i in newJson2) {
+
+            for (let j = 0; j < newJson2[i].eventos.length; j++) {
+
+                if(newJson2[i].eventos[j] === name){
+                    let selectArtists = document.getElementById("new-select");
+                    if (!selectArtists) return;
+
+                    // Recuperar la instancia de Choices (debes haberla guardado antes)
+                    let choicesInstance = selectArtists.choicesInstance;
+                    if (!choicesInstance) {
+                        console.warn("No se encontró la instancia de Choices en #new-select");
+                        return;
+                    }
+
+                    // Agregar una nueva opción a la instancia
+                    choicesInstance.setChoices(
+                        [
+                            {
+                                value: newJson2[i].id,     // Valor del <option>
+                                label: newJson2[i].nombre, // Texto del <option>
+                                selected: true             // Marcar como seleccionado
+                            }
+                        ],
+                        "value",
+                        "label",
+                        false
+                    );
+
+
+                }
+            }
+        }
 
         let n = 0;
         for (let i in newJson[0]) {
-            console.log(n);
             if (n === 1) {
                 for (let j in newJson[0][i]) {
                     if (n === 1) {
@@ -242,7 +311,6 @@ async function chargeEventData(json){
                         if (select) {
                             let found = false;
                             for (let option of select.options) {
-                                console.log("Comparando:", option.text, "con", newJson[0][i][j]);
                                 if (option.text.trim().toLowerCase() === newJson[0][i][j].toString().trim().toLowerCase()) {
                                     option.selected = true;
                                     found = true;
@@ -311,6 +379,9 @@ async function chargeEventData(json){
     } catch (error) {
         console.error("Error al cargar los datos del usuario:", error);
     }
+
+    return true;
+
 
 }
 
