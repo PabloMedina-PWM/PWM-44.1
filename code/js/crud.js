@@ -120,6 +120,7 @@ async function chargeUserData(json) {
 
             name = getUrlName('empleado');
 
+
         }
 
         let newJson = await getData(json.path[1]+name);
@@ -127,6 +128,7 @@ async function chargeUserData(json) {
         if (newJson.length > 0) {
             let n = 0;// Verifica que haya datos antes de acceder a json[0]
             for (let i in newJson[0]) { // Verifica que haya datos antes de acceder a json[0]
+                console.log(newJson[0][i]);
                 document.getElementById(json.fills[n]).value = newJson[0][i];
                 n++;
             }
