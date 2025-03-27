@@ -3,7 +3,6 @@ async function changeContent(page, json) {
 
     document.querySelector('.crudTitle').textContent = json.titulo;
 
-
     changeTextContent(json);
     changePlaceHolders(json);
     hideRows(json);
@@ -60,6 +59,8 @@ async function getData(page){
     return json;
 }
 
+
+
 async function specialChanges(page, json) {
     if (json.especial[0] === 0) return;
 
@@ -85,7 +86,12 @@ async function specialChanges(page, json) {
     for (let i in newJson) {
         let option = document.createElement("option");
         option.value = newJson[i].id;
-        option.textContent = i;
+        if (json.especial[1] === "provincias") {
+            option.textContent = i;
+        }else{
+            option.textContent = newJson[i].nombre;
+        }
+
         select.appendChild(option);
     }
 
@@ -139,18 +145,16 @@ async function chargeEnclosureData(json){
 
         let newJson = await getData(json.path[1]+name);
 
-        document.getElementById("name").value = name;
-
         let n = 0;
-        for (let i in newJson[name]) {
-            if (n === 0) {
-                for (let j in newJson[name][i]) {
-                    console.log("Valor actual:", newJson[name][i][j]);
+        for (let i in newJson[0]) {
 
-                    if (n === 0) {
+            if (n === 1) {
+                for (let j in newJson[0][i]) {
+
+                    if (n === 1) {
                         let inputField = document.getElementById(json.fills[n]);
                         if (inputField) {
-                            inputField.value = newJson[name][i][j];
+                            inputField.value = newJson[0][i][j];
                         } else {
                             console.warn("No se encontró el campo con ID:", json.fills[n]);
                         }
@@ -159,15 +163,15 @@ async function chargeEnclosureData(json){
                         if (select) {
                             let found = false;
                             for (let option of select.options) {
-                                console.log("Comparando:", option.text, "con", newJson[name][i][j]);
-                                if (option.text.trim().toLowerCase() === newJson[name][i][j].toString().trim().toLowerCase()) {
+                                console.log("Comparando:", option.text, "con", newJson[0][i][j]);
+                                if (option.text.trim().toLowerCase() === newJson[0][i][j].toString().trim().toLowerCase()) {
                                     option.selected = true;
                                     found = true;
                                     break;
                                 }
                             }
                             if (!found) {
-                                console.warn("No se encontró la opción en el select:", newJson[name][i][j]);
+                                console.warn("No se encontró la opción en el select:", newJson[0][i][j]);
                             }
                         } else {
                             console.warn("No se encontró el select con ID 'group'");
@@ -179,8 +183,8 @@ async function chargeEnclosureData(json){
 
 
             }else{
-                console.log(newJson[name][i]);
-                document.getElementById(json.fills[n]).value = newJson[name][i];
+                console.log(newJson[0][i]);
+                document.getElementById(json.fills[n]).value = newJson[0][i];
                 n++;
             }
 
@@ -201,12 +205,10 @@ async function chargeArtistData(json){
 
         let newJson = await getData(json.path[1]+name);
 
-        document.getElementById("name").value = name;
-
         let n = 0;
-        for (let i in newJson[name]) {
-            console.log(newJson[name][i]);
-            document.getElementById(json.fills[n]).value = newJson[name][i];
+        for (let i in newJson[0]) {
+            console.log(newJson[0][i]);
+            document.getElementById(json.fills[n]).value = newJson[0][i];
             n++;
         }
 
@@ -225,16 +227,82 @@ async function chargeEventData(json){
 
         let newJson = await getData(json.path[1]+name);
 
-        console.log(newJson);
 
-        document.getElementById("name").value = name;
+        let n = 0;
+        for (let i in newJson[0]) {
+            console.log(n);
+            if (n === 1) {
+                for (let j in newJson[0][i]) {
+                    if (n === 1) {
+                        let select = document.getElementById("group");
+                        if (select) {
+                            let found = false;
+                            for (let option of select.options) {
+                                console.log("Comparando:", option.text, "con", newJson[0][i][j]);
+                                if (option.text.trim().toLowerCase() === newJson[0][i][j].toString().trim().toLowerCase()) {
+                                    option.selected = true;
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            if (!found) {
+                                console.warn("No se encontró la opción en el select:", newJson[0][i][j]);
+                            }
+                        } else {
+                            console.warn("No se encontró el select con ID 'group'");
+                        }
+                        n++;
+                    }
 
-        /*let n = 0;
-        for (let i in newJson[name]) {
-            console.log(newJson[name][i]);
-            document.getElementById(json.fills[n]).value = newJson[name][i];
-            n++;
-        }*/
+
+                }
+
+            }else if (n !== 3 && n !== 4) {
+                document.getElementById(json.fills[n]).value = newJson[0][i];
+                n++;
+
+            }else{
+                if (n === 3){
+                    let select = document.getElementById("province");
+                    if (select) {
+                        let found = false;
+                        for (let option of select.options) {
+
+                            console.log("Comparando:", option.text, "con", newJson[0][i]);
+                            if (option.text.trim().toLowerCase() === newJson[0][i].toString().trim().toLowerCase()) {
+                                option.selected = true;
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (!found) {
+                            console.warn("No se encontró la opción en el select:", newJson[0][i]);
+                        }
+                    } else {
+                        console.warn("No se encontró el select con ID 'group'");
+                    }
+                }else if(n === 4){
+                    let select = document.getElementById("fecha"); // El ID del input de tipo date
+                    if (select) {
+                        let found = false;
+                        let targetDate = newJson[0][i];  // Fecha en formato 'yyyy-mm-dd' (o del array en tu estructura)
+
+                        console.log("Comparando:", select.value, "con", targetDate);
+                        select.value = targetDate;  // Seleccionamos la fecha
+                        found = true;
+
+
+                        if (!found) {
+                            console.warn("No se encontró la fecha en el input:", targetDate);
+                        }
+                    } else {
+                        console.warn("No se encontró el input con ID 'fecha'");
+                    }
+                }
+
+                n++;
+            }
+        }
 
     } catch (error) {
         console.error("Error al cargar los datos del usuario:", error);

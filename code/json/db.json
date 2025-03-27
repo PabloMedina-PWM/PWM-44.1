@@ -102,7 +102,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 2000,
-      "contacto": "Jose Alfredo"
+      "contacto": "josealfredo@example.com"
     },
     {
       "nombre": "Gran Canaria Arena",
@@ -111,7 +111,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 15000,
-      "contacto": "Pepe"
+      "contacto": "pepe@example.com"
     },
     {
       "nombre": "Estadio Insular",
@@ -120,7 +120,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 15000,
-      "contacto": "Pepe"
+      "contacto": "pepe@example.com"
     },
     {
       "nombre": "Auditorio Alfredo Kraus",
@@ -129,7 +129,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 1500,
-      "contacto": "Manuel López"
+      "contacto": "manuellopez@example.com"
     },
     {
       "nombre": "Teatro Pérez Galdós",
@@ -138,7 +138,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 1000,
-      "contacto": "Isabel Martín"
+      "contacto": "isabelmartin@example.com"
     },
     {
       "nombre": "Parque Santa Catalina",
@@ -147,7 +147,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 5000,
-      "contacto": "Carlos Ramírez"
+      "contacto": "carlosramirez@example.com"
     },
     {
       "nombre": "Estadio Gran Canaria",
@@ -156,7 +156,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 32000,
-      "contacto": "Luis Santana"
+      "contacto": "luissantana@example.com"
     },
     {
       "nombre": "Centro de Convenciones",
@@ -165,7 +165,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 12000,
-      "contacto": "Ana Gómez"
+      "contacto": "anagomez@example.com"
     },
     {
       "nombre": "Parque Doramas",
@@ -174,7 +174,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 3000,
-      "contacto": "María Hernández"
+      "contacto": "mariahernandez@example.com"
     },
     {
       "nombre": "Estadio Maspalomas",
@@ -183,7 +183,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 8000,
-      "contacto": "Sergio Torres"
+      "contacto": "sergiotorres@example.com"
     },
     {
       "nombre": "Sala Elder",
@@ -192,7 +192,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 1200,
-      "contacto": "Laura Pérez"
+      "contacto": "lauraperez@example.com"
     },
     {
       "nombre": "Estadio Tenerife",
@@ -201,7 +201,7 @@
         "provincia": "Santa Cruz de Tenerife"
       },
       "capacidad": 25000,
-      "contacto": "Jorge Suárez"
+      "contacto": "jorgesuarez@example.com"
     },
     {
       "nombre": "Teror Plaza",
@@ -210,7 +210,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 1000,
-      "contacto": "Elena Navarro"
+      "contacto": "elenanavarro@example.com"
     },
     {
       "nombre": "Campo Internacional",
@@ -219,7 +219,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 3000,
-      "contacto": "Juan Carlos"
+      "contacto": "juancarlos@example.com"
     },
     {
       "nombre": "Explanada Arucas",
@@ -228,7 +228,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 5000,
-      "contacto": "Carmen Delgado"
+      "contacto": "carmendelgado@example.com"
     },
     {
       "nombre": "Teatro Cuyás",
@@ -237,7 +237,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 900,
-      "contacto": "Antonio Ruiz"
+      "contacto": "antonioruiz@example.com"
     },
     {
       "nombre": "Las Arenas",
@@ -246,7 +246,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 2000,
-      "contacto": "Rosa López"
+      "contacto": "rosalopez@example.com"
     },
     {
       "nombre": "Palacio de Congresos",
@@ -255,7 +255,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 4000,
-      "contacto": "Pedro García"
+      "contacto": "pedrogarcia@example.com"
     },
     {
       "nombre": "El Pajar",
@@ -264,7 +264,7 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 2000,
-      "contacto": "Miguel Fernández"
+      "contacto": "miguelfernandez@example.com"
     }
   ],
   "artistas": [
@@ -783,7 +783,8 @@
         "nombre": "Estadio Insular",
         "provincia": "Las Palmas"
       },
-      "contacto": "José Joaquín",
+      "contacto": "josejoaquin@example.com",
+      "tipo": "Festival",
       "fecha": "2025-06-15",
       "artistas": "../html/artistas.html?evento=Boombastic%20Gran%20Canaria"
     },
@@ -793,7 +794,8 @@
         "nombre": "Estadio Gran Canaria",
         "provincia": "Las Palmas"
       },
-      "contacto": "Alberto Medina",
+      "contacto": "alberto.medina@example.com",
+      "tipo": "Festival",
       "fecha": "2025-07-20",
       "artistas": "../html/artistas.html?evento=Granca%20Live%20Fest"
     },
@@ -803,7 +805,8 @@
         "nombre": "Gran Canaria Arena",
         "provincia": "Las Palmas"
       },
-      "contacto": "Manuel Pérez",
+      "contacto": "manuel.perez@example.com",
+      "tipo": "Festival",
       "fecha": "2025-05-10",
       "artistas": "../html/artistas.html?evento=Granca%20Music%20Stars"
     },
@@ -813,7 +816,8 @@
         "nombre": "Auditorio Alfredo Kraus",
         "provincia": "Las Palmas"
       },
-      "contacto": "Luis Santana",
+      "contacto": "luis.santana@example.com",
+      "tipo": "Festival",
       "fecha": "2025-08-25",
       "artistas": "../html/artistas.html?evento=World%20Tour%20Gran%20Canaria"
     },
@@ -823,7 +827,8 @@
         "nombre": "Parque Santa Catalina",
         "provincia": "Las Palmas"
       },
-      "contacto": "María López",
+      "contacto": "maria.lopez@example.com",
+      "tipo": "Festival",
       "fecha": "2025-06-30",
       "artistas": "../html/artistas.html?evento=ElectroBeach%20Party"
     },
@@ -833,7 +838,8 @@
         "nombre": "Parque Doramas",
         "provincia": "Las Palmas"
       },
-      "contacto": "Carlos Ramírez",
+      "contacto": "carlos.ramirez@example.com",
+      "tipo": "Festival",
       "fecha": "2025-04-20",
       "artistas": "../html/artistas.html?evento=Jazz%20in%20the%20Park"
     },
@@ -843,7 +849,8 @@
         "nombre": "Teatro Pérez Galdós",
         "provincia": "Las Palmas"
       },
-      "contacto": "Isabel Martín",
+      "contacto": "isabel.martin@example.com",
+      "tipo": "Festival",
       "fecha": "2025-09-15",
       "artistas": "../html/artistas.html?evento=Rock%20&%20Roll%20Night"
     },
@@ -853,7 +860,8 @@
         "nombre": "Campo Internacional",
         "provincia": "Las Palmas"
       },
-      "contacto": "Juan Carlos",
+      "contacto": "juan.carlos@example.com",
+      "tipo": "Festival",
       "fecha": "2025-07-05",
       "artistas": "../html/artistas.html?evento=Indie%20Sunset%20Festival"
     },
@@ -863,7 +871,8 @@
         "nombre": "Palacio de Congresos",
         "provincia": "Las Palmas"
       },
-      "contacto": "Pedro García",
+      "contacto": "pedro.garcia@example.com",
+      "tipo": "Festival",
       "fecha": "2025-08-01",
       "artistas": "../html/artistas.html?evento=Pop%20Explosion"
     },
@@ -873,7 +882,8 @@
         "nombre": "Estadio Maspalomas",
         "provincia": "Las Palmas"
       },
-      "contacto": "Sergio Torres",
+      "contacto": "sergio.torres@example.com",
+      "tipo": "Festival",
       "fecha": "2025-05-25",
       "artistas": "../html/artistas.html?evento=Latin%20Beats%20Festival"
     },
@@ -883,7 +893,8 @@
         "nombre": "Centro de Convenciones",
         "provincia": "Las Palmas"
       },
-      "contacto": "Ana Gómez",
+      "contacto": "ana.gomez@example.com",
+      "tipo": "Festival",
       "fecha": "2025-06-10",
       "artistas": "../html/artistas.html?evento=Urban%20Vibes"
     },
@@ -893,7 +904,8 @@
         "nombre": "Auditorio Alfredo Kraus",
         "provincia": "Las Palmas"
       },
-      "contacto": "Manuel López",
+      "contacto": "manuel.lopez@example.com",
+      "tipo": "Festival",
       "fecha": "2025-11-20",
       "artistas": "../html/artistas.html?evento=Classical%20Gala%20Night"
     },
@@ -903,7 +915,8 @@
         "nombre": "Explanada Arucas",
         "provincia": "Las Palmas"
       },
-      "contacto": "Carmen Delgado",
+      "contacto": "carmen.delgado@example.com",
+      "tipo": "Festival",
       "fecha": "2025-07-15",
       "artistas": "../html/artistas.html?evento=Summer%20Reggae%20Fest"
     },
@@ -913,7 +926,8 @@
         "nombre": "Estadio Tenerife",
         "provincia": "Santa Cruz de Tenerife"
       },
-      "contacto": "Jorge Suárez",
+      "contacto": "jorge.suarez@example.com",
+      "tipo": "Festival",
       "fecha": "2025-05-18",
       "artistas": "../html/artistas.html?evento=Electronic%20Island%20Festival"
     },
@@ -923,7 +937,8 @@
         "nombre": "Estadio Gran Canaria",
         "provincia": "Las Palmas"
       },
-      "contacto": "Luis Santana",
+      "contacto": "luis.santana@example.com",
+      "tipo": "Festival",
       "fecha": "2025-09-10",
       "artistas": "../html/artistas.html?evento=The%20Big%20Fiesta"
     },
@@ -933,7 +948,8 @@
         "nombre": "Teatro Cuyás",
         "provincia": "Las Palmas"
       },
-      "contacto": "Antonio Ruiz",
+      "contacto": "antonio.ruiz@example.com",
+      "tipo": "Festival",
       "fecha": "2025-04-12",
       "artistas": "../html/artistas.html?evento=Night%20of%20Flamenco"
     },
@@ -943,7 +959,8 @@
         "nombre": "Campo Internacional",
         "provincia": "Las Palmas"
       },
-      "contacto": "Miguel Fernández",
+      "contacto": "miguel.fernandez@example.com",
+      "tipo": "Festival",
       "fecha": "2025-08-12",
       "artistas": "../html/artistas.html?evento=Beach%20Party%20Maspalomas"
     },
@@ -953,7 +970,8 @@
         "nombre": "Las Arenas",
         "provincia": "Las Palmas"
       },
-      "contacto": "Rosa López",
+      "contacto": "rosa.lopez@example.com",
+      "tipo": "Festival",
       "fecha": "2025-06-25",
       "artistas": "../html/artistas.html?evento=Canary%20Rock%20Fest"
     },
@@ -963,7 +981,8 @@
         "nombre": "Teror Plaza",
         "provincia": "Las Palmas"
       },
-      "contacto": "Elena Navarro",
+      "contacto": "elena.navarro@example.com",
+      "tipo": "Festival",
       "fecha": "2025-05-15",
       "artistas": "../html/artistas.html?evento=Sunset%20Jazz%20Evenings"
     },
@@ -973,11 +992,13 @@
         "nombre": "El Pajar",
         "provincia": "Las Palmas"
       },
-      "contacto": "Francisco Mena",
+      "contacto": "francisco.mena@example.com",
+      "tipo": "Festival",
       "fecha": "2025-12-10",
       "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival"
     }
-  ],
+  ]
+,
   "usuarios": [
     {
       "nombre": "Juan",
@@ -1201,16 +1222,18 @@
       "Procedencia del artista"
     ],
     "ocultar": [
-      4,
+      5,
       ".c-n-task",
       ".c-password",
       ".c-group",
-      ".c-province"
+      ".c-province",
+      ".date-div"
     ],
     "especial": [
       0
     ],
     "fills": [
+      "name",
       "address",
       "RolPlaceh",
       "telephone",
@@ -1238,10 +1261,11 @@
       "Rol"
     ],
     "ocultar": [
-      3,
+      4,
       ".c-n-task",
       ".c-province",
-      ".c-group"
+      ".c-group",
+      ".date-div"
     ],
     "especial": [
       0
@@ -1264,7 +1288,7 @@
     "cambiar": [
       10,
       "surnames",
-      "Estilo de música:",
+      "Email de contacto:",
       "provincia",
       "Tipo de evento:",
       "buscar provincia",
@@ -1277,7 +1301,7 @@
     "placeholders": [
       2,
       "address",
-      "Tipo de música que se usará"
+      "Email de contacto"
     ],
     "ocultar": [
       5,
@@ -1292,6 +1316,12 @@
       "recintos"
     ],
     "placeholderSelector": "Bucar recinto",
+    "fills": [
+      "name",
+      "grupo",
+      "address",
+      "provincia"
+    ],
     "path": [
       0,
       "eventos?nombre="
@@ -1314,11 +1344,12 @@
       "Selecciona la capacidad"
     ],
     "ocultar": [
-      4,
+      5,
       ".c-n-task",
       ".c-phone",
       ".c-password",
-      ".c-province"
+      ".c-province",
+      ".date-div"
     ],
     "especial": [
       1,
@@ -1326,6 +1357,7 @@
     ],
     "placeholderSelector": "Bucar provincia",
     "fills": [
+      "name",
       "address",
       "buscar grupo",
       "RolPlaceh",
@@ -1359,11 +1391,12 @@
       "Tipo"
     ],
     "ocultar": [
-      4,
+      5,
       ".c-phone",
       ".c-password",
       ".c-email",
-      ".c-province"
+      ".c-province",
+      ".date-div"
     ],
     "especial": [
       1,
@@ -1392,11 +1425,12 @@
       "Rol"
     ],
     "ocultar": [
-      4,
+      5,
       ".c-n-task",
       ".c-province",
       ".c-group",
-      ".delete-icon"
+      ".delete-icon",
+      ".date-div"
     ],
     "especial": [
       0
