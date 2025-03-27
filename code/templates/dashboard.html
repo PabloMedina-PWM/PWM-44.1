@@ -11,176 +11,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="centered">
-        <h1>Dashboard</h1>
-        <h2>Tareas pendientes</h2>
-        <div class="table-container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Tarea</th>
-                        <th>Prioridad</th>
-                        <th>Fecha límite</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                    <tr>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>1/1/1999</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <h2>Próximos eventos</h2>
-        <div class="table-container">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Recinto</th>
-                    <th>Fecha</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                <tr>
-                    <td>Lorem</td>
-                    <td><a>Ipsum</a></td>
-                    <td>1/1/1999</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="buttons">
-            <a href="../html/crud_recinto.html"><button class="button">Añadir recinto</button></a>
-            <a href="../html/crud_evento.html"><button class="button">Añadir evento</button></a>
-                <a href="../html/crud_artista.html"><button class="button">Añadir artista</button></a>
-                <a href="../html/crud_tarea.html"><button class="button admin">Añadir tarea</button></a>
-                <a href="../html/crud_empleado.html"><button class="button admin">Añadir empleado</button></a>
-        </div>
+<d<div class="centered">
+    <h1 id="Title">Dashboard</h1>
+    <h2 id="task">Tareas pendientes</h2>
+    <div class="table-container">
+        <table class="table" id="tasksTable">
+            <thead>
+            <tr>
+                <th>Tarea</th>
+                <th>Descripción</th>
+                <th>Prioridad</th>
+                <th>Fecha límite</th>
+            </tr>
+            </thead>
+            <tbody id="tasksTableBody">
+            </tbody>
+        </table>
+    </div>
+    <h2 id="events">Próximos eventos</h2>
+    <div class="table-container">
+        <table class="table" id="EventsTable">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Recinto</th>
+                <th>Fecha</th>
+            </tr>
+            </thead>
+            <tbody id="eventsTableBody">
+            </tbody>
+        </table>
     </div>
 
+    <div class="buttons">
+        <a href="../html/crud_recinto.html"><button class="button">Añadir recinto</button></a>
+        <a href="../html/crud_evento.html"><button class="button">Añadir evento</button></a>
+        <a href="../html/crud_artista.html"><button class="button">Añadir artista</button></a>
+        <a href="../html/crud_tarea.html"><button class="button admin">Añadir tarea</button></a>
+        <a href="../html/crud_empleado.html"><button class="button admin">Añadir empleado</button></a>
+    </div>
+</div>
 
+<script src="../js/dashboard.js"></script>
 </body>
 </html>
