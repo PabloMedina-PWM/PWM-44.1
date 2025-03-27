@@ -16,6 +16,8 @@ async function changeContent(page, json) {
         await chargeArtistData(json);
     } else if (json.path[1] === "eventos?nombre=") {
         await chargeEventData(json);
+    } else if (json.path[1] === "tareas?nombre=") {
+        await chargeTaskData(json);
     }
 
 
@@ -307,6 +309,58 @@ async function chargeEventData(json){
     } catch (error) {
         console.error("Error al cargar los datos del usuario:", error);
     }
+
+}
+
+async function chargeTaskData(json){
+
+    try {
+        let name;
+
+        name = getUrlName('tarea');
+
+        let newJson = await getData(json.path[1]+name);
+
+        let n = 0;
+
+        for (let i in newJson[0]) {
+            if (n <= 2) {
+                console.log(newJson[0][i]);
+                document.getElementById(json.fills[n]).value = newJson[0][i];
+
+            }else if (n === 3) {
+                let select = document.getElementById("group");
+                if (select) {
+                    let found = false;
+                    for (let option of select.options) {
+
+                        console.log("Comparando:", option.text, "con", newJson[0][i]);
+                        if (option.text.trim().toLowerCase() === newJson[0][i].toString().trim().toLowerCase()) {
+                            option.selected = true;
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        console.warn("No se encontró la opción en el select:", newJson[0][i]);
+                    }
+                } else {
+                    console.warn("No se encontró el select con ID 'group'");
+                }
+            } else if (n === 6) {
+                document.getElementById(json.fills[4]).value = newJson[0][i];
+            }
+
+            n++;
+
+        }
+
+    } catch (error) {
+        console.error("Error al cargar los datos del usuario:", error);
+    }
+
+
+
 
 }
 

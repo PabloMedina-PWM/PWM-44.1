@@ -1371,15 +1371,13 @@
   "crud_tarea": {
     "titulo": "Tarea",
     "cambiar": [
-      10,
+      8,
       "surnames",
       "Descripción:",
-      "provincia",
-      "Tipo de tarea:",
       "buscar provincia",
       "Tipo",
       "Rol",
-      "Tipo de tarea:",
+      "Prioridad:",
       "grupo",
       "Empleado:"
     ],
@@ -1388,7 +1386,7 @@
       "address",
       "Descripción de la tarea",
       "RolPlaceh",
-      "Tipo"
+      "Prioridad"
     ],
     "ocultar": [
       5,
@@ -1403,6 +1401,13 @@
       "empleados"
     ],
     "placeholderSelector": "Bucar empleado",
+    "fills": [
+      "name",
+      "address",
+      "RolPlaceh",
+      "group",
+      "n-task"
+    ],
     "path": [
       0,
       "tareas?nombre="
