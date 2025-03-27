@@ -102,11 +102,9 @@ async function addData(json) {
         let padre = datos[dato];
         let tr = document.createElement("tr");
         let td1 = document.createElement("td");
-        td1.innerText = dato;
-        tr.appendChild(td1);
         tr.id = dato;
         tr.classList.add("fila");
-        let index = 0;
+        let index = -1;
         for (let hijo in padre) {
             if (index === numColumnas-2 && json.nombreBotonTabla !== undefined) {
                 let td2 = document.createElement("td");
@@ -163,14 +161,14 @@ async function addData(json) {
 }
 
 async function addOptionToFilter(filterName, optionName) {
-    if (filterName === "fecha" || filterName === "capacidad" || filterName === "emailEmpleado" || filterName === "idTarea" || filterName == "id") return;
-    if (filterName === "direccion") return;
+    if (filterName === "fecha" || filterName === "capacidad" || filterName === "emailEmpleado" || filterName === "id") return;
+    if (filterName === "direccion" || filterName === "idTarea" || filterName === "nombre" || filterName === "artistas") return;
     let filter = document.getElementById(filterName);
     if (!filter) {
+        console.log(filterName);
         filterName = filterName.slice(0, -1);
         filter = document.getElementById(filterName);
     }
-
 
     // Encuentra la opción "Eliminar filtro" si existe
     const eliminarFiltrosOption = Array.from(filter.options).find(option => option.value === "Eliminar filtro");
@@ -309,15 +307,7 @@ async function getData(page){
         console.error("Hubo un error:", error);
         return;
     }
-    const resultado = {};
-    let jsonArray = Array.of(json);
-    //console.log(jsonArray);
-    jsonArray[0].forEach(elemento => {
-        resultado[elemento.nombre] = elemento;
-        delete resultado[elemento.nombre]["nombre"];
-    });
-    console.log(resultado);
-    return resultado;
+    return json;
 }
 
 function filters() {
