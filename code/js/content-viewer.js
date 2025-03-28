@@ -143,8 +143,13 @@ async function addData(json) {
         tr.addEventListener("click", async () => {
             let url = "../html/crud_";
             url += json.titulo.slice(0,-1).toLowerCase() + ".html";
-            url += "?" + "id=";
-            url += padre.id;
+            if (json.titulo === "Empleados") {
+                url += "?" + "email=";
+                url += padre["correo electrónico"];
+            } else {
+                url += "?" + "id=";
+                url += padre.id;
+            }
             window.open(url, '_blank');
         });
         tr.addEventListener('mouseover', () => {
