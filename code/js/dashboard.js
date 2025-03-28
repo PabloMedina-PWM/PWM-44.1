@@ -3,7 +3,7 @@ async function changeContent(page, json) {
     document.getElementById("task").innerText = json.Titulo2;
     document.getElementById("events").innerText = json.Titulo3;
     await obtenerTareasUsuario();
-    await obtenerEventos();  // Llamamos a la nueva función para los eventos
+    await obtenerEventos();
 
 }
 
@@ -55,49 +55,39 @@ async function getData(page) {
     return json;
 }
 
-// Función para mostrar las tareas en la interfaz
 function displayTareas(tareas) {
     const tareasTableBody = document.getElementById("tasksTableBody");
-    tareasTableBody.innerHTML = "";  // Limpiar el contenedor antes de mostrar las tareas
+    tareasTableBody.innerHTML = "";
 
     if (tareas.length > 0) {
         tareas.forEach(tarea => {
             let tr = document.createElement("tr");
 
-            // Nombre de la tarea
             let td1 = document.createElement("td");
-            td1.innerText = tarea.nombre;  // Ajusta según el campo real en tu JSON
+            td1.innerText = tarea.nombre;
             tr.appendChild(td1);
 
-            // Prioridad de la tarea
             let td2 = document.createElement("td");
-            td2.innerText = tarea.descripcion;  // Ajusta según el campo real en tu JSON
+            td2.innerText = tarea.descripcion;
             tr.appendChild(td2);
 
-            // Fecha límite de la tarea
             let td3 = document.createElement("td");
-            td3.innerText = tarea.prioridad;  // Ajusta según el campo real en tu JSON
+            td3.innerText = tarea.prioridad;
             tr.appendChild(td3);
 
-            // Descripción de la tarea
             let td4 = document.createElement("td");
-            td4.innerText = tarea.fecha;  // Agregar la descripción de la tarea
+            td4.innerText = tarea.fecha;
             tr.appendChild(td4);
 
-            // Agregar un evento de clic a la fila de la tarea para redirigir
             tr.addEventListener('click', () => {
-                // Redirigir a la página de tareas con el filtro por ID y correo del usuario
                 window.location.href = `../html/tareas.html?emailEmpleado=${tarea.emailEmpleado}&idTarea=${tarea.id}`;
             });
-
-            // Agregar la fila al tbody de la tabla
             tareasTableBody.appendChild(tr);
         });
     } else {
-        // Si no hay tareas, mostrar un mensaje
         let tr = document.createElement("tr");
         let td = document.createElement("td");
-        td.colSpan = 4;  // Actualizar a 4 columnas, ya que ahora tenemos una columna más
+        td.colSpan = 4;
         td.innerText = "No hay tareas asignadas a este usuario.";
         tr.appendChild(td);
         tareasTableBody.appendChild(tr);
@@ -105,54 +95,71 @@ function displayTareas(tareas) {
 }
 
 async function obtenerEventos() {
-    let eventsJson = await getData("eventos?nombres");  // Llamada al backend para obtener los eventos
-    console.log(eventsJson);  // Verifica que recibimos los eventos correctamente
+    let eventsJson = await getData("eventos?nombres");
+    console.log(eventsJson);
 
     if (eventsJson && eventsJson.length > 0) {
-        displayEventos(eventsJson);  // Si los eventos existen, los mostramos
+        let filteredEvents = filterEventsByDate(eventsJson);
+
+        if (filteredEvents.length > 0) {
+            displayEventos(filteredEvents);
+        } else {
+            console.log("No hay eventos dentro del rango de fechas.");
+        }
     } else {
         console.log("No hay eventos disponibles.");
     }
 }
 
-// Función para mostrar los eventos en la tabla
+function filterEventsByDate(events) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const oneMonthLater = new Date();
+    oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
+    oneMonthLater.setHours(23, 59, 59, 999);
+
+    return events.filter(event => {
+        const eventDate = new Date(event.fecha);
+        eventDate.setHours(0, 0, 0, 0);
+
+        return eventDate >= today && eventDate <= oneMonthLater;
+    });
+}
+
+
 function displayEventos(eventos) {
-    const eventsTableBody = document.getElementById("eventsTableBody");  // Obtén el cuerpo de la tabla
+    const eventsTableBody = document.getElementById("eventsTableBody");
 
     if (!eventsTableBody) {
         console.error("No se encuentra el contenedor de la tabla.");
         return;
     }
 
-    eventsTableBody.innerHTML = "";  // Limpiar la tabla antes de agregar los nuevos eventos
+    eventsTableBody.innerHTML = "";
 
     if (eventos.length > 0) {
         eventos.forEach(evento => {
             let tr = document.createElement("tr");
 
-            // Crear celda para el nombre del evento
             let td1 = document.createElement("td");
-            td1.innerText = evento.nombre;  // Nombre del evento
+            td1.innerText = evento.nombre;
             tr.appendChild(td1);
 
-            // Crear celda para el recinto
             let td2 = document.createElement("td");
-            td2.innerText = evento.recinto.nombre;  // Nombre del recinto
+            td2.innerText = evento.recinto.nombre;
             tr.appendChild(td2);
 
-            // Crear celda para la fecha
             let td3 = document.createElement("td");
-            td3.innerText = evento.fecha;  // Fecha del evento
+            td3.innerText = evento.fecha;
             tr.appendChild(td3);
 
-            // Agregar la fila de evento a la tabla
             eventsTableBody.appendChild(tr);
         });
     } else {
-        // Si no hay eventos, mostrar un mensaje
         let tr = document.createElement("tr");
         let td = document.createElement("td");
-        td.colSpan = 3;  // Esta celda ocupará todas las columnas
+        td.colSpan = 3;
         td.innerText = "No hay eventos disponibles en este momento.";
         tr.appendChild(td);
         eventsTableBody.appendChild(tr);
