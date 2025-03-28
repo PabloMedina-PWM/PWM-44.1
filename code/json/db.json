@@ -1462,7 +1462,7 @@
       "provincias",
       0
     ],
-    "placeholderSelector": "Bucar provincia",
+    "placeholderSelector": "Buscar provincia",
     "fills": [
       "name",
       "address",
@@ -1509,7 +1509,7 @@
       "empleados",
       0
     ],
-    "placeholderSelector": "Bucar empleado",
+    "placeholderSelector": "Buscar empleado",
     "fills": [
       "name",
       "address",
