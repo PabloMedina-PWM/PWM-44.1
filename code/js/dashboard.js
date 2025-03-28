@@ -80,7 +80,7 @@ function displayTareas(tareas) {
             tr.appendChild(td4);
 
             tr.addEventListener('click', () => {
-                window.location.href = `../html/tareas.html?emailEmpleado=${tarea.emailEmpleado}&idTarea=${tarea.id}`;
+                window.location.href = `../html/crud_tarea.html?id=${tarea.id}`;
             });
             tareasTableBody.appendChild(tr);
         });
@@ -136,7 +136,7 @@ function displayEventos(eventos) {
         return;
     }
 
-    eventsTableBody.innerHTML = "";
+    eventsTableBody.innerHTML = "";  // Limpiar el contenido anterior
 
     if (eventos.length > 0) {
         eventos.forEach(evento => {
@@ -153,6 +153,11 @@ function displayEventos(eventos) {
             let td3 = document.createElement("td");
             td3.innerText = evento.fecha;
             tr.appendChild(td3);
+
+            // Agregar el evento de click para redirigir a la página del evento
+            tr.addEventListener('click', () => {
+                window.location.href = `../html/crud_evento.html?id=${evento.id}`;
+            });
 
             eventsTableBody.appendChild(tr);
         });

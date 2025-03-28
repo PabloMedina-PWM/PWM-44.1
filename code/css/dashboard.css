@@ -5,6 +5,16 @@
     flex-direction: column;
 }
 
+#tasksTableBody tr:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+
+#eventsTableBody tr:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+
 h1 {
     font-size: 2.5rem;
     margin: 0.5rem;
