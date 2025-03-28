@@ -103,7 +103,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 2000,
-      "contacto": "josealfredo@example.com"
+      "contacto": "josealfredo@example.com",
+      "id": "46ba"
     },
     {
       "nombre": "Gran Canaria Arena",
@@ -112,7 +113,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 15000,
-      "contacto": "pepe@example.com"
+      "contacto": "pepe@example.com",
+      "id": "c7b3"
     },
     {
       "nombre": "Estadio Insular",
@@ -121,7 +123,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 15000,
-      "contacto": "pepe@example.com"
+      "contacto": "pepe@example.com",
+      "id": "3926"
     },
     {
       "nombre": "Auditorio Alfredo Kraus",
@@ -130,7 +133,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 1500,
-      "contacto": "manuellopez@example.com"
+      "contacto": "manuellopez@example.com",
+      "id": "eb57"
     },
     {
       "nombre": "Teatro Pérez Galdós",
@@ -139,7 +143,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 1000,
-      "contacto": "isabelmartin@example.com"
+      "contacto": "isabelmartin@example.com",
+      "id": "acf0"
     },
     {
       "nombre": "Parque Santa Catalina",
@@ -148,7 +153,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 5000,
-      "contacto": "carlosramirez@example.com"
+      "contacto": "carlosramirez@example.com",
+      "id": "ae95"
     },
     {
       "nombre": "Estadio Gran Canaria",
@@ -157,7 +163,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 32000,
-      "contacto": "luissantana@example.com"
+      "contacto": "luissantana@example.com",
+      "id": "03a5"
     },
     {
       "nombre": "Centro de Convenciones",
@@ -166,7 +173,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 12000,
-      "contacto": "anagomez@example.com"
+      "contacto": "anagomez@example.com",
+      "id": "4b97"
     },
     {
       "nombre": "Parque Doramas",
@@ -175,7 +183,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 3000,
-      "contacto": "mariahernandez@example.com"
+      "contacto": "mariahernandez@example.com",
+      "id": "fc7c"
     },
     {
       "nombre": "Estadio Maspalomas",
@@ -184,7 +193,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 8000,
-      "contacto": "sergiotorres@example.com"
+      "contacto": "sergiotorres@example.com",
+      "id": "19f0"
     },
     {
       "nombre": "Sala Elder",
@@ -193,7 +203,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 1200,
-      "contacto": "lauraperez@example.com"
+      "contacto": "lauraperez@example.com",
+      "id": "f071"
     },
     {
       "nombre": "Estadio Tenerife",
@@ -202,7 +213,8 @@
         "provincia": "Santa Cruz de Tenerife"
       },
       "capacidad": 25000,
-      "contacto": "jorgesuarez@example.com"
+      "contacto": "jorgesuarez@example.com",
+      "id": "db5e"
     },
     {
       "nombre": "Teror Plaza",
@@ -211,7 +223,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 1000,
-      "contacto": "elenanavarro@example.com"
+      "contacto": "elenanavarro@example.com",
+      "id": "da0f"
     },
     {
       "nombre": "Campo Internacional",
@@ -220,7 +233,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 3000,
-      "contacto": "juancarlos@example.com"
+      "contacto": "juancarlos@example.com",
+      "id": "c68f"
     },
     {
       "nombre": "Explanada Arucas",
@@ -229,7 +243,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 5000,
-      "contacto": "carmendelgado@example.com"
+      "contacto": "carmendelgado@example.com",
+      "id": "7e81"
     },
     {
       "nombre": "Teatro Cuyás",
@@ -238,7 +253,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 900,
-      "contacto": "antonioruiz@example.com"
+      "contacto": "antonioruiz@example.com",
+      "id": "b765"
     },
     {
       "nombre": "Las Arenas",
@@ -247,7 +263,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 2000,
-      "contacto": "rosalopez@example.com"
+      "contacto": "rosalopez@example.com",
+      "id": "efd4"
     },
     {
       "nombre": "Palacio de Congresos",
@@ -256,7 +273,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 4000,
-      "contacto": "pedrogarcia@example.com"
+      "contacto": "pedrogarcia@example.com",
+      "id": "608d"
     },
     {
       "nombre": "El Pajar",
@@ -278,7 +296,8 @@
       "eventos": [
         "Granca Live Fest",
         "Rock & Roll Night"
-      ]
+      ],
+      "id": "96f3"
     },
     {
       "nombre": "Cruz Cafuné",
@@ -288,7 +307,8 @@
       "email": "cruz.cafune@example.com",
       "eventos": [
         "Boombastic Gran Canaria"
-      ]
+      ],
+      "id": "b84a"
     },
     {
       "nombre": "Fernando Olvera",
@@ -298,7 +318,8 @@
       "email": "fernando.olvera@example.com",
       "eventos": [
         "Granca Live Fest"
-      ]
+      ],
+      "id": "b9dd"
     },
     {
       "nombre": "Rosalía",
@@ -309,7 +330,8 @@
       "eventos": [
         "Granca Music Stars",
         "Boombastic Gran Canaria"
-      ]
+      ],
+      "id": "5a3f"
     },
     {
       "nombre": "Bad Bunny",
@@ -319,7 +341,8 @@
       "email": "bad.bunny@example.com",
       "eventos": [
         "Boombastic Gran Canaria"
-      ]
+      ],
+      "id": "c588"
     },
     {
       "nombre": "Coldplay",
@@ -329,7 +352,8 @@
       "email": "coldplay@example.com",
       "eventos": [
         "World Tour Gran Canaria"
-      ]
+      ],
+      "id": "d6d4"
     },
     {
       "nombre": "J Balvin",
@@ -339,7 +363,8 @@
       "email": "j.balvin@example.com",
       "eventos": [
         "Granca Live Fest"
-      ]
+      ],
+      "id": "c1f2"
     },
     {
       "nombre": "Shakira",
@@ -349,7 +374,8 @@
       "email": "shakira@example.com",
       "eventos": [
         "Granca Music Stars"
-      ]
+      ],
+      "id": "4b8a"
     },
     {
       "nombre": "Alejandro Sanz",
@@ -359,7 +385,8 @@
       "email": "alejandro.sanz@example.com",
       "eventos": [
         "Granca Live Fest"
-      ]
+      ],
+      "id": "973c"
     },
     {
       "nombre": "Adele",
@@ -369,7 +396,8 @@
       "email": "adele@example.com",
       "eventos": [
         "World Tour Gran Canaria"
-      ]
+      ],
+      "id": "2faa"
     },
     {
       "nombre": "Ed Sheeran",
@@ -379,7 +407,8 @@
       "email": "ed.sheeran@example.com",
       "eventos": [
         "Boombastic Gran Canaria"
-      ]
+      ],
+      "id": "3f8e"
     },
     {
       "nombre": "The Weeknd",
@@ -389,7 +418,8 @@
       "email": "the.weeknd@example.com",
       "eventos": [
         "Granca Music Stars"
-      ]
+      ],
+      "id": "191f"
     },
     {
       "nombre": "Drake",
@@ -399,7 +429,8 @@
       "email": "drake@example.com",
       "eventos": [
         "Boombastic Gran Canaria"
-      ]
+      ],
+      "id": "29e7"
     },
     {
       "nombre": "Beyoncé",
@@ -409,7 +440,8 @@
       "email": "beyonce@example.com",
       "eventos": [
         "Granca Music Stars"
-      ]
+      ],
+      "id": "6d16"
     },
     {
       "nombre": "Bruno Mars",
@@ -419,7 +451,8 @@
       "email": "bruno.mars@example.com",
       "eventos": [
         "Granca Live Fest"
-      ]
+      ],
+      "id": "6eec"
     },
     {
       "nombre": "Taylor Swift",
@@ -429,7 +462,8 @@
       "email": "taylor.swift@example.com",
       "eventos": [
         "World Tour Gran Canaria"
-      ]
+      ],
+      "id": "407f"
     },
     {
       "nombre": "Harry Styles",
@@ -439,7 +473,8 @@
       "email": "harry.styles@example.com",
       "eventos": [
         "Boombastic Gran Canaria"
-      ]
+      ],
+      "id": "2094"
     },
     {
       "nombre": "Rihanna",
@@ -449,7 +484,8 @@
       "email": "rihanna@example.com",
       "eventos": [
         "Granca Music Stars"
-      ]
+      ],
+      "id": "277d"
     },
     {
       "nombre": "Maluma",
@@ -459,7 +495,8 @@
       "email": "maluma@example.com",
       "eventos": [
         "Boombastic Gran Canaria"
-      ]
+      ],
+      "id": "2cd9"
     },
     {
       "nombre": "Luis Fonsi",
@@ -469,7 +506,8 @@
       "email": "luis.fonsi@example.com",
       "eventos": [
         "Granca Live Fest"
-      ]
+      ],
+      "id": "7c44"
     }
   ],
   "tareas": [
@@ -480,7 +518,8 @@
       "empleado": "Marcos",
       "fecha": "2025-03-01",
       "emailEmpleado": "marcos@prodandfests.com",
-      "idTarea": "A1B2C"
+      "idTarea": "A1B2C",
+      "id": "f1b1"
     },
     {
       "nombre": "Diseñar los carteles",
@@ -489,7 +528,8 @@
       "empleado": "Juan",
       "fecha": "2025-03-02",
       "emailEmpleado": "juan@prodandfests.com",
-      "idTarea": "D3E4F"
+      "idTarea": "D3E4F",
+      "id": "3d5a"
     },
     {
       "nombre": "Contactar artistas",
@@ -498,7 +538,8 @@
       "empleado": "Juan Pedro",
       "fecha": "2025-03-05",
       "emailEmpleado": "juanpedro@prodandfests.com",
-      "idTarea": "G5H6I"
+      "idTarea": "G5H6I",
+      "id": "1d14"
     },
     {
       "nombre": "Organizar logística",
@@ -507,7 +548,8 @@
       "empleado": "Alfredo",
       "fecha": "2025-03-08",
       "emailEmpleado": "alfredo@prodandfests.com",
-      "idTarea": "J7K8L"
+      "idTarea": "J7K8L",
+      "id": "b3ce"
     },
     {
       "nombre": "Vender entradas",
@@ -516,7 +558,8 @@
       "empleado": "Marcos",
       "fecha": "2025-03-10",
       "emailEmpleado": "marcos@prodandfests.com",
-      "idTarea": "M9N0O"
+      "idTarea": "M9N0O",
+      "id": "3238"
     },
     {
       "nombre": "Montar escenario",
@@ -525,7 +568,8 @@
       "empleado": "Juan Pedro",
       "fecha": "2025-03-12",
       "emailEmpleado": "juanpedro@prodandfests.com",
-      "idTarea": "P1Q2R"
+      "idTarea": "P1Q2R",
+      "id": "9670"
     },
     {
       "nombre": "Coordinar seguridad",
@@ -534,7 +578,8 @@
       "empleado": "Luis",
       "fecha": "2025-03-15",
       "emailEmpleado": "luis@prodandfests.com",
-      "idTarea": "S3T4U"
+      "idTarea": "S3T4U",
+      "id": "d259"
     },
     {
       "nombre": "Revisar presupuesto",
@@ -543,7 +588,8 @@
       "empleado": "Ana",
       "fecha": "2025-03-18",
       "emailEmpleado": "ana@prodandfests.com",
-      "idTarea": "V5W6X"
+      "idTarea": "V5W6X",
+      "id": "b49b"
     },
     {
       "nombre": "Contratar personal",
@@ -552,7 +598,8 @@
       "empleado": "Carlos",
       "fecha": "2025-03-20",
       "emailEmpleado": "carlos@prodandfests.com",
-      "idTarea": "Y7Z8A"
+      "idTarea": "Y7Z8A",
+      "id": "5c83"
     },
     {
       "nombre": "Gestionar catering",
@@ -561,7 +608,8 @@
       "empleado": "Laura",
       "fecha": "2025-03-22",
       "emailEmpleado": "laura@prodandfests.com",
-      "idTarea": "B9C0D"
+      "idTarea": "B9C0D",
+      "id": "dc58"
     },
     {
       "nombre": "Promoción en redes sociales",
@@ -570,7 +618,8 @@
       "empleado": "Rosa",
       "fecha": "2025-03-25",
       "emailEmpleado": "rosa@prodandfests.com",
-      "idTarea": "E1F2G"
+      "idTarea": "E1F2G",
+      "id": "f226"
     },
     {
       "nombre": "Gestionar acreditaciones",
@@ -579,7 +628,8 @@
       "empleado": "Pedro",
       "fecha": "2025-03-28",
       "emailEmpleado": "pedro@prodandfests.com",
-      "idTarea": "H3I4J"
+      "idTarea": "H3I4J",
+      "id": "df3a"
     },
     {
       "nombre": "Confirmar horarios",
@@ -588,7 +638,8 @@
       "empleado": "Sergio",
       "fecha": "2025-03-30",
       "emailEmpleado": "sergio@prodandfests.com",
-      "idTarea": "K5L6M"
+      "idTarea": "K5L6M",
+      "id": "9d1c"
     },
     {
       "nombre": "Inspeccionar recintos",
@@ -597,7 +648,8 @@
       "empleado": "Elena",
       "fecha": "2025-04-02",
       "emailEmpleado": "elena@prodandfests.com",
-      "idTarea": "N7O8P"
+      "idTarea": "N7O8P",
+      "id": "cc5f"
     },
     {
       "nombre": "Verificar contratos",
@@ -606,7 +658,8 @@
       "empleado": "Antonio",
       "fecha": "2025-04-05",
       "emailEmpleado": "antonio@prodandfests.com",
-      "idTarea": "Q9R0S"
+      "idTarea": "Q9R0S",
+      "id": "7731"
     },
     {
       "nombre": "Control de ingresos",
@@ -615,7 +668,8 @@
       "empleado": "Luis",
       "fecha": "2025-04-08",
       "emailEmpleado": "luis@prodandfests.com",
-      "idTarea": "T1U2V"
+      "idTarea": "T1U2V",
+      "id": "626f"
     },
     {
       "nombre": "Configurar iluminación",
@@ -624,7 +678,8 @@
       "empleado": "Marcos",
       "fecha": "2025-04-10",
       "emailEmpleado": "marcos@prodandfests.com",
-      "idTarea": "W3X4Y"
+      "idTarea": "W3X4Y",
+      "id": "68ec"
     },
     {
       "nombre": "Diseñar sitio web",
@@ -633,7 +688,8 @@
       "empleado": "Juan",
       "fecha": "2025-03-06",
       "emailEmpleado": "juan@prodandfests.com",
-      "idTarea": "Z5A6B"
+      "idTarea": "Z5A6B",
+      "id": "074c"
     },
     {
       "nombre": "Reservar transporte",
@@ -642,7 +698,8 @@
       "empleado": "Ana",
       "fecha": "2025-04-12",
       "emailEmpleado": "ana@prodandfests.com",
-      "idTarea": "C7D8E"
+      "idTarea": "C7D8E",
+      "id": "2d37"
     },
     {
       "nombre": "Realizar pruebas de sonido",
@@ -651,7 +708,8 @@
       "empleado": "Carlos",
       "fecha": "2025-04-15",
       "emailEmpleado": "carlos@prodandfests.com",
-      "idTarea": "F9G0H"
+      "idTarea": "F9G0H",
+      "id": "076b"
     }
   ],
   "empleados": [
@@ -659,124 +717,143 @@
       "nombre": "Juan Pedro",
       "correo electrónico": "juanpedro@prodandfests.com",
       "rol": "Administrador",
-      "tareas": "../html/tareas.html?empleado=Juan%20Pedro"
+      "tareas": "../html/tareas.html?empleado=Juan%20Pedro",
+      "id": "2768"
     },
     {
       "nombre": "Marcos",
       "correo electrónico": "marcos@prodandfests.com",
       "rol": "Diseñador",
-      "tareas": "../html/tareas.html?empleado=Marcos"
+      "tareas": "../html/tareas.html?empleado=Marcos",
+      "id": "9abe"
     },
     {
       "nombre": "Juan",
       "correo electrónico": "juan@prodandfests.com",
       "rol": "Programador",
-      "tareas": "../html/tareas.html?empleado=Juan"
+      "tareas": "../html/tareas.html?empleado=Juan",
+      "id": "6c4c"
     },
     {
       "nombre": "Alfredo",
       "correo electrónico": "alfredo@prodandfests.com",
       "rol": "Logística",
-      "tareas": "../html/tareas.html?empleado=Alfredo"
+      "tareas": "../html/tareas.html?empleado=Alfredo",
+      "id": "4831"
     },
     {
       "nombre": "Luis",
       "correo electrónico": "luis@prodandfests.com",
       "rol": "Seguridad",
-      "tareas": "../html/tareas.html?empleado=Luis"
+      "tareas": "../html/tareas.html?empleado=Luis",
+      "id": "971c"
     },
     {
       "nombre": "Ana",
       "correo electrónico": "ana@prodandfests.com",
       "rol": "Administrador",
-      "tareas": "../html/tareas.html?empleado=Ana"
+      "tareas": "../html/tareas.html?empleado=Ana",
+      "id": "5ac2"
     },
     {
       "nombre": "Carlos",
       "correo electrónico": "carlos@prodandfests.com",
       "rol": "Recursos Humanos",
-      "tareas": "../html/tareas.html?empleado=Carlos"
+      "tareas": "../html/tareas.html?empleado=Carlos",
+      "id": "1233"
     },
     {
       "nombre": "Laura",
       "correo electrónico": "laura@prodandfests.com",
       "rol": "Catering",
-      "tareas": "../html/tareas.html?empleado=Laura"
+      "tareas": "../html/tareas.html?empleado=Laura",
+      "id": "6f35"
     },
     {
       "nombre": "Rosa",
       "correo electrónico": "rosa@prodandfests.com",
       "rol": "Catering",
-      "tareas": "../html/tareas.html?empleado=Rosa"
+      "tareas": "../html/tareas.html?empleado=Rosa",
+      "id": "952f"
     },
     {
       "nombre": "Pedro",
       "correo electrónico": "pedro@prodandfests.com",
       "rol": "Coordinador",
-      "tareas": "../html/tareas.html?empleado=Pedro"
+      "tareas": "../html/tareas.html?empleado=Pedro",
+      "id": "1edb"
     },
     {
       "nombre": "Sergio",
       "correo electrónico": "sergio@prodandfests.com",
       "rol": "Producción",
-      "tareas": "../html/tareas.html?empleado=Sergio"
+      "tareas": "../html/tareas.html?empleado=Sergio",
+      "id": "4c79"
     },
     {
       "nombre": "Elena",
       "correo electrónico": "elena@prodandfests.com",
       "rol": "Inspección",
-      "tareas": "../html/tareas.html?empleado=Elena"
+      "tareas": "../html/tareas.html?empleado=Elena",
+      "id": "1f80"
     },
     {
       "nombre": "Antonio",
       "correo electrónico": "antonio@prodandfests.com",
       "rol": "Legal",
-      "tareas": "../html/tareas.html?empleado=Antonio"
+      "tareas": "../html/tareas.html?empleado=Antonio",
+      "id": "aa9c"
     },
     {
       "nombre": "Carmen",
       "correo electrónico": "carmen@prodandfests.com",
       "rol": "Asistente",
-      "tareas": "../html/tareas.html?empleado=Carmen"
+      "tareas": "../html/tareas.html?empleado=Carmen",
+      "id": "f41c"
     },
     {
       "nombre": "Miguel",
       "correo electrónico": "miguel@prodandfests.com",
       "rol": "Montaje",
-      "tareas": "../html/tareas.html?empleado=Miguel"
+      "tareas": "../html/tareas.html?empleado=Miguel",
+      "id": "b1c0"
     },
     {
       "nombre": "Francisco",
       "correo electrónico": "francisco@prodandfests.com",
       "rol": "Logística",
-      "tareas": "../html/tareas.html?empleado=Francisco"
+      "tareas": "../html/tareas.html?empleado=Francisco",
+      "id": "9a7a"
     },
     {
       "nombre": "José",
       "correo electrónico": "jose@prodandfests.com",
       "rol": "Supervisor",
-      "tareas": "../html/tareas.html?empleado=José"
+      "tareas": "../html/tareas.html?empleado=José",
+      "id": "ce7a"
     },
     {
       "nombre": "Jorge",
       "correo electrónico": "jorge@prodandfests.com",
       "rol": "Recursos Humanos",
-      "tareas": "../html/tareas.html?empleado=Jorge"
+      "tareas": "../html/tareas.html?empleado=Jorge",
+      "id": "a02e"
     },
     {
       "nombre": "Isabel",
       "correo electrónico": "isabel@prodandfests.com",
       "rol": "Coordinador",
-      "tareas": "../html/tareas.html?empleado=Isabel"
+      "tareas": "../html/tareas.html?empleado=Isabel",
+      "id": "77f2"
     },
     {
       "nombre": "Manuel",
       "correo electrónico": "manuel@prodandfests.com",
       "rol": "Técnico",
-      "tareas": "../html/tareas.html?empleado=Manuel"
+      "tareas": "../html/tareas.html?empleado=Manuel",
+      "id": "05fd"
     }
   ],
-
   "eventos": [
     {
       "nombre": "Boombastic Gran Canaria",
@@ -787,7 +864,8 @@
       "contacto": "josejoaquin@example.com",
       "tipo": "Festival",
       "fecha": "2025-06-15",
-      "artistas": "../html/artistas.html?evento=Boombastic%20Gran%20Canaria"
+      "artistas": "../html/artistas.html?evento=Boombastic%20Gran%20Canaria",
+      "id": "7734"
     },
     {
       "nombre": "Granca Live Fest",
@@ -798,7 +876,8 @@
       "contacto": "alberto.medina@example.com",
       "tipo": "Festival",
       "fecha": "2025-07-20",
-      "artistas": "../html/artistas.html?evento=Granca%20Live%20Fest"
+      "artistas": "../html/artistas.html?evento=Granca%20Live%20Fest",
+      "id": "1e96"
     },
     {
       "nombre": "Granca Music Stars",
@@ -809,7 +888,8 @@
       "contacto": "manuel.perez@example.com",
       "tipo": "Festival",
       "fecha": "2025-05-10",
-      "artistas": "../html/artistas.html?evento=Granca%20Music%20Stars"
+      "artistas": "../html/artistas.html?evento=Granca%20Music%20Stars",
+      "id": "6ea3"
     },
     {
       "nombre": "World Tour Gran Canaria",
@@ -820,7 +900,8 @@
       "contacto": "luis.santana@example.com",
       "tipo": "Festival",
       "fecha": "2025-08-25",
-      "artistas": "../html/artistas.html?evento=World%20Tour%20Gran%20Canaria"
+      "artistas": "../html/artistas.html?evento=World%20Tour%20Gran%20Canaria",
+      "id": "cbb7"
     },
     {
       "nombre": "ElectroBeach Party",
@@ -831,7 +912,8 @@
       "contacto": "maria.lopez@example.com",
       "tipo": "Festival",
       "fecha": "2025-06-30",
-      "artistas": "../html/artistas.html?evento=ElectroBeach%20Party"
+      "artistas": "../html/artistas.html?evento=ElectroBeach%20Party",
+      "id": "2b33"
     },
     {
       "nombre": "Jazz in the Park",
@@ -842,7 +924,8 @@
       "contacto": "carlos.ramirez@example.com",
       "tipo": "Festival",
       "fecha": "2025-04-20",
-      "artistas": "../html/artistas.html?evento=Jazz%20in%20the%20Park"
+      "artistas": "../html/artistas.html?evento=Jazz%20in%20the%20Park",
+      "id": "7a5b"
     },
     {
       "nombre": "Rock & Roll Night",
@@ -853,7 +936,8 @@
       "contacto": "isabel.martin@example.com",
       "tipo": "Festival",
       "fecha": "2025-09-15",
-      "artistas": "../html/artistas.html?evento=Rock%20&%20Roll%20Night"
+      "artistas": "../html/artistas.html?evento=Rock%20&%20Roll%20Night",
+      "id": "9a25"
     },
     {
       "nombre": "Indie Sunset Festival",
@@ -864,7 +948,8 @@
       "contacto": "juan.carlos@example.com",
       "tipo": "Festival",
       "fecha": "2025-07-05",
-      "artistas": "../html/artistas.html?evento=Indie%20Sunset%20Festival"
+      "artistas": "../html/artistas.html?evento=Indie%20Sunset%20Festival",
+      "id": "26ad"
     },
     {
       "nombre": "Pop Explosion",
@@ -875,7 +960,8 @@
       "contacto": "pedro.garcia@example.com",
       "tipo": "Festival",
       "fecha": "2025-08-01",
-      "artistas": "../html/artistas.html?evento=Pop%20Explosion"
+      "artistas": "../html/artistas.html?evento=Pop%20Explosion",
+      "id": "9e9a"
     },
     {
       "nombre": "Latin Beats Festival",
@@ -886,7 +972,8 @@
       "contacto": "sergio.torres@example.com",
       "tipo": "Festival",
       "fecha": "2025-05-25",
-      "artistas": "../html/artistas.html?evento=Latin%20Beats%20Festival"
+      "artistas": "../html/artistas.html?evento=Latin%20Beats%20Festival",
+      "id": "ac4f"
     },
     {
       "nombre": "Urban Vibes",
@@ -897,7 +984,8 @@
       "contacto": "ana.gomez@example.com",
       "tipo": "Festival",
       "fecha": "2025-06-10",
-      "artistas": "../html/artistas.html?evento=Urban%20Vibes"
+      "artistas": "../html/artistas.html?evento=Urban%20Vibes",
+      "id": "8b58"
     },
     {
       "nombre": "Classical Gala Night",
@@ -908,7 +996,8 @@
       "contacto": "manuel.lopez@example.com",
       "tipo": "Festival",
       "fecha": "2025-11-20",
-      "artistas": "../html/artistas.html?evento=Classical%20Gala%20Night"
+      "artistas": "../html/artistas.html?evento=Classical%20Gala%20Night",
+      "id": "71ed"
     },
     {
       "nombre": "Summer Reggae Fest",
@@ -919,7 +1008,8 @@
       "contacto": "carmen.delgado@example.com",
       "tipo": "Festival",
       "fecha": "2025-07-15",
-      "artistas": "../html/artistas.html?evento=Summer%20Reggae%20Fest"
+      "artistas": "../html/artistas.html?evento=Summer%20Reggae%20Fest",
+      "id": "29fa"
     },
     {
       "nombre": "Electronic Island Festival",
@@ -930,7 +1020,8 @@
       "contacto": "jorge.suarez@example.com",
       "tipo": "Festival",
       "fecha": "2025-05-18",
-      "artistas": "../html/artistas.html?evento=Electronic%20Island%20Festival"
+      "artistas": "../html/artistas.html?evento=Electronic%20Island%20Festival",
+      "id": "3201"
     },
     {
       "nombre": "The Big Fiesta",
@@ -941,7 +1032,8 @@
       "contacto": "luis.santana@example.com",
       "tipo": "Festival",
       "fecha": "2025-09-10",
-      "artistas": "../html/artistas.html?evento=The%20Big%20Fiesta"
+      "artistas": "../html/artistas.html?evento=The%20Big%20Fiesta",
+      "id": "554a"
     },
     {
       "nombre": "Night of Flamenco",
@@ -952,7 +1044,8 @@
       "contacto": "antonio.ruiz@example.com",
       "tipo": "Festival",
       "fecha": "2025-04-12",
-      "artistas": "../html/artistas.html?evento=Night%20of%20Flamenco"
+      "artistas": "../html/artistas.html?evento=Night%20of%20Flamenco",
+      "id": "680d"
     },
     {
       "nombre": "Beach Party Maspalomas",
@@ -963,7 +1056,8 @@
       "contacto": "miguel.fernandez@example.com",
       "tipo": "Festival",
       "fecha": "2025-08-12",
-      "artistas": "../html/artistas.html?evento=Beach%20Party%20Maspalomas"
+      "artistas": "../html/artistas.html?evento=Beach%20Party%20Maspalomas",
+      "id": "f5e9"
     },
     {
       "nombre": "Canary Rock Fest",
@@ -974,7 +1068,8 @@
       "contacto": "rosa.lopez@example.com",
       "tipo": "Festival",
       "fecha": "2025-06-25",
-      "artistas": "../html/artistas.html?evento=Canary%20Rock%20Fest"
+      "artistas": "../html/artistas.html?evento=Canary%20Rock%20Fest",
+      "id": "c26d"
     },
     {
       "nombre": "Sunset Jazz Evenings",
@@ -985,7 +1080,8 @@
       "contacto": "elena.navarro@example.com",
       "tipo": "Festival",
       "fecha": "2025-05-15",
-      "artistas": "../html/artistas.html?evento=Sunset%20Jazz%20Evenings"
+      "artistas": "../html/artistas.html?evento=Sunset%20Jazz%20Evenings",
+      "id": "36ef"
     },
     {
       "nombre": "Winter Wonderland Festival",
@@ -996,10 +1092,10 @@
       "contacto": "francisco.mena@example.com",
       "tipo": "Festival",
       "fecha": "2025-12-10",
-      "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival"
+      "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival",
+      "id": "b9d0"
     }
-  ]
-,
+  ],
   "usuarios": [
     {
       "nombre": "Juan Pedro",
@@ -1178,7 +1274,8 @@
       "correo": "manuel@prodandfests.com",
       "telefono": "012-345-678",
       "rol": "Técnico",
-      "password": "prueba1234-"
+      "password": "prueba1234-",
+      "id": "e995"
     }
   ],
   "index": {
@@ -1320,7 +1417,8 @@
     ],
     "especial": [
       2,
-      "recintos", "artistas"
+      "recintos",
+      "artistas"
     ],
     "placeholderSelector": "Bucar recinto",
     "fills": [
@@ -1361,7 +1459,8 @@
     ],
     "especial": [
       1,
-      "provincias", 0
+      "provincias",
+      0
     ],
     "placeholderSelector": "Bucar provincia",
     "fills": [
@@ -1407,7 +1506,8 @@
     ],
     "especial": [
       1,
-      "empleados", 0
+      "empleados",
+      0
     ],
     "placeholderSelector": "Bucar empleado",
     "fills": [
