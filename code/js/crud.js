@@ -9,19 +9,17 @@ async function changeContent(page, json) {
 
     await specialChanges(json.especial[1], json);
 
-    if (json.path[1] === "usuarios?nombre=") {
+    if (json.path[1] === "usuarios?email=") {
         await chargeUserData(json);
-    } else if (json.path[1] === "recintos?nombre=") {
+    } else if (json.path[1] === "recintos?id=") {
         await chargeEnclosureData(json);
-    } else if (json.path[1] === "artistas?nombre=") {
+    } else if (json.path[1] === "artistas?id=") {
         await chargeArtistData(json);
-    } else if (json.path[1] === "eventos?nombre=") {
+    } else if (json.path[1] === "eventos?id=") {
         await chargeEventData(json);
-    } else if (json.path[1] === "tareas?nombre=") {
+    } else if (json.path[1] === "tareas?id=") {
         await chargeTaskData(json);
     }
-
-
 }
 
 function changeTextContent(json){
@@ -38,13 +36,13 @@ function changePlaceHolders(json){
     }
 }
 
-
 function hideRows(json){
     if (json.ocultar[0] === 0) return;
     for (let i = 1; i <= json.ocultar[0]; i++){
         document.querySelector(json.ocultar[i]).style.display = "none";
     }
 }
+
 async function getData(page){
     const url = "http://localhost:3000/" + page;
     let json;
@@ -61,7 +59,6 @@ async function getData(page){
     }
     return json;
 }
-
 
 
 async function specialChanges(page, json) {
@@ -136,7 +133,6 @@ async function specialChanges(page, json) {
 }
 
 
-
 async function chargeUserData(json) {
     try {
         let name;
@@ -150,7 +146,8 @@ async function chargeUserData(json) {
 
         } else{
 
-            name = getUrlName('empleado');
+            name = getUrlName('email');
+            console.log(name);
 
 
         }
@@ -178,7 +175,7 @@ async function chargeEnclosureData(json){
         let name;
 
 
-        name = getUrlName('recinto');
+        name = getUrlName('id');
 
         let newJson = await getData(json.path[1]+name);
 
@@ -240,7 +237,7 @@ async function chargeArtistData(json){
     try {
         let name;
 
-        name = getUrlName('artista');
+        name = getUrlName('id');
 
         let newJson = await getData(json.path[1]+name);
 
@@ -262,17 +259,24 @@ async function chargeEventData(json){
     try {
         let name;
 
-        name = getUrlName('evento');
+        name = getUrlName('id');
+
+
 
         let newJson = await getData(json.path[1]+name);
 
+        let nombre = newJson[0].nombre
+
         let newJson2 = await getData("artistas");
+
 
         for (let i in newJson2) {
 
+
             for (let j = 0; j < newJson2[i].eventos.length; j++) {
 
-                if(newJson2[i].eventos[j] === name){
+                if(newJson2[i].eventos[j] === nombre){
+                    console.log(newJson2[i].eventos[j]);
                     let selectArtists = document.getElementById("new-select");
                     if (!selectArtists) return;
 
@@ -388,11 +392,12 @@ async function chargeEventData(json){
 async function chargeTaskData(json){
 
     try {
-        let name;
+        let id;
 
-        name = getUrlName('tarea');
+        id = getUrlName('id');
 
-        let newJson = await getData(json.path[1]+name);
+
+        let newJson = await getData(json.path[1]+id);
 
         let n = 0;
 
@@ -420,7 +425,7 @@ async function chargeTaskData(json){
                 } else {
                     console.warn("No se encontró el select con ID 'group'");
                 }
-            } else if (n === 6) {
+            } else if (n === 7) {
                 document.getElementById(json.fills[4]).value = newJson[0][i];
             }
 

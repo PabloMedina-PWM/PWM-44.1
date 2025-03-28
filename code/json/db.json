@@ -1344,7 +1344,7 @@
     ],
     "path": [
       0,
-      "artistas?nombre="
+      "artistas?id="
     ]
   },
   "crud_empleado": {
@@ -1384,7 +1384,7 @@
     ],
     "path": [
       0,
-      "usuarios?nombre="
+      "usuarios?email="
     ]
   },
   "crud_evento": {
@@ -1429,7 +1429,7 @@
     ],
     "path": [
       0,
-      "eventos?nombre="
+      "eventos?id="
     ]
   },
   "crud_recinto": {
@@ -1472,7 +1472,7 @@
     ],
     "path": [
       0,
-      "recintos?nombre="
+      "recintos?id="
     ]
   },
   "crud_tarea": {
@@ -1519,7 +1519,7 @@
     ],
     "path": [
       0,
-      "tareas?nombre="
+      "tareas?id="
     ]
   },
   "cuenta_usuario": {
@@ -1560,7 +1560,7 @@
     ],
     "path": [
       "miperfil",
-      "usuarios?nombre="
+      "usuarios?id="
     ]
   },
   "provincias": {
