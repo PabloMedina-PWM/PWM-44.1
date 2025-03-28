@@ -9,7 +9,7 @@ async function changeContent(page, json) {
 
     await specialChanges(json.especial[1], json);
 
-    if (json.path[1] === "usuarios?email=") {
+    if (json.path[1] === "usuarios?correo=") {
         await chargeUserData(json);
     } else if (json.path[1] === "recintos?id=") {
         await chargeEnclosureData(json);
@@ -142,17 +142,18 @@ async function chargeUserData(json) {
             let userDataString = sessionStorage.getItem("currentUser");
             let userData = JSON.parse(userDataString);
             let userId = Object.keys(userData)[0]; // Obtiene la clave "5"
-            name = userData[userId].nombre; // Obtiene "Ana"
+            name = userData[userId].correo; // Obtiene "Ana"
 
         } else{
 
             name = getUrlName('email');
-            console.log(name);
-
 
         }
 
+
         let newJson = await getData(json.path[1]+name);
+
+
 
         if (newJson.length > 0) {
             let n = 0;// Verifica que haya datos antes de acceder a json[0]

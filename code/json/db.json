@@ -1384,7 +1384,7 @@
     ],
     "path": [
       0,
-      "usuarios?email="
+      "usuarios?correo="
     ]
   },
   "crud_evento": {
@@ -1420,7 +1420,7 @@
       "recintos",
       "artistas"
     ],
-    "placeholderSelector": "Bucar recinto",
+    "placeholderSelector": "Buscar recinto",
     "fills": [
       "name",
       "grupo",
@@ -1560,7 +1560,7 @@
     ],
     "path": [
       "miperfil",
-      "usuarios?id="
+      "usuarios?correo="
     ]
   },
   "provincias": {
