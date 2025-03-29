@@ -159,10 +159,10 @@ async function specialChanges(page, json) {
 async function chargeUserData(json) {
     try {
         let name;
-
+        console.log(json.path[0]);
         if (json.path[0] === "miperfil"){
 
-            let userDataString = sessionStorage.getItem("currentUser");
+            let userDataString = localStorage.getItem("currentUser");
             let userData = JSON.parse(userDataString);
             let userId = Object.keys(userData)[0]; // Obtiene la clave "5"
             name = userData[userId].correo; // Obtiene "Ana"
@@ -174,13 +174,65 @@ async function chargeUserData(json) {
         }
 
 
+
+
         let newJson = await getData(json.path[1]+name);
 
+        document.querySelector(".button").addEventListener("click", async (event) => {
+            event.preventDefault();
+            let index = 0;
+            let campos = ["nombre", "apellidos", "teléfono", "email", "contraseña", "rol"];
+            let res = {};
+            document.querySelectorAll("input").forEach(input => {
+                if (input.parentElement.style.display !== "none") {
+                    res[campos[index]] = input.value;
+                    index += 1;
+                }
+            });
+            console.log(res);
 
+            let resultado = {
+                "nombre": res.nombre,
+                "apellido": res.apellidos,
+                "correo": res.email,
+                "teléfono": res.teléfono,
+                "rol": res.rol,
+                "password": res.contraseña
+            }
 
+            let resultadoEmpleado = {
+                "nombre": res.nombre + " " + res.apellidos,
+                "correo electrónico": res.email,
+                "rol": res.rol,
+                "tareas": "../html/tareas.html?empleado=" + encodeURIComponent(res.nombre + " " + res.apellidos),
+            }
+            let idEmpleado;
+            getData("empleados").then((data) => {
+                idEmpleado = data.filter(item => item.nombre === res.nombre)[0]?.id;
+                if (newJson.length > 0 && newJson[0]?.id !== undefined && name !== null) {
+                    let url = "usuarios/"
+                    url += newJson[0].id;
+                    updateData(url, resultado);
+                    let url2 = "empleados/" + idEmpleado;
+                    updateData(url2, resultadoEmpleado);
+                } else {
+                    updateData("usuarios", resultado);
+                    updateData("empleados", resultadoEmpleado);
+                }
+            });
+        });
+
+        document.getElementById("delete-icon").addEventListener("click", function (event) {
+            event.preventDefault();
+            let url = json.titulo.toLowerCase() + "s/" + newJson[0].id;
+            removeData(url);
+        });
+
+        if (!name) return;
         if (newJson.length > 0) {
             let n = 0;// Verifica que haya datos antes de acceder a json[0]
             for (let i in newJson[0]) { // Verifica que haya datos antes de acceder a json[0]
+                if (i === "id") continue;
                 console.log(newJson[0][i]);
                 document.getElementById(json.fills[n]).value = newJson[0][i];
                 n++;
@@ -369,7 +421,7 @@ async function chargeEventData(json){
 
         let newJson = await getData(json.path[1]+name);
 
-        let nombre = newJson[0].nombre
+        let nombre = newJson[0]?.nombre
 
         let newJson2 = await getData("artistas");
 
@@ -397,7 +449,7 @@ async function chargeEventData(json){
 
             let selectorTipo = document.getElementById("province");
             let tipo = selectorTipo[selectorTipo.selectedIndex].innerText;
-            let urlArtistas = "../html/artistas.html?evento=" + encodeURIComponent(newJson[0].nombre);
+            let urlArtistas = "../html/artistas.html?evento=" + encodeURIComponent(res.nombre);
             let resultado = {
                 "nombre": res.nombre,
                 "recinto": {"nombre": recinto, "provincia": provincia},
@@ -436,7 +488,7 @@ async function chargeEventData(json){
                 }
             }
 
-            if (newJson.length > 0 && newJson[0].id !== undefined) {
+            if (newJson.length > 0 && newJson[0]?.id !== undefined) {
                 let url = "eventos/"
                 url += newJson[0].id;
                 updateData(url, resultado);
@@ -450,6 +502,7 @@ async function chargeEventData(json){
             let url = json.titulo.toLowerCase() + "s/" + newJson[0].id;
             removeData(url);
         });
+        if (!name) return;
 
         for (let i in newJson2) {
             for (let j = 0; j < newJson2[i].eventos.length; j++) {
@@ -487,6 +540,7 @@ async function chargeEventData(json){
 
         let n = 0;
         for (let i in newJson[0]) {
+            if (i === "id") continue;
             if (n === 1) {
                 for (let j in newJson[0][i]) {
                     if (n === 1) {

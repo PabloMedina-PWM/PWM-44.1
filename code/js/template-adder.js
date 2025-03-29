@@ -12,36 +12,8 @@ function loadTemplate(fileName, id, callback) {
     });
 }
 
-/*async function init(route, page) {
-    if (page !== "index" && sessionStorage.getItem("currentUser") === null) {
-        window.location.href = "../html/index.html";
-    }
-    const url = "http://localhost:3000/" + page;
-    let json;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error("Error al obtener los datos");
-        }
-        json = await response.json();
-    } catch (error) {
-        console.error("Hubo un error:", error);
-        return;
-    }
-
-    loadTemplate('../templates/header.html', 'main_header', () => {
-        loadTemplate(route.toString(), 'main_section', () => {
-            loadTemplate('../templates/footer.html', 'main_footer', () => {
-                changeContent(page, json);
-            });
-        });
-    });
-}
-*/
-
 async function init(route, page) {
-    if (page !== "index" && sessionStorage.getItem("currentUser") === null) {
+    if (page !== "index" && localStorage.getItem("currentUser") === null) {
         window.location.href = "../html/index.html";
     }
     const url = "http://localhost:3000/" + page;

@@ -8,7 +8,7 @@ async function changeContent(page, json) {
 }
 
 async function obtenerTareasUsuario() {
-    let userDataString = sessionStorage.getItem("currentUser");
+    let userDataString = localStorage.getItem("currentUser");
     if (userDataString) {
         let userData = JSON.parse(userDataString);
         let accountKey = Object.keys(userData)[0];
@@ -34,7 +34,7 @@ async function obtenerTareasUsuario() {
             }
         }
     } else {
-        console.error("No se encontró el usuario en sessionStorage.");
+        console.error("No se encontró el usuario en localStorage.");
     }
 }
 

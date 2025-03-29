@@ -409,7 +409,8 @@
       "teléfono": "123789456",
       "email": "the.weeknd@example.com",
       "eventos": [
-        "Granca Music Stars"
+        "Granca Music Stars",
+        "Jazz in the Park"
       ],
       "id": "191f"
     },
@@ -442,7 +443,8 @@
       "teléfono": "897685489",
       "email": "bruno.mars@example.com",
       "eventos": [
-        "Granca Live Fest"
+        "Granca Live Fest",
+        "Garaje Concert"
       ],
       "id": "6eec"
     },
@@ -508,7 +510,9 @@
       "grupo": "BNMP",
       "teléfono": "922383486",
       "email": "cruzzi@mecen.es",
-      "eventos": []
+      "eventos": [
+        "Garaje Concert"
+      ]
     }
   ],
   "tareas": [
@@ -536,7 +540,7 @@
       "nombre": "Organizar logística",
       "descripcion": "Coordinar transporte y alojamiento de artistas",
       "prioridad": "Media",
-      "empleado": "Alfredo",
+      "empleado": "Alfredo Martínez",
       "fecha": "2025-03-08",
       "emailEmpleado": "alfredo@prodandfests.com",
       "idTarea": "J7K8L",
@@ -701,9 +705,6 @@
       "emailEmpleado": "carlos@prodandfests.com",
       "idTarea": "F9G0H",
       "id": "076b"
-    },
-    {
-      "id": "975b"
     }
   ],
   "empleados": [
@@ -729,10 +730,10 @@
       "id": "6c4c"
     },
     {
-      "nombre": "Alfredo",
+      "nombre": "Alfredo Martínez",
       "correo electrónico": "alfredo@prodandfests.com",
-      "rol": "Logística",
-      "tareas": "../html/tareas.html?empleado=Alfredo",
+      "rol": "Administrador",
+      "tareas": "../html/tareas.html?empleado=Alfredo%20Mart%C3%ADnez",
       "id": "4831"
     },
     {
@@ -846,6 +847,13 @@
       "rol": "Técnico",
       "tareas": "../html/tareas.html?empleado=Manuel",
       "id": "05fd"
+    },
+    {
+      "id": "d9c0",
+      "nombre": "Kevin Falcón",
+      "correo electrónico": "kevin@prodandfests.com",
+      "rol": "Administrador",
+      "tareas": "../html/tareas.html?empleado=Kevin%20Falc%C3%B3n"
     }
   ],
   "eventos": [
@@ -1088,6 +1096,18 @@
       "fecha": "2025-12-10",
       "artistas": "../html/artistas.html?evento=Winter%20Wonderland%20Festival",
       "id": "b9d0"
+    },
+    {
+      "id": "6743",
+      "nombre": "Garaje Concert",
+      "recinto": {
+        "nombre": "El Garaje",
+        "provincia": "Las Palmas"
+      },
+      "contacto": "medina@example.com",
+      "tipo": "Concierto único",
+      "fecha": "2025-03-30",
+      "artistas": "../html/artistas.html?evento=Garaje%20Concert"
     }
   ],
   "usuarios": [
@@ -1123,9 +1143,10 @@
       "apellido": "Martínez",
       "correo": "alfredo@prodandfests.com",
       "telefono": "456-789-012",
-      "rol": "Logística",
+      "rol": "Administrador",
       "password": "prueba1234-",
-      "id": "bf57"
+      "id": "bf57",
+      "teléfono": "456-789-012"
     },
     {
       "nombre": "Luis",
@@ -1270,6 +1291,24 @@
       "rol": "Técnico",
       "password": "prueba1234-",
       "id": "e995"
+    },
+    {
+      "id": "6748",
+      "nombre": "k",
+      "apellido": "k",
+      "teléfono": "k",
+      "rol": "k",
+      "password": "k",
+      "correo": "k"
+    },
+    {
+      "id": "b4f0",
+      "nombre": "Kevin",
+      "apellido": "Falcón",
+      "correo": "kevin@prodandfests.com",
+      "teléfono": "789465138",
+      "rol": "Administrador",
+      "password": "prueba1234-"
     }
   ],
   "index": {

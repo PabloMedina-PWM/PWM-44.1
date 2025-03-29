@@ -45,7 +45,7 @@ h2 {
     margin-top: 3rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 70%;
     padding: 1.2rem;
 }

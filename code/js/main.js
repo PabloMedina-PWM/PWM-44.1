@@ -1,5 +1,5 @@
 async function changeContent(page, json) {
-    if (sessionStorage.getItem("currentUser") !== null) {
+    if (localStorage.getItem("currentUser") !== null) {
         window.location.href = "../html/dashboard.html";
         return
     }
@@ -15,10 +15,13 @@ async function changeContent(page, json) {
     input2.style.fontSize = '2rem';
     input2.style.textAlign = 'left';
     document.getElementById("logoPhoto").href = "";
-    document.querySelectorAll(".unauthhide").forEach((element) => {
-        element.style.display = 'none';
-    });
     let currentPage = window.location.pathname;
+
+    if (localStorage.getItem("currentUser") === null) {
+        document.querySelectorAll(".unauthhide").forEach(element => {
+            element.style.display = "none";
+        });
+    }
 
     if (!currentPage.includes("index.html")) {
         document.querySelector(".link_password").style.display = "none";
@@ -77,7 +80,7 @@ async function login(email, password) {
         if (email === datos[account].correo && password === datos[account].password) {
             let datosUsuario = datos[account];
             datosUsuario.password = "";
-            sessionStorage.setItem("currentUser", JSON.stringify({[account]:datos[account]}));
+            localStorage.setItem("currentUser", JSON.stringify({[account]:datos[account]}));
             window.location.href = "../html/dashboard.html";
             return
         }
