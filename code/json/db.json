@@ -1496,12 +1496,11 @@
       "Prioridad"
     ],
     "ocultar": [
-      6,
+      5,
       ".c-phone",
       ".c-password",
       ".c-email",
       ".c-province",
-      ".date-div",
       ".c-new-selector"
     ],
     "especial": [

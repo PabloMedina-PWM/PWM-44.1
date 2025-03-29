@@ -428,6 +428,23 @@ async function chargeTaskData(json){
                 }
             } else if (n === 7) {
                 document.getElementById(json.fills[4]).value = newJson[0][i];
+            } else if (n===4){
+                let select = document.getElementById("fecha"); // El ID del input de tipo date
+                if (select) {
+                    let found = false;
+                    let targetDate = newJson[0][i];  // Fecha en formato 'yyyy-mm-dd' (o del array en tu estructura)
+
+                    console.log("Comparando:", select.value, "con", targetDate);
+                    select.value = targetDate;  // Seleccionamos la fecha
+                    found = true;
+
+
+                    if (!found) {
+                        console.warn("No se encontró la fecha en el input:", targetDate);
+                    }
+                } else {
+                    console.warn("No se encontró el input con ID 'fecha'");
+                }
             }
 
             n++;
