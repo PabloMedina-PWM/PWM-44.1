@@ -587,21 +587,27 @@ async function chargeTaskData(json){
                     index += 1;
                 }
             });
-
-            let resultado = {
-                "nombre": res.nombre,
-                "descripcion": res.descripcion,
-                "prioridad": res.prioridad,
-                "empleado": document.getElementById("group").value
-            }
-            if (newJson.length > 0 && newJson[0].id !== undefined) {
-                let url = "tareas/"
-                url += newJson[0].id;
-                updateData(url, resultado);
-            } else {
-                updateData("tareas", resultado);
-            }
-
+            let selEmpleado = document.getElementById("group");
+            let empleado = selEmpleado[selEmpleado.selectedIndex].innerText;
+            let correo;
+            getData("empleados?nombre="+empleado).then((data) => {
+                correo = data[0]["correo electrónico"];
+                let resultado = {
+                    "nombre": res.nombre,
+                    "descripcion": res.descripcion,
+                    "prioridad": res.prioridad,
+                    "empleado": empleado,
+                    "fecha": document.getElementById("fecha").value,
+                    "emailEmpleado": correo
+                }
+                if (newJson.length > 0 && newJson[0].id !== undefined) {
+                    let url = "tareas/"
+                    url += newJson[0].id;
+                    updateData(url, resultado);
+                } else {
+                    updateData("tareas", resultado);
+                }
+            });
         });
 
         document.getElementById("delete-icon").addEventListener("click", function (event) {
@@ -610,7 +616,7 @@ async function chargeTaskData(json){
             removeData(url);
         });
 
-        let n = 0;
+        /*let n = 0;
 
         for (let i in newJson[0]) {
             if (n <= 2) {
@@ -659,7 +665,54 @@ async function chargeTaskData(json){
 
             n++;
 
+        }*/
+
+        let n = 0;
+
+// Iterar sobre las propiedades del objeto
+        for (let key in newJson[0]) {
+            if (key === "id") {
+                console.log("Procesando el campo 'id':", newJson[0][key]);
+                // Aquí puedes manejar el campo "id" si es necesario
+                continue; // Saltar al siguiente campo después de procesar "id"
+            }
+
+            if (n <= 2) {
+                console.log(newJson[0][key]);
+                document.getElementById(json.fills[n]).value = newJson[0][key];
+            } else if (n === 3) {
+                let select = document.getElementById("group");
+                if (select) {
+                    let found = false;
+                    for (let option of select.options) {
+                        console.log("Comparando:", option.text, "con", newJson[0][key]);
+                        if (option.text.trim().toLowerCase() === newJson[0][key].toString().trim().toLowerCase()) {
+                            option.selected = true;
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        console.warn("No se encontró la opción en el select:", newJson[0][key]);
+                    }
+                } else {
+                    console.warn("No se encontró el select con ID 'group'");
+                }
+            } else if (n === 4) {
+                let dateInput = document.getElementById("fecha");
+                if (dateInput) {
+                    console.log("Estableciendo la fecha:", newJson[0][key]);
+                    dateInput.value = newJson[0][key];
+                } else {
+                    console.warn("No se encontró el input con ID 'fecha'");
+                }
+            } else if (n === 7) {
+                document.getElementById(json.fills[4]).value = newJson[0][key];
+            }
+
+            n++;
         }
+        document.getElementById("n-task").value = newJson[0]["id"];
 
     } catch (error) {
         console.error("Error al cargar los datos del usuario:", error);
@@ -688,7 +741,6 @@ function updateData(place, data) {
         met = 'POST';
     }
     let url = "http://localhost:3000/" + place;
-
     fetch(url, {
         method: met,
         headers: {'Content-Type': 'application/json'},
@@ -698,6 +750,7 @@ function updateData(place, data) {
     }).catch(function (error) {
         console.error("Error al cargar los datos: ", error);
     });
+
 }
 
 

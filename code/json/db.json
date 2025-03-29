@@ -152,7 +152,7 @@
         "nombre": "Siete Palmas",
         "provincia": "Las Palmas"
       },
-      "capacidad": 32000,
+      "capacidad": "31000",
       "contacto": "luissantana@example.com",
       "id": "03a5"
     },
@@ -275,6 +275,16 @@
       "capacidad": 2000,
       "contacto": "miguelfernandez@example.com",
       "id": "8f56"
+    },
+    {
+      "id": "3616",
+      "nombre": "El Garaje",
+      "direccion": {
+        "nombre": "C/ Medina",
+        "provincia": "Las Palmas"
+      },
+      "capacidad": "150",
+      "contacto": "medina@example.com"
     }
   ],
   "artistas": [
@@ -665,10 +675,10 @@
     {
       "nombre": "Diseñar sitio web",
       "descripcion": "Actualizar la web oficial del evento",
-      "prioridad": "Alta",
-      "empleado": "Juan",
+      "prioridad": "Muy alta",
+      "empleado": "Jorge",
       "fecha": "2025-03-06",
-      "emailEmpleado": "juan@prodandfests.com",
+      "emailEmpleado": "jorge@prodandfests.com",
       "idTarea": "Z5A6B",
       "id": "074c"
     },
@@ -691,6 +701,9 @@
       "emailEmpleado": "carlos@prodandfests.com",
       "idTarea": "F9G0H",
       "id": "076b"
+    },
+    {
+      "id": "975b"
     }
   ],
   "empleados": [
@@ -1011,7 +1024,7 @@
         "provincia": "Las Palmas"
       },
       "contacto": "luis.santana@example.com",
-      "tipo": "Festival",
+      "tipo": "Concierto único",
       "fecha": "2025-09-10",
       "artistas": "../html/artistas.html?evento=The%20Big%20Fiesta",
       "id": "554a"
