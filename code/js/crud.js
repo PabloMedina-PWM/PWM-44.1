@@ -661,6 +661,12 @@ async function chargeTaskData(json){
 
         }
 
+    } catch (error) {
+        console.error("Error al cargar los datos del usuario:", error);
+    }
+
+}
+
 function removeData(place) {
     let url = "http://localhost:3000/" + place;
     fetch (url, {
@@ -672,21 +678,6 @@ function removeData(place) {
         console.error("Error al cargar los datos: ", error);
     });
 }
-    } catch (error) {
-        console.error("Error al cargar los datos del usuario:", error);
-    }
-
-}
-
-
-
-}
-
-
-function getUrlName(name){
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name); // Retorna el valor de 'empleado' en la URL
-}
 
 function updateData(place, data) {
     let route = place.split("/");
@@ -697,7 +688,8 @@ function updateData(place, data) {
         met = 'POST';
     }
     let url = "http://localhost:3000/" + place;
-    fetch (url, {
+
+    fetch(url, {
         method: met,
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
@@ -706,5 +698,12 @@ function updateData(place, data) {
     }).catch(function (error) {
         console.error("Error al cargar los datos: ", error);
     });
+}
+
+
+function getUrlName(name){
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name); // Retorna el valor de 'empleado' en la URL
+}
 
 
