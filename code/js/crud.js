@@ -1,3 +1,26 @@
+document.addEventListener("DOMContentLoaded", async function () {
+    if (window.location.href.includes("crud_evento")) {
+        await init('../templates/crud.html','crud_evento');
+        const newSelectElement = document.getElementById("new-select");
+        if (newSelectElement) {
+            // Crear la instancia de Choices
+            const myChoices = new Choices(newSelectElement, {
+                removeItemButton: true,
+                searchEnabled: true,
+                placeholder: true,
+                placeholderValue: "Selecciona los artistas...",
+                noResultsText: "No se encontraron opciones",
+                noChoicesText: "No hay más opciones disponibles",
+                itemSelectText: "Presiona para seleccionar"
+            });
+
+            // **GUARDAR** la instancia en el propio elemento
+            newSelectElement.choicesInstance = myChoices;
+        } else {
+            console.error("El elemento select con id 'new-select' no existe.");
+        }
+    }
+});
 
 async function changeContent(page, json) {
 
@@ -171,19 +194,58 @@ async function chargeUserData(json) {
 }
 
 async function chargeEnclosureData(json){
-
     try {
         let name;
-
-
         name = getUrlName('id');
 
         let newJson = await getData(json.path[1]+name);
 
+        document.querySelector(".button").addEventListener("click", async (event) => {
+            event.preventDefault();
+            let index = 0;
+            let campos = ["nombre", "direccion", "contacto", "capacidad"];
+            let res = {};
+            document.querySelectorAll("input").forEach(input => {
+                if (input.parentElement.style.display !== "none") {
+                    if (campos[index] !== "direccion") {
+                        res[campos[index]] = input.value;
+                    } else {
+                        let provinciaIndex = document.getElementById("group").selectedIndex;
+                        let provincia = document.getElementById("group").options[provinciaIndex].innerText;
+
+                        res[campos[index]] = {
+                            "nombre": input.value,
+                            "provincia": provincia
+                        }
+                    }
+                    index += 1;
+                }
+            });
+            let resultado = {
+                "nombre": res.nombre,
+                "direccion": res.direccion,
+                "capacidad": res.capacidad,
+                "contacto": res.contacto
+            }
+            if (newJson.length > 0 && newJson[0].id !== undefined) {
+                let url = "recintos/"
+                url += newJson[0].id;
+                updateData(url, resultado);
+            } else {
+                updateData("recintos", resultado);
+            }
+        });
+
+        document.getElementById("delete-icon").addEventListener("click", function (event) {
+            event.preventDefault();
+            let url = json.titulo.toLowerCase() + "s/" + newJson[0].id;
+            removeData(url);
+        });
 
 
         let n = 0;
         for (let i in newJson[0]) {
+            if (i === "id") continue;
 
             if (n === 1) {
                 for (let j in newJson[0][i]) {
@@ -230,7 +292,6 @@ async function chargeEnclosureData(json){
     } catch (error) {
         console.error("Error al cargar los datos del usuario:", error);
     }
-
 }
 
 async function chargeArtistData(json){
@@ -242,8 +303,50 @@ async function chargeArtistData(json){
 
         let newJson = await getData(json.path[1]+name);
 
+        document.querySelector(".button").addEventListener("click", async (event) => {
+            event.preventDefault();
+            let index = 0;
+            let campos = ["nombre", "dirección", "teléfono", "email"];
+            let res = {};
+            document.querySelectorAll("input").forEach(input => {
+                if (input.parentElement.style.display !== "none") {
+                    if (index >= campos.length) {
+                        res["grupo"] = input.value;
+                    } else {
+                        res[campos[index]] = input.value;
+                    }
+
+                    index += 1;
+                }
+            });
+
+            let resultado = {
+                "nombre": res.nombre,
+                "dirección": res.dirección,
+                "grupo": res.grupo,
+                "teléfono": res.teléfono,
+                "email": res.email,
+                "eventos": []
+            }
+            if (newJson.length > 0 && newJson[0].id !== undefined) {
+                let url = "artistas/"
+                url += newJson[0].id;
+                updateData(url, resultado);
+            } else {
+                updateData("artistas", resultado);
+            }
+
+        });
+
+        document.getElementById("delete-icon").addEventListener("click", function (event) {
+            event.preventDefault();
+            let url = json.titulo.toLowerCase() + "s/" + newJson[0].id;
+            removeData(url);
+        });
+
         let n = 0;
         for (let i in newJson[0]) {
+            if (i === "id") continue;
             console.log(newJson[0][i]);
             document.getElementById(json.fills[n]).value = newJson[0][i];
             n++;
@@ -270,10 +373,85 @@ async function chargeEventData(json){
 
         let newJson2 = await getData("artistas");
 
+        document.querySelector(".button").addEventListener("click", async (event) => {
+            event.preventDefault();
+            let index = 0;
+            let campos = ["nombre", "contacto", "fecha", "recinto", "tipo"];
+            let res = {};
+            document.querySelectorAll("input").forEach(input => {
+                if (input.parentElement.style.display !== "none") {
+                    res[campos[index]] = input.value;
+
+                    index += 1;
+                }
+            });
+            let recinto = document.getElementById("group")[document.getElementById("group").selectedIndex].innerText;
+            let recintos = await getData("recintos");
+            let provincia = "";
+            for (let data in recintos) {
+                if (recintos[data].nombre === recinto) {
+                    provincia = recintos[data].direccion.provincia;
+                    break;
+                }
+            }
+
+            let selectorTipo = document.getElementById("province");
+            let tipo = selectorTipo[selectorTipo.selectedIndex].innerText;
+            let urlArtistas = "../html/artistas.html?evento=" + encodeURIComponent(newJson[0].nombre);
+            let resultado = {
+                "nombre": res.nombre,
+                "recinto": {"nombre": recinto, "provincia": provincia},
+                "contacto": res.contacto,
+                "tipo": tipo,
+                "fecha": res.fecha,
+                "artistas": urlArtistas
+            }
+            let artistas = document.querySelector(".choices__input").choicesInstance.getValue();
+            for (const choice of artistas) {
+                let url = "artistas?nombre=" + encodeURIComponent(choice.label);
+                getData(url).then(artista => {
+                    let eventosUpdate = artista[0].eventos;
+                    if (!(eventosUpdate.includes(resultado.nombre))) {
+                        eventosUpdate.push(resultado.nombre);
+                    }
+                    updateData("artistas/" + artista[0].id, {
+                        "eventos" : eventosUpdate
+                    });
+                });
+            }
+            for (let artist in newJson2) {
+                if (newJson2[artist].eventos.includes(resultado.nombre)) {
+                    let borrar = true;
+                    for (const artista of artistas) {
+                        if (artista.label === newJson2[artist].nombre) {
+                            borrar = false;
+                        }
+                    }
+                    if (borrar) {
+                        const eventosUpdate = newJson2[artist].eventos.filter(item => item !== resultado.nombre);
+                        updateData("artistas/" + newJson2[artist].id, {
+                            "eventos" : eventosUpdate
+                        });
+                    }
+                }
+            }
+
+            if (newJson.length > 0 && newJson[0].id !== undefined) {
+                let url = "eventos/"
+                url += newJson[0].id;
+                updateData(url, resultado);
+            } else {
+                updateData("eventos", resultado);
+            }
+        });
+
+        document.getElementById("delete-icon").addEventListener("click", function (event) {
+            event.preventDefault();
+            let url = json.titulo.toLowerCase() + "s/" + newJson[0].id;
+            removeData(url);
+        });
 
         for (let i in newJson2) {
-
-
             for (let j = 0; j < newJson2[i].eventos.length; j++) {
 
                 if(newJson2[i].eventos[j] === nombre){
@@ -386,8 +564,6 @@ async function chargeEventData(json){
     }
 
     return true;
-
-
 }
 
 async function chargeTaskData(json){
@@ -399,6 +575,40 @@ async function chargeTaskData(json){
 
 
         let newJson = await getData(json.path[1]+id);
+
+        document.querySelector(".button").addEventListener("click", async (event) => {
+            event.preventDefault();
+            let index = 0;
+            let campos = ["nombre", "descripcion", "prioridad"];
+            let res = {};
+            document.querySelectorAll("input").forEach(input => {
+                if (input.parentElement.style.display !== "none" && input.id !== "n-task") {
+                    res[campos[index]] = input.value;
+                    index += 1;
+                }
+            });
+
+            let resultado = {
+                "nombre": res.nombre,
+                "descripcion": res.descripcion,
+                "prioridad": res.prioridad,
+                "empleado": document.getElementById("group").value
+            }
+            if (newJson.length > 0 && newJson[0].id !== undefined) {
+                let url = "tareas/"
+                url += newJson[0].id;
+                updateData(url, resultado);
+            } else {
+                updateData("tareas", resultado);
+            }
+
+        });
+
+        document.getElementById("delete-icon").addEventListener("click", function (event) {
+            event.preventDefault();
+            let url = json.titulo.toLowerCase() + "s/" + newJson[0].id;
+            removeData(url);
+        });
 
         let n = 0;
 
@@ -451,10 +661,22 @@ async function chargeTaskData(json){
 
         }
 
+function removeData(place) {
+    let url = "http://localhost:3000/" + place;
+    fetch (url, {
+        method: "DELETE",
+        headers: {'Content-Type': 'application/json'},
+    }).then(function (response) {
+        return response.json();
+    }).catch(function (error) {
+        console.error("Error al cargar los datos: ", error);
+    });
+}
     } catch (error) {
         console.error("Error al cargar los datos del usuario:", error);
     }
 
+}
 
 
 
@@ -466,5 +688,23 @@ function getUrlName(name){
     return urlParams.get(name); // Retorna el valor de 'empleado' en la URL
 }
 
+function updateData(place, data) {
+    let route = place.split("/");
+    let met;
+    if (route.length > 1) {
+        met = 'PATCH';
+    } else {
+        met = 'POST';
+    }
+    let url = "http://localhost:3000/" + place;
+    fetch (url, {
+        method: met,
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    }).then(function (response) {
+        return response.json();
+    }).catch(function (error) {
+        console.error("Error al cargar los datos: ", error);
+    });
 
 

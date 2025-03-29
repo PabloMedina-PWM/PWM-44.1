@@ -102,19 +102,9 @@
         "nombre": "La Feria",
         "provincia": "Las Palmas"
       },
-      "capacidad": 2000,
+      "capacidad": "20000",
       "contacto": "josealfredo@example.com",
       "id": "46ba"
-    },
-    {
-      "nombre": "Gran Canaria Arena",
-      "direccion": {
-        "nombre": "Fondos de Segura",
-        "provincia": "Las Palmas"
-      },
-      "capacidad": 15000,
-      "contacto": "pepe@example.com",
-      "id": "c7b3"
     },
     {
       "nombre": "Estadio Insular",
@@ -122,8 +112,8 @@
         "nombre": "Fondos de Segura",
         "provincia": "Las Palmas"
       },
-      "capacidad": 15000,
-      "contacto": "pepe@example.com",
+      "capacidad": "15000",
+      "contacto": "juanjose@example.com",
       "id": "3926"
     },
     {
@@ -283,7 +273,8 @@
         "provincia": "Las Palmas"
       },
       "capacidad": 2000,
-      "contacto": "miguelfernandez@example.com"
+      "contacto": "miguelfernandez@example.com",
+      "id": "8f56"
     }
   ],
   "artistas": [
@@ -298,17 +289,6 @@
         "Rock & Roll Night"
       ],
       "id": "96f3"
-    },
-    {
-      "nombre": "Cruz Cafuné",
-      "dirección": "Tacoronte",
-      "grupo": "Locoplaya",
-      "teléfono": "987654321",
-      "email": "cruz.cafune@example.com",
-      "eventos": [
-        "Boombastic Gran Canaria"
-      ],
-      "id": "b84a"
     },
     {
       "nombre": "Fernando Olvera",
@@ -329,7 +309,8 @@
       "email": "rosalia@example.com",
       "eventos": [
         "Granca Music Stars",
-        "Boombastic Gran Canaria"
+        "Boombastic Gran Canaria",
+        "Night of Flamenco"
       ],
       "id": "5a3f"
     },
@@ -384,7 +365,8 @@
       "teléfono": "963258741",
       "email": "alejandro.sanz@example.com",
       "eventos": [
-        "Granca Live Fest"
+        "Granca Live Fest",
+        "Night of Flamenco"
       ],
       "id": "973c"
     },
@@ -447,7 +429,7 @@
       "nombre": "Bruno Mars",
       "dirección": "Honolulu",
       "grupo": "Silk Sonic",
-      "teléfono": "456987123",
+      "teléfono": "897685489",
       "email": "bruno.mars@example.com",
       "eventos": [
         "Granca Live Fest"
@@ -508,6 +490,15 @@
         "Granca Live Fest"
       ],
       "id": "7c44"
+    },
+    {
+      "id": "0814",
+      "nombre": "Cruz Cafuné",
+      "dirección": "Tacoronte",
+      "grupo": "BNMP",
+      "teléfono": "922383486",
+      "email": "cruzzi@mecen.es",
+      "eventos": []
     }
   ],
   "tareas": [
@@ -530,16 +521,6 @@
       "emailEmpleado": "juan@prodandfests.com",
       "idTarea": "D3E4F",
       "id": "3d5a"
-    },
-    {
-      "nombre": "Contactar artistas",
-      "descripcion": "Gestionar los contratos con los artistas principales",
-      "prioridad": "Alta",
-      "empleado": "Juan Pedro",
-      "fecha": "2025-03-05",
-      "emailEmpleado": "juanpedro@prodandfests.com",
-      "idTarea": "G5H6I",
-      "id": "1d14"
     },
     {
       "nombre": "Organizar logística",
@@ -1038,10 +1019,10 @@
     {
       "nombre": "Night of Flamenco",
       "recinto": {
-        "nombre": "Teatro Cuyás",
-        "provincia": "Las Palmas"
+        "nombre": "Estadio Tenerife",
+        "provincia": "Santa Cruz de Tenerife"
       },
-      "contacto": "antonio.ruiz@example.com",
+      "contacto": "marcos@prodandfests.com",
       "tipo": "Festival",
       "fecha": "2025-04-12",
       "artistas": "../html/artistas.html?evento=Night%20of%20Flamenco",

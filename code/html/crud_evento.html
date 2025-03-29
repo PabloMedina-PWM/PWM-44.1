@@ -24,32 +24,5 @@
 
         <footer id="main_footer"></footer>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(() => {
-                const newSelectElement = document.getElementById("new-select");
-                if (newSelectElement) {
-                    // Crear la instancia de Choices
-                    const myChoices = new Choices(newSelectElement, {
-                        removeItemButton: true,
-                        searchEnabled: true,
-                        placeholder: true,
-                        placeholderValue: "Selecciona los artistas...",
-                        noResultsText: "No se encontraron opciones",
-                        noChoicesText: "No hay más opciones disponibles",
-                        itemSelectText: "Presiona para seleccionar"
-                    });
-
-                    // **GUARDAR** la instancia en el propio elemento
-                    newSelectElement.choicesInstance = myChoices;
-                } else {
-                    console.error("El elemento select con id 'new-select' no existe.");
-                }
-            }, 100);
-        });
-    </script>
-    <script>init('../templates/crud.html','crud_evento');</script>
-
 </body>
 </html>

@@ -106,6 +106,7 @@ async function addData(json) {
         tr.classList.add("fila");
         let index = -1;
         for (let hijo in padre) {
+            if (hijo === "id") continue;
             if (index === numColumnas-2 && json.nombreBotonTabla !== undefined) {
                 let td2 = document.createElement("td");
                 let button = document.createElement("button");
@@ -240,7 +241,8 @@ async function addButton(json) {
 
 let filtrosActivos = [];
 
-function updateVisibility(datos) {
+function updateVisibility(datos, criterio) {
+    ordenarJson(datos, criterio);
     for (let dato in datos) {
         let debeMostrar = true;
 
@@ -248,21 +250,28 @@ function updateVisibility(datos) {
             let cumpleFiltro = false;
 
             for (let campo in datos[dato]) {
+                if (campo === "id") continue;
                 if (campo === filtro.field) {
                     if (filtro.field === "fecha" && !isNaN(Date.parse(datos[dato][campo]))) {
+                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = new Date(datos[dato][campo]) <= new Date(filtro.equals);
                     } else if (filtro.field === "capacidad") {
+                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo] <= filtro.equals;
                     } else if (typeof datos[dato][campo] === "object") {
+                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo].nombre === filtro.equals.toString();
                     }
                     else {
+                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo].toString() === filtro.equals.toString();
                     }
                 } else if (typeof datos[dato][campo] === "object") {
                     if (Array.isArray(datos[dato][campo])) {
+                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo].some(valor => valor?.toString() === filtro.equals.toString());
                     } else {
+                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo][filtro.field]?.toString() === filtro.equals.toString();
                     }
                 }
@@ -294,7 +303,7 @@ async function filter(json, field, equals) {
     }
 
     let datos = await getData(json.titulo.toLowerCase());
-    updateVisibility(datos);
+    updateVisibility(datos, json.ordenarPor);
 }
 
 
@@ -332,7 +341,7 @@ function checkFilters() {
 
 async function search(json, equals) {
     let datos = await getData(json.titulo.toLowerCase());
-
+    ordenarJson(datos, json.ordenarPor);
     for (let dato in datos) {
         let cumpleBusqueda = false;
 
@@ -376,30 +385,18 @@ async function search(json, equals) {
     }
 }
 
-async function ordenarJson(json, criterio) {
+async function ordenarJson(array, criterio) {
     if (criterio === "campo") {
-        // Ordenar por las claves del objeto alfabéticamente
-        return Object.keys(json)
-            .sort() // Ordenar las claves
-            .reduce((obj, clave) => {
-                obj[clave] = json[clave];
-                return obj;
-            }, {});
-    } else {
-        // Ordenar por un campo específico dentro de los valores si son objetos
-        const jsonComoArray = Object.entries(json);
-        const jsonOrdenado = jsonComoArray.sort(([keyA, valueA], [keyB, valueB]) => {
-            // Verifica que los valores sean objetos y tengan el campo especificado
-            if (valueA[criterio] && valueB[criterio]) {
-                return String(valueA[criterio]).localeCompare(String(valueB[criterio]), "es", { sensitivity: "base" });
-            }
-            return 0; // Si no tienen el campo, no cambiar el orden
+        return array.sort((a, b) => {
+            return String(a.nombre).localeCompare(String(b.nombre), "es", { sensitivity: "base" });
         });
-        // Reconstruir el objeto ordenado
-        return jsonOrdenado.reduce((obj, [clave, valor]) => {
-            obj[clave] = valor;
-            return obj;
-        }, {});
+    } else {
+        return array.sort((a, b) => {
+            if (a[criterio] && b[criterio]) {
+                return String(a[criterio]).localeCompare(String(b[criterio]), "es", { sensitivity: "base" });
+            }
+            return 0;
+        });
     }
 }
 
