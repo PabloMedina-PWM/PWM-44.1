@@ -126,6 +126,36 @@ body {
     cursor: pointer;
 }
 
+.image-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido */
+}
+
+.profile-photo {
+    width: 150px; /* Ajusta según el tamaño de tu imagen */
+    height: auto;
+    border-radius: 50%;
+}
+
+.logout-button {
+    margin-top: 10px; /* Espacio entre la imagen y el botón */
+    padding: 8px 16px;
+    background-color: #e8a21a; /* Rojo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.3s ease-in-out
+}
+
+.logout-button:hover {
+    background-color: #c9302c; /* Color más oscuro al pasar el mouse */
+}
+
+
 /* Media Queries para Responsividad */
 
 @media (max-width: 1024px) {

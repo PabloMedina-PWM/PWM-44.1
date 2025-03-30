@@ -43,6 +43,9 @@ async function changeContent(page, json) {
     } else if (json.path[1] === "tareas?id=") {
         await chargeTaskData(json);
     }
+
+    logOut(json);
+
 }
 
 function changeTextContent(json){
@@ -811,6 +814,14 @@ function updateData(place, data) {
 function getUrlName(name){
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name); // Retorna el valor de 'empleado' en la URL
+}
+
+async function logOut(json) {
+    document.getElementById("Cerrar sesión").onclick = () => {
+        localStorage.removeItem("currentUser");
+        localStorage.clear();
+        window.location.href = "../html/index.html";
+    }
 }
 
 

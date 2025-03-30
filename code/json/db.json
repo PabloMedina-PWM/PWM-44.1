@@ -807,10 +807,10 @@
       "id": "f41c"
     },
     {
-      "nombre": "Miguel",
+      "nombre": "Miguel Ortiz",
       "correo electrónico": "miguel@prodandfests.com",
       "rol": "Montaje",
-      "tareas": "../html/tareas.html?empleado=Miguel",
+      "tareas": "../html/tareas.html?empleado=Miguel%20Ortiz",
       "id": "b1c0"
     },
     {
@@ -1245,7 +1245,8 @@
       "telefono": "567-890-123",
       "rol": "Montaje",
       "password": "prueba1234-",
-      "id": "6c8e"
+      "id": "6c8e",
+      "teléfono": "567-890-123"
     },
     {
       "nombre": "Francisco",
