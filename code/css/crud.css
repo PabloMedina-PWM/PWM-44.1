@@ -133,7 +133,6 @@ body {
 }
 
 .profile-photo {
-    width: 150px; /* Ajusta según el tamaño de tu imagen */
     height: auto;
     border-radius: 50%;
 }

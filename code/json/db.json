@@ -1358,13 +1358,14 @@
       "Procedencia del artista"
     ],
     "ocultar": [
-      6,
+      7,
       ".c-n-task",
       ".c-password",
       ".c-group",
       ".c-province",
       ".date-div",
-      ".c-new-selector"
+      ".c-new-selector",
+      ".logout-button"
     ],
     "especial": [
       0
@@ -1398,12 +1399,13 @@
       "Rol"
     ],
     "ocultar": [
-      5,
+      6,
       ".c-n-task",
       ".c-province",
       ".c-group",
       ".date-div",
-      ".c-new-selector"
+      ".c-new-selector",
+      ".logout-button"
     ],
     "especial": [
       0
@@ -1442,12 +1444,13 @@
       "Email de contacto"
     ],
     "ocultar": [
-      5,
+      6,
       ".c-n-task",
       ".c-phone",
       ".c-email",
       ".c-password",
-      ".c-input"
+      ".c-input",
+      ".logout-button"
     ],
     "especial": [
       2,
@@ -1483,13 +1486,14 @@
       "Selecciona la capacidad"
     ],
     "ocultar": [
-      6,
+      7,
       ".c-n-task",
       ".c-phone",
       ".c-password",
       ".c-province",
       ".date-div",
-      ".c-new-selector"
+      ".c-new-selector",
+      ".logout-button"
     ],
     "especial": [
       1,
@@ -1530,12 +1534,13 @@
       "Prioridad"
     ],
     "ocultar": [
-      5,
+      6,
       ".c-phone",
       ".c-password",
       ".c-email",
       ".c-province",
-      ".c-new-selector"
+      ".c-new-selector",
+      ".logout-button"
     ],
     "especial": [
       1,
