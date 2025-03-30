@@ -11,6 +11,25 @@ Permite la creación, edición y eliminación de Recintos, Artistas, Eventos y T
 con el principal objetivo de visualizar los detalles a simple vista, y gestionar
 de manera eficiente próximos eventos y planificar aquellos que aún no se han iniciado.
 
+## IMPORTANTE: EJECUTAR NPM INSTALL AL ABRIR EL PROYECTO, AUTOMÁTICAMENTE INSTALARÁ JSON SERVER Y LO INICIARÁ
+
+## Detalles importantes para el SPRINT 2
+
+Puede abrirse cualquiera de las páginas de la carpeta code/html, pues todas redirigen a index.html en caso de no haber iniciado sesión.
+La sesión se cierra en el apartado de cuenta de usuario, accesible picando en la imagen de usuario presente en el header.
+
+En este SPRINT se han añadido las siguientes funcionalidades:
+- **Login:** distingue entre usuarios administradores (tendrán acceso a las páginas de empleados y tareas) y usuarios no administradores. 
+  - Cuentas de usuario:
+    - Administrador: ana@prodandfests.com
+    - No administrador: marcos@prodandfests.com
+    - Contraseña de todas las cuentas: prueba1234-
+- **Dashboard:** muestra las tareas asignadas al usuario que ha iniciado sesión. Ademas, muestra los eventos próximos (aquellos que se celebrarán durante el próximo mes). Estos datos son extraídos del JSON.
+- **Muestra de datos:** todos los datos del JSON pueden consultarse desde las diferentes páginas (eventos, artistas, tareas, recintos y empleados), permitiendo ver, filtrar por diversos campos y además buscar.
+
+  El filtro de fecha de las diferentes páginas funciona como fecha límite, es decir, se mostrarán todas aquellas filas que tengan una fecha anterior o igual a la seleccionada. Queda pendiente hacerlo con un rango de fechas en el próximo sprint.
+- **CRUD:** ahora, la web permite la creación, edición y eliminación de eventos, artistas, recintos, tareas y empleados, estos dos últimos sólo en caso de ser usuario administrador.
+- **JSON:** las creaciones, ediciones y eliminaciones previamente mencionadas se reflejan directamente en el db.json gracias al uso de json-server.
 
 ## Listado de requisitos funcionales
 ### 1. Autenticación y gestión de usuarios
@@ -34,7 +53,7 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
 - Formularios de contacto para soporte técnico, en caso de existir alguna incidencia por parte del empleado.  
 
 ## Mockups, storyboard y templates
-- **Archivo PDF:** [Mockups y storyboard](https://drive.google.com/file/d/1JzGE8Z98nW-HObK0eU7IEDxqI8KOqGVo/view)
+- **Archivo PDF:** [Mockups y storyboard actualizados SPRINT 2](https://drive.google.com/file/d/1Zy-JhGAwfZIy27lgdeHjK-SEcU28VHKo/view?usp=sharing)
 - **Archivo PDF:** [Templates](https://drive.google.com/file/d/1fF63HOjzUm8UOH_ISxyiZX9-TdlreM8n/view?usp=drive_link)
 
 
