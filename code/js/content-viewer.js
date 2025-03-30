@@ -73,6 +73,11 @@ async function createFilters(json) {
             mobileFilter.classList.remove("filtro");
             mobileFilter.id = filtro.toLowerCase()+"-mobile";
             mobileFilter.onchange = async () => await filter(json, filtro.toLowerCase(), mobileFilter.value);
+            mobileFilter.addEventListener("change", () => {
+                if (mobileFilter.value === "Eliminar filtro") {
+                    mobileFilter.selectedIndex = 1;
+                }
+            });
             document.getElementById("mobile-filters").append(mobileFilter);
         }
     });
@@ -125,16 +130,25 @@ async function addData(json) {
                 if (typeof padre[hijo] === "object") {
                     td2.innerText = padre[hijo].nombre;
                     for (let field in padre[hijo]) {
-                        if (nombreFiltros.includes(field.toLowerCase()) && padre[hijo][field] !== "-") {
-                            await addOptionToFilter(field, padre[hijo][field]);
+                        if (nombreFiltros.includes(field.toLowerCase())) {
+                            if (padre[hijo][field] === "-") {
+                                await addOptionToFilter(field, "Sin grupo.");
+                            } else{
+                                await addOptionToFilter(field, padre[hijo][field]);
+                            }
                         } else if (field === "nombre") {
                             await addOptionToFilter(hijo, padre[hijo][field]);
                         }
                     }
                 } else {
                     td2.innerText = padre[hijo];
-                    if (nombreFiltros.includes(hijo.toLowerCase()) && padre[hijo] !== "-") {
-                        await addOptionToFilter(hijo, padre[hijo]);
+                    if (nombreFiltros.includes(hijo.toLowerCase())) {
+                        if (padre[hijo] === "-") {
+                            await addOptionToFilter(hijo, "Sin grupo");
+                        } else{
+                            await addOptionToFilter(hijo, padre[hijo]);
+                        }
+
                     }
                 }
                 tr.appendChild(td2);
@@ -222,11 +236,23 @@ async function addOptionToFilter(filterName, optionName) {
     for (let valor of valores) {
         let opt = document.createElement("option");
         opt.innerText = valor;
-        opt.value = valor;
+        if (valor === "Sin grupo") {
+            opt.value = "-";
+        } else {
+            opt.value = valor;
+        }
         filter.appendChild(opt);
 
         let optMobile = opt.cloneNode(true);
         document.getElementById(filterName + "-mobile").appendChild(optMobile);
+    }
+
+    let guiones = Array.from(filter.options).filter(e => e.innerText === "-");
+    for (let option in guiones) {
+        if (option !== null) {
+            guiones[option].style.display = "none";
+        }
+
     }
 }
 
