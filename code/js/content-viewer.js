@@ -185,7 +185,6 @@ async function addOptionToFilter(filterName, optionName) {
     if (filterName === "direccion" || filterName === "idTarea" || filterName === "nombre" || filterName === "artistas") return;
     let filter = document.getElementById(filterName);
     if (!filter) {
-        console.log(filterName);
         filterName = filterName.slice(0, -1);
         filter = document.getElementById(filterName);
     }
@@ -252,7 +251,13 @@ async function addOptionToFilter(filterName, optionName) {
         if (option !== null) {
             guiones[option].style.display = "none";
         }
-
+    }
+    let filtroMobile = document.getElementById(filterName + "-mobile");
+    let guionesMobile = Array.from(filtroMobile.options).filter(e => e.innerText === "-");
+    for (let option in guionesMobile) {
+        if (option !== null) {
+            guionesMobile[option].style.display = "none";
+        }
     }
 }
 
@@ -279,25 +284,19 @@ function updateVisibility(datos, criterio) {
                 if (campo === "id") continue;
                 if (campo === filtro.field) {
                     if (filtro.field === "fecha" && !isNaN(Date.parse(datos[dato][campo]))) {
-                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = new Date(datos[dato][campo]) <= new Date(filtro.equals);
                     } else if (filtro.field === "capacidad") {
-                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo] <= filtro.equals;
                     } else if (typeof datos[dato][campo] === "object") {
-                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo].nombre === filtro.equals.toString();
                     }
                     else {
-                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo].toString() === filtro.equals.toString();
                     }
                 } else if (typeof datos[dato][campo] === "object") {
                     if (Array.isArray(datos[dato][campo])) {
-                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo].some(valor => valor?.toString() === filtro.equals.toString());
                     } else {
-                        console.log(datos[dato][campo], filtro.equals, dato);
                         cumpleFiltro = datos[dato][campo][filtro.field]?.toString() === filtro.equals.toString();
                     }
                 }
