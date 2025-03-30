@@ -13,7 +13,8 @@ function loadTemplate(fileName, id, callback) {
 }
 
 async function init(route, page) {
-    if (page !== "index" && localStorage.getItem("currentUser") === null) {
+    let unauthPages = ["index", "soporte_tecnico", "correo_de_recuperacion"];
+    if (!(unauthPages.includes(page)) && localStorage.getItem("currentUser") === null) {
         window.location.href = "../html/index.html";
     }
     const url = "http://localhost:3000/" + page;
