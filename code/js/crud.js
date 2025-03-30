@@ -183,16 +183,19 @@ async function chargeUserData(json) {
 
         document.querySelector(".button").addEventListener("click", async (event) => {
             event.preventDefault();
+
             let index = 0;
             let campos = ["nombre", "apellidos", "teléfono", "email", "contraseña", "rol"];
             let res = {};
+            let continuar = true;
             document.querySelectorAll("input").forEach(input => {
                 if (input.parentElement.style.display !== "none") {
+                    if (input.value === "") {alert("Debe rellenar todos los campos."); continuar = false;}
                     res[campos[index]] = input.value;
                     index += 1;
                 }
             });
-            console.log(res);
+            if (!continuar) return;
 
             let resultado = {
                 "nombre": res.nombre,
@@ -268,8 +271,10 @@ async function chargeEnclosureData(json){
             let index = 0;
             let campos = ["nombre", "direccion", "contacto", "capacidad"];
             let res = {};
+            let continuar = true;
             document.querySelectorAll("input").forEach(input => {
                 if (input.parentElement.style.display !== "none") {
+                    if (input.value === "") {alert("Debe rellenar todos los campos."); continuar = false;}
                     if (campos[index] !== "direccion") {
                         res[campos[index]] = input.value;
                     } else {
@@ -284,6 +289,7 @@ async function chargeEnclosureData(json){
                     index += 1;
                 }
             });
+            if (!continuar) return;
             let resultado = {
                 "nombre": res.nombre,
                 "direccion": res.direccion,
@@ -371,8 +377,10 @@ async function chargeArtistData(json){
             let index = 0;
             let campos = ["nombre", "dirección", "teléfono", "email"];
             let res = {};
+            let continuar = true;
             document.querySelectorAll("input").forEach(input => {
                 if (input.parentElement.style.display !== "none") {
+                    if (input.value === "") {alert("Debe rellenar todos los campos."); continuar = false;}
                     if (index >= campos.length) {
                         res["grupo"] = input.value;
                     } else {
@@ -382,6 +390,8 @@ async function chargeArtistData(json){
                     index += 1;
                 }
             });
+
+            if (!continuar) return;
 
             let resultado = {
                 "nombre": res.nombre,
@@ -441,13 +451,18 @@ async function chargeEventData(json){
             let index = 0;
             let campos = ["nombre", "contacto", "fecha", "recinto", "tipo"];
             let res = {};
+            let continuar = true;
             document.querySelectorAll("input").forEach(input => {
                 if (input.parentElement.style.display !== "none") {
+                    if (input.value === "") {alert("Debe rellenar todos los campos."); continuar = false;}
                     res[campos[index]] = input.value;
 
                     index += 1;
                 }
             });
+
+            if (!continuar) return;
+
             let recinto = document.getElementById("group")[document.getElementById("group").selectedIndex].innerText;
             let recintos = await getData("recintos");
             let provincia = "";
@@ -646,12 +661,16 @@ async function chargeTaskData(json){
             let index = 0;
             let campos = ["nombre", "descripcion", "prioridad"];
             let res = {};
+            let continuar = true;
             document.querySelectorAll("input").forEach(input => {
                 if (input.parentElement.style.display !== "none" && input.id !== "n-task") {
+                    if (input.value === "") {alert("Debe rellenar todos los campos."); continuar = false;}
                     res[campos[index]] = input.value;
                     index += 1;
                 }
             });
+            if (!continuar) return;
+
             let selEmpleado = document.getElementById("group");
             let empleado = selEmpleado[selEmpleado.selectedIndex].innerText;
             let correo;
@@ -766,7 +785,7 @@ function updateData(place, data) {
         body: JSON.stringify(data)
     }).then(function (response) {
         let url = place.split("/")[0];
-        if (place.includes("empleado")) {
+        if (place.includes("usuario")) {
             alert("Creado satisfactoriamente.");
             url = "empleados";
         }

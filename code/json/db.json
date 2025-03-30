@@ -802,10 +802,10 @@
       "id": "1f80"
     },
     {
-      "nombre": "Antonio",
+      "nombre": "Antonio Jiménez",
       "correo electrónico": "antonio@prodandfests.com",
       "rol": "Legal",
-      "tareas": "../html/tareas.html?empleado=Antonio",
+      "tareas": "../html/tareas.html?empleado=Antonio%20Jim%C3%A9nez",
       "id": "aa9c"
     },
     {
@@ -856,6 +856,13 @@
       "correo electrónico": "kevin@prodandfests.com",
       "rol": "Administrador",
       "tareas": "../html/tareas.html?empleado=Kevin%20Falc%C3%B3n"
+    },
+    {
+      "id": "e8eb",
+      "nombre": "Pablo Medina",
+      "correo electrónico": "pablomedi@ydb.com",
+      "rol": "Administrador",
+      "tareas": "../html/tareas.html?empleado=Pablo%20Medina"
     }
   ],
   "eventos": [
@@ -1229,7 +1236,8 @@
       "telefono": "345-678-901",
       "rol": "Legal",
       "password": "prueba1234-",
-      "id": "8be0"
+      "id": "8be0",
+      "teléfono": "345-678-901"
     },
     {
       "nombre": "Carmen",
@@ -1300,6 +1308,15 @@
       "apellido": "Falcón",
       "correo": "kevin@prodandfests.com",
       "teléfono": "789465138",
+      "rol": "Administrador",
+      "password": "prueba1234-"
+    },
+    {
+      "id": "8ab9",
+      "nombre": "Pablo",
+      "apellido": "Medina",
+      "correo": "pablomedi@ydb.com",
+      "teléfono": "654543432",
       "rol": "Administrador",
       "password": "prueba1234-"
     }
