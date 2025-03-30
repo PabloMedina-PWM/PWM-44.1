@@ -227,8 +227,16 @@ async function chargeUserData(json) {
 
         document.getElementById("delete-icon").addEventListener("click", function (event) {
             event.preventDefault();
-            let url = json.titulo.toLowerCase() + "s/" + newJson[0].id;
+            let url = "usuarios/" + newJson[0].id;
             removeData(url);
+            let idEmpleado;
+            getData("empleados").then((data) => {
+                idEmpleado = data.filter(item => item.nombre === document.getElementById("name").value)[0].id;
+                if (idEmpleado === undefined) idEmpleado = data.filter(item => item.nombre === document.getElementById("name").value + " " + document.getElementById("surnames").value)[0].id;
+                url = "empleados/" + idEmpleado;
+                removeData(url);
+                window.location.href = "../html/empleados.html";
+            });
         });
 
         if (!name) return;
@@ -673,57 +681,6 @@ async function chargeTaskData(json){
             removeData(url);
         });
 
-        /*let n = 0;
-
-        for (let i in newJson[0]) {
-            if (n <= 2) {
-                console.log(newJson[0][i]);
-                document.getElementById(json.fills[n]).value = newJson[0][i];
-
-            }else if (n === 3) {
-                let select = document.getElementById("group");
-                if (select) {
-                    let found = false;
-                    for (let option of select.options) {
-
-                        console.log("Comparando:", option.text, "con", newJson[0][i]);
-                        if (option.text.trim().toLowerCase() === newJson[0][i].toString().trim().toLowerCase()) {
-                            option.selected = true;
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        console.warn("No se encontró la opción en el select:", newJson[0][i]);
-                    }
-                } else {
-                    console.warn("No se encontró el select con ID 'group'");
-                }
-            } else if (n === 7) {
-                document.getElementById(json.fills[4]).value = newJson[0][i];
-            } else if (n===4){
-                let select = document.getElementById("fecha"); // El ID del input de tipo date
-                if (select) {
-                    let found = false;
-                    let targetDate = newJson[0][i];  // Fecha en formato 'yyyy-mm-dd' (o del array en tu estructura)
-
-                    console.log("Comparando:", select.value, "con", targetDate);
-                    select.value = targetDate;  // Seleccionamos la fecha
-                    found = true;
-
-
-                    if (!found) {
-                        console.warn("No se encontró la fecha en el input:", targetDate);
-                    }
-                } else {
-                    console.warn("No se encontró el input con ID 'fecha'");
-                }
-            }
-
-            n++;
-
-        }*/
-
         let n = 0;
 
 // Iterar sobre las propiedades del objeto
@@ -783,6 +740,11 @@ function removeData(place) {
         method: "DELETE",
         headers: {'Content-Type': 'application/json'},
     }).then(function (response) {
+        alert("Borrado correcto.");
+        let url = place.split("/")[0];
+        if (!(place.includes("empleado")) && !(place.includes("usuarios"))) {
+            window.location.href = "../html/" + url + ".html";
+        }
         return response.json();
     }).catch(function (error) {
         console.error("Error al cargar los datos: ", error);
@@ -803,6 +765,12 @@ function updateData(place, data) {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     }).then(function (response) {
+        let url = place.split("/")[0];
+        if (place.includes("empleado")) {
+            alert("Creado satisfactoriamente.");
+            url = "empleados";
+        }
+        window.location.href = "../html/" + url + ".html";
         return response.json();
     }).catch(function (error) {
         console.error("Error al cargar los datos: ", error);

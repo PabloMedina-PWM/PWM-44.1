@@ -6,7 +6,7 @@ function toggleMenu() {
     menu.classList.toggle('show');
 }
 
-if (JSON.parse(localStorage.getItem("currentUser"))[1].rol !== "Administrador") {
+if (Object.values(JSON.parse(localStorage.getItem("currentUser"))).some(e => e.rol !== "Administrador")) {
     document.querySelectorAll(".noadminhide").forEach(e => {
         e.style.display = "none";
     });

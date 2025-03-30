@@ -513,6 +513,15 @@
       "eventos": [
         "Garaje Concert"
       ]
+    },
+    {
+      "id": "8c92",
+      "nombre": "Gabri Medina",
+      "dirección": "C/ Medina",
+      "grupo": "-",
+      "teléfono": "789767655",
+      "email": "gabrimedi@ydb.com",
+      "eventos": []
     }
   ],
   "tareas": [
@@ -805,13 +814,6 @@
       "rol": "Asistente",
       "tareas": "../html/tareas.html?empleado=Carmen",
       "id": "f41c"
-    },
-    {
-      "nombre": "Miguel Ortiz",
-      "correo electrónico": "miguel@prodandfests.com",
-      "rol": "Montaje",
-      "tareas": "../html/tareas.html?empleado=Miguel%20Ortiz",
-      "id": "b1c0"
     },
     {
       "nombre": "Francisco",
@@ -1237,16 +1239,6 @@
       "rol": "Asistente",
       "password": "prueba1234-",
       "id": "39a2"
-    },
-    {
-      "nombre": "Miguel",
-      "apellido": "Ortiz",
-      "correo": "miguel@prodandfests.com",
-      "telefono": "567-890-123",
-      "rol": "Montaje",
-      "password": "prueba1234-",
-      "id": "6c8e",
-      "teléfono": "567-890-123"
     },
     {
       "nombre": "Francisco",
