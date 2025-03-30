@@ -154,7 +154,6 @@ function displayEventos(eventos) {
             td3.innerText = evento.fecha;
             tr.appendChild(td3);
 
-            // Agregar el evento de click para redirigir a la página del evento
             tr.addEventListener('click', () => {
                 window.location.href = `../html/crud_evento.html?id=${evento.id}`;
             });
