@@ -60,8 +60,8 @@ En este SPRINT se han añadido las siguientes funcionalidades:
 (También pueden encontrarse en la carpeta /pdfs de este mismo repositorio.)
 
 ## Presentación y vídeo
-- **Archivo PDF:** [Presentación](https://drive.google.com/file/d/1dNxQBhGbq_D47FEYHuwpF0ThRdCUfiMQ/view?usp=sharing)
-- **Vídeo MP4:** [Vídeo](https://drive.google.com/file/d/1655nbYBS4x_qw2IuD5TyXoYkigKoo-kN/view?usp=sharing)
+- **Archivo PDF:** [Presentación](https://drive.google.com/file/d/1Am7_xfoqBKtPV3v1qqX8eZgbsSJKgDOA/view?usp=sharing)
+- **Vídeo MP4:** [Vídeo](https://drive.google.com/file/d/1852FouIBWqU7nym_YtX9NIlRVwPjjJo1/view?usp=sharing)
 
 ## Listado de archivos templates y archivos en los que se cargan
 - main.html
