@@ -1,0 +1,31 @@
+<body>
+<footer>
+  <nav id="links">
+    @if (this.authService.loggedIn) {
+      @for (item of [
+        {link: "../html/empleados.html", title: "Empleados", admin: true},
+        {link: "../html/tareas.html", title: "Tareas", admin: true},
+        {link: "../html/dashboard.html", title: "Dashboard", admin: false},
+        {link: "../html/recintos.html", title: "Recintos", admin: false},
+        {link: "../html/artistas.html", title: "Artistas", admin: false},
+        {link: "../html/eventos.html", title: "Eventos", admin: false}
+      ]; track item.title;){
+        @if (currentUser["rol"] === "Administrador") {
+          <a class="footerLink unauthhide" [href] = item.link>{{item.title}}</a>
+        } @else {
+          @if (!item.admin) {
+            <a class="footerLink unauthhide" [href] = item.link>{{item.title}}</a>
+          }
+
+
+        }
+      }
+    }
+  </nav>
+  <img id="logo" src = "/images/logoLargo.png">
+  <div id="messages">
+    <a class="footerLink">© 2025 Grupo 44.1 PWM</a>
+    <a href="../html/soporte_tecnico.html" class="footerLink">Soporte técnico</a>
+  </div>
+</footer>
+</body>

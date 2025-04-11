@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Header</title>
+</head>
+<body>
+<header>
+  <nav>
+    <div id="header">
+      <a href=""><img id="logoPhoto" src = "/images/logoimg.png"></a>
+      <div id="menu">
+        @if (this.authService.loggedIn) {
+          @for (item of [
+            {link: "../html/empleados.html", title: "Empleados", admin: true},
+            {link: "../html/tareas.html", title: "Tareas", admin: true},
+            {link: "../html/dashboard.html", title: "Dashboard", admin: false},
+            {link: "../html/recintos.html", title: "Recintos", admin: false},
+            {link: "../html/artistas.html", title: "Artistas", admin: false},
+            {link: "../html/eventos.html", title: "Eventos", admin: false}
+          ]; track item.title;){
+            @if (currentUser["rol"] === "Administrador") {
+              <a class="headerLink unauthhide"  [href] = item.link>{{item.title}}</a>
+            } @else {
+              @if (!item.admin) {
+                <a class="headerLink unauthhide" [href] = item.link>{{item.title}}</a>
+              }
+            }
+          }
+        }
+
+      </div>
+      @if (this.authService.loggedIn) {
+        <button id="hamburger" onclick="toggleMenu()">&#9776;</button>
+        <a class="unauthhide" id="userPhoto" href="../html/cuenta_usuario.html"><img src = "/images/icon.png"></a>
+      }
+
+
+    </div>
+  </nav>
+</header>
+</body>
+</html>
+
