@@ -44,7 +44,7 @@ export class AuthService {
 
       const q = query(
         collection(this.firestore, 'empleado'),
-        where('correo electronico', '==', userEmail)
+        where('correo electrónico', '==', userEmail)
       );
 
       try {
@@ -53,7 +53,7 @@ export class AuthService {
         if (!querySnapshot.empty) {
           const doc = querySnapshot.docs[0];
           const data = doc.data();
-          console.log('Correo electrónico encontrado:', data['correo electronico']);
+          console.log('Correo electrónico encontrado:', data['correo electrónico']);
           return data['rol'];
         } else {
           console.log('No se encontró el documento de usuario en Firestore');
