@@ -1,17 +1,21 @@
-import {Component, inject, Input, OnInit} from '@angular/core';
-import {AuthService} from '../auth.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
-  imports: [],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  standalone: true,
+  styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
   @Input() nombre!: string;
   authService: AuthService = inject(AuthService);
-  constructor (private route: ActivatedRoute, private router:Router) {}
+  userRole: string = '';
+  isAdmin: boolean = false;
+  userEmail: string = '';
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   onSubmit(event: Event): void {
     event.preventDefault();
@@ -21,9 +25,15 @@ export class MainComponent implements OnInit {
       if (emailElement && passwordElement) {
         const email = emailElement.value;
         const password = passwordElement.value;
+
+        localStorage.clear(); // Limpiar el localStorage
+
         this.authService.inicioSesion(email, password).subscribe({
           next: (user) => {
-            sessionStorage.setItem("userUID", JSON.stringify(user?.uid));
+            // Guardar datos nuevos en localStorage
+            localStorage.setItem("userUID", user?.uid || '');
+            localStorage.setItem("userEmail", email);
+
             this.router.navigate(['dashboard']);
           },
           error: (error) => {
@@ -36,8 +46,22 @@ export class MainComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    if (sessionStorage.getItem("userUID")) {
+  async ngOnInit() {
+    const userUID = localStorage.getItem('userUID');
+    if (!userUID) {
+      this.router.navigate(['main']);
+      return;
+    }
+
+    this.userEmail = localStorage.getItem('userEmail') || '';
+
+    const role = await this.authService.comprobarRol();
+    this.userRole = role;
+    console.log('Rol del usuario:', this.userRole);
+
+    this.isAdmin = this.userRole === 'admin';
+
+    if (!this.isAdmin) {
       this.router.navigate(['dashboard']);
     }
   }

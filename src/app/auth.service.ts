@@ -1,18 +1,7 @@
-import { Injectable } from '@angular/core';
-import {
-  Auth,
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-  sendEmailVerification,
-  onAuthStateChanged,
-  User,
-  setPersistence, user,
-  browserSessionPersistence, signOut
-} from "@angular/fire/auth";
-import { firebaseConfig } from '../config';
-import {from, Observable} from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { Auth, signInWithEmailAndPassword, signOut, browserSessionPersistence, setPersistence, user, User } from '@angular/fire/auth';
+import { Firestore, collection, query, where, getDocs} from '@angular/fire/firestore';
+import { from, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -21,8 +10,10 @@ import {from, Observable} from 'rxjs';
 export class AuthService {
   user$: Observable<User | null>;
   loggedIn: boolean = false;
+  firestore: Firestore = inject(Firestore);
+  firebaseAuth: Auth = inject(Auth);
 
-  constructor(private firebaseAuth: Auth) {
+  constructor() {
     setPersistence(this.firebaseAuth, browserSessionPersistence);
     this.user$ = user(this.firebaseAuth);
   }
@@ -40,13 +31,43 @@ export class AuthService {
     const promise = signOut(this.firebaseAuth).then(() => {
       sessionStorage.clear();
       this.loggedIn = false;
+      localStorage.clear();
     });
     return from(promise);
   }
 
-  comprobarRol(): string {
 
-    return ""
+  async comprobarRol(): Promise<string> {
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (userEmail) {
+
+      const q = query(
+        collection(this.firestore, 'empleado'),
+        where('correo electronico', '==', userEmail)
+      );
+
+      try {
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+          const doc = querySnapshot.docs[0];
+          const data = doc.data();
+          console.log('Correo electrónico encontrado:', data['correo electronico']);
+          return data['rol'];
+        } else {
+          console.log('No se encontró el documento de usuario en Firestore');
+          return 'usuario';
+        }
+      } catch (error) {
+        console.error('Error al consultar Firestore:', error);
+        return 'usuario';
+      }
+    } else {
+      console.log('Correo electrónico no encontrado en localStorage');
+      return 'usuario';
+    }
   }
-
 }
+
+

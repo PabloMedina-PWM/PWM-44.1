@@ -1,0 +1,23 @@
+<div class="centered">
+  <h2 id="task" #tituloRef>Tareas pendientes</h2>
+  <div class="table-container">
+    <table class="table" id="tasksTable">
+      <thead>
+      <tr #theadRef>
+        <th>Tarea</th>
+        <th>Descripción</th>
+        <th>Prioridad</th>
+        <th>Fecha límite</th>
+      </tr>
+      </thead>
+      <tbody id="tasksTableBody" #tbodyRef>
+      <tr *ngFor="let tarea of tareas">
+        <td>{{ tarea.nombre }}</td>
+        <td>{{ tarea.descripcion }}</td>
+        <td>{{ tarea.prioridad }}</td>
+        <td>{{ tarea.fecha }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

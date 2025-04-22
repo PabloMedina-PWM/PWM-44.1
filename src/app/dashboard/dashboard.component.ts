@@ -1,21 +1,27 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {FirestoreService} from '../firestore.service';
-import {catchError, Observable, of} from 'rxjs';
-import {AsyncPipe} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {TableComponent} from '../table/table.component';
+import {ButtonComponent} from '../button/button.component';
+import {AuthService} from '../auth.service';
 
-interface Artist {
-  id: string;
-  name: string;
-}
 
 @Component({
   selector: 'app-dashboard',
   imports: [
-    AsyncPipe
+    TableComponent,
+    ButtonComponent
   ],
   templateUrl: './dashboard.component.html',
+  standalone: true,
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  userRole: string = '';
 
+  constructor(private authService: AuthService) {}
+
+  async ngOnInit() {
+    this.userRole = await this.authService.comprobarRol();
+
+    console.log('Rol del usuario en Dashboard:', this.userRole);
+  }
 }
