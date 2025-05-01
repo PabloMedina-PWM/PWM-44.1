@@ -13,20 +13,20 @@
     <div id="header">
       <a href=""><img id="logoPhoto" src = "/images/logoimg.png"></a>
       <div id="menu">
-        @if (this.authService.loggedIn) {
+        @if (localStorage.getItem("user") !== null) {
           @for (item of [
-            {link: "../html/empleados.html", title: "Empleados", admin: true},
-            {link: "../html/tareas.html", title: "Tareas", admin: true},
-            {link: "../html/dashboard.html", title: "Dashboard", admin: false},
-            {link: "../html/recintos.html", title: "Recintos", admin: false},
-            {link: "../html/artistas.html", title: "Artistas", admin: false},
-            {link: "../html/eventos.html", title: "Eventos", admin: false}
+            {link: "empleados", title: "Empleados", admin: true},
+            {link: "tareas", title: "Tareas", admin: true},
+            {link: "dashboard", title: "Dashboard", admin: false},
+            {link: "recintos", title: "Recintos", admin: false},
+            {link: "artistas", title: "Artistas", admin: false},
+            {link: "eventos", title: "Eventos", admin: false}
           ]; track item.title;){
-            @if (currentUser["rol"] === "Administrador") {
-              <a class="headerLink unauthhide"  [href] = item.link>{{item.title}}</a>
+            @if (userRole === "Administrador") {
+              <a class="headerLink unauthhide"  [routerLink] = item.link>{{item.title}}</a>
             } @else {
               @if (!item.admin) {
-                <a class="headerLink unauthhide" [href] = item.link>{{item.title}}</a>
+                <a class="headerLink unauthhide" [routerLink] = item.link>{{item.title}}</a>
               }
             }
           }

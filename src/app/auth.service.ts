@@ -22,6 +22,7 @@ export class AuthService {
     const promise = signInWithEmailAndPassword(this.firebaseAuth, email, password).then(() => {
       let user = this.firebaseAuth.currentUser;
       this.loggedIn = true;
+      localStorage.setItem('user', JSON.stringify(user));
       return user;
     });
     return from(promise);

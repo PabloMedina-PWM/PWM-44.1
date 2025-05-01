@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    @for (th of headings; track $index) {
+      <th>{{th}}</th>
+    }
+  </thead>
+
+  @for (row of filteredRows(); track $index) {
+    <tr>
+      @for (field of fields; track $index) {
+        @if (field !== button) {
+          @if (typeof row[field] === 'object') {
+            <td>{{row[field].nombre}}</td>
+          } @else {
+            <td>{{row[field]}}</td>
+          }
+        } @else {
+          <td><button class="button_colum" type="button" (click)="goTo(row)">Ver {{button}}</button></td>
+        }
+      }
+    </tr>
+  }
+</table>

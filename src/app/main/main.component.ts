@@ -49,7 +49,7 @@ export class MainComponent implements OnInit {
   async ngOnInit() {
     const userUID = localStorage.getItem('userUID');
     if (!userUID) {
-      this.router.navigate(['main']);
+      this.router.navigate(['']);
       return;
     }
 

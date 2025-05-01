@@ -1,0 +1,155 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 2rem;
+  text-align: center;
+}
+
+.inputs-content {
+  display: flex;
+  height: 3.2rem;
+  width: 80%;
+}
+
+.search-filter {
+  font-size: 1rem;
+  padding: 0.7rem;
+  font-weight: 500;
+  border-radius: 0;
+  background-color: #f0f0f0;
+  width: 13rem;
+}
+
+#search {
+  width: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.table-container{
+  margin-top: 2rem;
+  width: 80%;
+  height: 20rem;
+  border: none;
+}
+
+.button-view {
+  display: flex;
+  margin-top: 30px;
+  justify-content: flex-end;
+  width: 90%;
+}
+
+
+
+#add-button {
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  background-color: var(--orange);
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 2rem;
+  margin: 1rem;
+  width: 20%;
+  cursor: pointer;
+}
+
+#search-button {
+  background-color: var(--orange);
+  width: 7%;
+  border-radius: 0 10px 10px 0;
+}
+
+#filtro1,
+#filtro2,
+#filtro3 {
+  border-radius: 0; /* Sin redondeo */
+  height: 100%;
+}
+
+#filter-button {
+  display: none;
+}
+
+#filters {
+  display: flex;
+}
+
+.visible {
+  display: block;
+}
+
+.visible-filter {
+  display: block;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#filtro-mobile {
+  display: none;
+}
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+
+input[type=date] { color: transparent !important; }
+.active input[type=date] { color: inherit !important; }
+
+input[type=date] {
+  width: 2.9rem;
+}
+
+@media (max-width: 767px) {
+  .filtro {
+    display: none;
+  }
+
+  #search-button {
+    width: 30%;
+    height: 100%;
+  }
+
+  .inputs-content {
+    height: 2rem;
+  }
+
+  #filter-button {
+    display: flex;
+    align-items: center;
+  }
+
+  #filter-image {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  #add-button {
+    width: 40%;
+    height: 40%;
+  }
+  #filtro-mobile {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 900px) {
+  #search-button {
+    width: 20%;
+  }
+}
+
+@media (max-width: 900px) {
+  input[type="date"]::-webkit-datetime-edit {
+    display: none;
+  }
+}

@@ -50,11 +50,36 @@ export class ButtonComponent {
   }
 
   handleButtonClick() {
-    if (this.buttontext === 'Añadir artista') {
+    if (this.mostrarTarea) {
+      this.router.navigate(["/crud_tareas",], {state: {
+        page: "tareas"
+        }});
+    }
+    if (this.mostrarRecinto) {
+      this.router.navigate(["/crud_recintos",], {state: {
+          page: "recintos"
+        }});
+    }
+    if (this.mostrarEmpleado) {
+      this.router.navigate(["/crud_empleados",], {state: {
+          page: "empleado"
+        }});
+    }
+    if (this.mostrarArtista) {
+      this.router.navigate(["/crud_artistas",], {state: {
+          page: "artistas"
+        }});
+    }
+    if (this.mostrarEventos) {
+      this.router.navigate(["/crud_eventos",], {state: {
+          page: "eventos"
+        }});
+    }
+    /*if (this.buttontext === 'Añadir artista') {
       this.cerrarSesion();
     }
     else {
       console.log('Botón clickeado, pero no es "Añadir artista".');
-    }
+    }*/
   }
 }

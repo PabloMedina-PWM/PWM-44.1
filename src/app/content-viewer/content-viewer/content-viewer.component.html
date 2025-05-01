@@ -1,0 +1,40 @@
+<body>
+<div class="content">
+  <h1 id="titulo1">{{titulo}}</h1>
+  <div class="inputs-content">
+    <input [(ngModel)]="searchText" type="search" placeholder="Buscar" class="search-filter" id="search">
+    <div id="filters">
+      @for (filter of filters; track $index){
+        <select (change)="filterTable($event, filter)" class="search-filter">
+          <option disabled selected>{{filter}}</option>
+          <option>Eliminar filtro</option>
+          @for (option of getFilters(filter); track $index) {
+            <option>{{option}}</option>
+          }
+        </select>
+      }
+      @if (titulo === "Recintos") {
+        <input type="number" placeholder="Capacidad máx" [(ngModel)]="capacidadMax" class="search-filter">
+      }
+    </div>
+    <button id="filter-button"><img id="filter-image" src="images/filtro.png" onclick="filters()"></button>
+    <button id="search-button"><img src="images/lupa.png"></button>
+  </div>
+  <div class="table-container">
+    <app-content-viewer-table [rows] = "collection" [filterText] = "searchText" [capacidadMax] = "capacidadMax"></app-content-viewer-table>
+    <div id="mobile-filters">
+    </div>
+    <table id="table-viewer">
+      <thead>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="button-view">
+    <button id="add-button" (click)="goTo()">Añadir {{titulo.toLowerCase().slice(0,-1)}}</button>
+  </div>
+</div>
+</body>
+
