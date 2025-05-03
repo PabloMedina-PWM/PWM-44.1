@@ -1,18 +1,23 @@
 <body>
 
-<h1 id="support-title">Soporte Técnico</h1>
+<h1 id="support-title" *ngIf="isSupportPage">Soporte Técnico</h1>
+
 <div class="login_container">
-  <form (submit) = "onSubmit($event)" id="login-form">
+  <form (submit)="onSubmit($event)" id="login-form">
     <div class="input_container">
-      <h2 id="text-main-superior">{{nombre || "Correo electrónico"}}</h2>
-      <input type="email" placeholder="Correo electrónico" id="email" name="email" required>
-      <h2 id="text-main-inferior">Contraseña</h2>
-      <input type="password" placeholder="Contraseña" id="password" name="password" required>
-      <a class="link_password" href="../html/correo_recuperacion.html">¿Has olvidado la contraseña?</a>
+      <h2 id="text-main-superior">{{ textSuperior }}</h2>
+      <input type="text" [placeholder]="placeholderEmail" id="email" name="email" required>
+
+      <h2 id="text-main-inferior">{{ textInferior }}</h2>
+      <input type="text" [placeholder]="placeholderPassword" id="password" name="password" required>
+
+      <a class="link_password" *ngIf="!isSupportPage && !isEmailPage && !isNewPassword" routerLink="/recuperacion_correo">¿Has olvidado la contraseña?</a>
     </div>
+
     <div class="button-container">
-      <button id="main-button" type="submit">Iniciar sesión</button>
+      <button id="main-button" [ngClass]="{'full-width-button': isSupportPage}">{{ mainButtonText }}</button>
     </div>
   </form>
 </div>
+
 </body>

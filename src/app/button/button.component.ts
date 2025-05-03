@@ -3,10 +3,10 @@ import { AuthService } from '../auth.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-    selector: 'app-button',
-    templateUrl: './button.component.html',
-    standalone: true,
-    styleUrls: ['./button.component.css']
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  standalone: true,
+  styleUrls: ['./button.component.css']
 })
 export class ButtonComponent {
 
@@ -33,7 +33,7 @@ export class ButtonComponent {
   }
   async ngOnInit() {
     if (this.mostrarTarea) {
-        this.buttontext = "Añadir tarea"
+      this.buttontext = "Añadir tarea"
     }
     if (this.mostrarRecinto) {
       this.buttontext = "Añadir recinto"
