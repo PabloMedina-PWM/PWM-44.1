@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecintoService } from '../recinto.service';
+import { ArtistaService } from '../artista.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Firestore } from '@angular/fire/firestore';
@@ -15,6 +16,7 @@ import { Firestore } from '@angular/fire/firestore';
   templateUrl: './crud.component.html',
   styleUrls: ['./crud.component.css']
 })
+
 export class CrudComponent implements OnInit {
 
   // Flags para mostrar campos dinámicamente
@@ -52,12 +54,14 @@ export class CrudComponent implements OnInit {
   provincia: string = '';
   grupoSeleccionado: string = '';
   fecha: string = '';
+  provinciasDisponibles: string[] = [];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private recintoService: RecintoService,
-    private firestore: Firestore
+    private firestore: Firestore,
+    private artistaService: ArtistaService
   ) {}
 
   ngOnInit() {
@@ -83,12 +87,29 @@ export class CrudComponent implements OnInit {
       this.firstSelectTextTitle = 'Provincia';
       this.selectedFromFirstSelector = 'Buscar provincia';
 
+      this.recintoService.getProvincias().then((provincias) => {
+        this.provinciasDisponibles = provincias;
+      });
+
       const id = this.route.snapshot.paramMap.get('id');
       console.log('ID recibido:', id);
 
       if (id) {
-        let a = this.recintoService.getRecintoById(id);
-        console.log(a);
+        this.recintoService.getRecintoById(id).then((docSnap) => {
+          if (docSnap.exists()) {
+            const recinto = docSnap.data();
+            console.log('Datos recibidos:', recinto);
+            this.nombre = recinto['nombre'] || '';
+            this.direccion = recinto['direccion']?.nombre || '';
+            this.provincia = recinto['direccion']?.provincia || '';
+            this.email = recinto['contacto'] || '';
+            this.capacidad = recinto['capacidad'] || '';
+          } else {
+            console.error('No se encontró el recinto con ID:', id);
+          }
+        }).catch((err) => {
+          console.error('Error al obtener recinto:', err);
+        });
       }
 
 
@@ -107,6 +128,27 @@ export class CrudComponent implements OnInit {
       this.placeholderThirdTextTitle = 'Procedencia del artista';
       this.fourTextTitle = 'Grupo';
       this.placeholderFourTextTitle = 'Nombre del grupo';
+
+      const id = this.route.snapshot.paramMap.get('id');
+      console.log('ID recibido:', id);
+
+      if (id) {
+        this.artistaService.getArtistaById(id).then((docSnap) => {
+          if (docSnap.exists()) {
+            const artista = docSnap.data();
+            console.log('Datos recibidos:', artista);
+            this.nombre = artista['nombre'] || '';
+            this.direccion = artista['dirección'] || '';
+            this.email = artista['email'] || '';
+            this.telefono = artista['teléfono'] || '';
+            this.capacidad = artista['grupo'] || '';
+          } else {
+            console.error('No se encontró el recinto con ID:', id);
+          }
+        }).catch((err) => {
+          console.error('Error al obtener recinto:', err);
+        });
+      }
 
     } else if (currentPath.includes('crud_empleado')) {
       this.mostrarCamposPorNombre(['nombre', 'direccion', 'telefono', 'email', 'password', 'grupoTexto', 'botones']);
@@ -162,5 +204,38 @@ export class CrudComponent implements OnInit {
   eliminarRecinto(): void {
     console.log('Lógica para eliminar recinto (a implementar)');
     // Aquí puedes agregar lógica real para eliminar
+  }
+
+  guardarArtista(): void {
+    const data = {
+      nombre: this.nombre,
+      direccion: this.direccion,
+      telefono: this.telefono,
+      email: this.email,
+      grupo: this.capacidad
+    };
+
+    this.artistaService.addArtista(data)
+      .then((docRef) => {
+        const id = docRef.id;
+        return this.artistaService.updateArtistaId(id);
+      })
+      .then(() => {
+        console.log('Artista agregado con ID');
+        this.router.navigate(['/crud_artistas']);
+      })
+      .catch(err => console.error('Error al agregar artista:', err));
+  }
+
+  onSubmit() {
+    const currentUrl = this.router.url;
+
+    if (currentUrl === '/crud/crud_recintos') {
+      this.guardarRecinto();
+    } else if (currentUrl === '/crud/crud_artistas') {
+      this.guardarArtista();
+    } else {
+      console.warn('Ruta no reconocida:', currentUrl);
+    }
   }
 }

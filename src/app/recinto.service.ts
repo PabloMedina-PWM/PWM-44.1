@@ -1,14 +1,30 @@
 // src/app/recinto.service.ts
 import { Injectable } from '@angular/core';
-import {Firestore, collection, addDoc, doc, updateDoc, getDoc} from '@angular/fire/firestore';
+import {
+  Firestore,
+  collection,
+  addDoc,
+  doc,
+  updateDoc,
+  getDoc,
+  DocumentData,
+  DocumentSnapshot, getDocs, query, where
+} from '@angular/fire/firestore';
 
 @Injectable({ providedIn: 'root' })
 export class RecintoService {
   constructor(private firestore: Firestore) {}
 
-  getRecintoById(id: string) {
-    const recintoRef = doc(this.firestore, 'recintos', id);
-    return getDoc(recintoRef);
+  getRecintoById(id: string): Promise<DocumentSnapshot<DocumentData>> {
+    const recintoDoc = doc(this.firestore, `recintos/${id}`);
+    return getDoc(recintoDoc);
+  }
+
+  getProvincias(): Promise<string[]> {
+    const provinciasRef = collection(this.firestore, 'provincias');
+    return getDocs(provinciasRef).then((querySnapshot) => {
+      return querySnapshot.docs.map(doc => doc.data()['nombre']);
+    });
   }
 
   addRecinto(data: any) {

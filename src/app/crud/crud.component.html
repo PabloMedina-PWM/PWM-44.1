@@ -15,7 +15,7 @@
 
   <div class="form-box">
     <h2 class="crudTitle">{{ crudTitle }}</h2>
-    <form (ngSubmit)="guardarRecinto()">
+    <form (ngSubmit)="onSubmit()">
 
       <div class="c-n-task" *ngIf="mostrarNTarea">
         <label for="n-task" class="n-task-form-label">Nº de Tarea:</label>
@@ -54,11 +54,10 @@
 
       <div class="c-province" *ngIf="mostrarProvincia">
         <label for="province" class="form-label">{{ firstSelectTextTitle }}:</label>
-        <select class="form-select" id="province" [(ngModel)]="provincia" name="provincia">
-          <option selected>{{ selectedFromFirstSelector }}</option>
-          <option value="Festival">Festival</option>
-          <option value="Gira">Gira</option>
-          <option value="Concierto único">Concierto único</option>
+        <select [(ngModel)]="provincia" class="form-select" name="provincia" id="province">
+          <option *ngFor="let p of provinciasDisponibles" [value]="p">
+            {{ p }}
+          </option>
         </select>
       </div>
 
