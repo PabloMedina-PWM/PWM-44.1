@@ -154,7 +154,7 @@ export class CrudComponent implements OnInit {
       })
       .then(() => {
         console.log('Recinto agregado con dirección anidada e ID');
-        this.router.navigate(['/crud_recinto']);
+        this.router.navigate(['/crud_recintos']);
       })
       .catch(err => console.error('Error al agregar:', err));
   }

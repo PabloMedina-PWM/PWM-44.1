@@ -13,7 +13,7 @@ export const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent
   },
-  { path: 'crud/:tipo/:id', component: CrudComponent },
+  { path: 'crud/:tipo', component: CrudComponent },
   { path: ':tipo', component: ContentViewerComponent },
   { path: ':tipo/:evento', component: ContentViewerComponent },
   { path: ':crud/:id', component: DashboardComponent },
