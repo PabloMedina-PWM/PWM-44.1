@@ -1,16 +1,16 @@
 import {Component, Input} from '@angular/core';
 import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-    selector: 'app-button',
-    templateUrl: './button.component.html',
-    standalone: true,
-    styleUrls: ['./button.component.css']
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  standalone: true,
+  styleUrls: ['./button.component.css']
 })
 export class ButtonComponent {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
   @Input() mostrarRecinto: boolean = false;
   @Input() mostrarTarea: boolean = false;
   @Input() mostrarEmpleado: boolean = false;
@@ -33,7 +33,7 @@ export class ButtonComponent {
   }
   async ngOnInit() {
     if (this.mostrarTarea) {
-        this.buttontext = "Añadir tarea"
+      this.buttontext = "Añadir tarea"
     }
     if (this.mostrarRecinto) {
       this.buttontext = "Añadir recinto"
@@ -47,33 +47,20 @@ export class ButtonComponent {
     if (this.mostrarEventos) {
       this.buttontext = "Añadir evento"
     }
+
   }
 
   handleButtonClick() {
-    if (this.mostrarTarea) {
-      this.router.navigate(["/crud_tareas",], {state: {
-        page: "tareas"
-        }});
-    }
-    if (this.mostrarRecinto) {
-      this.router.navigate(["/crud_recintos",], {state: {
-          page: "recintos"
-        }});
-    }
-    if (this.mostrarEmpleado) {
-      this.router.navigate(["/crud_empleados",], {state: {
-          page: "empleado"
-        }});
-    }
-    if (this.mostrarArtista) {
-      this.router.navigate(["/crud_artistas",], {state: {
-          page: "artistas"
-        }});
-    }
-    if (this.mostrarEventos) {
-      this.router.navigate(["/crud_eventos",], {state: {
-          page: "eventos"
-        }});
+    let tipo = "";
+
+    if (this.mostrarTarea) tipo = "crud_tareas";
+    else if (this.mostrarRecinto) tipo = "crud_recintos";
+    else if (this.mostrarEmpleado) tipo = "crud_empleados";
+    else if (this.mostrarArtista) tipo = "crud_artistas";
+    else if (this.mostrarEventos) tipo = "crud_eventos";
+
+    if (tipo) {
+      this.router.navigate([`/crud/${tipo}`], { state: { page: tipo } });
     }
     /*if (this.buttontext === 'Añadir artista') {
       this.cerrarSesion();

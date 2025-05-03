@@ -9,6 +9,17 @@ export const routes: Routes = [
   component: MainComponent
   },
   {
+    path: 'soporte_tecnico',
+    component: MainComponent
+  },
+  {
+    path: 'recuperacion_correo',
+    component: MainComponent
+  },  {
+    path: 'nueva_password',
+    component: MainComponent
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent
   },
