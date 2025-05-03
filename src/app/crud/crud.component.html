@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Recinto</title>
+</head>
+<body>
+
+<div class="container-box">
+  <div class="image-box">
+    <img src="../resources/images/add-photo.jpg" class="profile-photo">
+    <button class="logout-button" id="Cerrar sesión">Cerrar sesión</button>
+  </div>
+
+  <div class="form-box">
+    <h2 class="crudTitle">{{ crudTitle }}</h2>
+    <form (ngSubmit)="guardarRecinto()">
+
+      <div class="c-n-task" *ngIf="mostrarNTarea">
+        <label for="n-task" class="n-task-form-label">Nº de Tarea:</label>
+        <input type="text" class="n-task-form-control" id="n-task" [(ngModel)]="ntarea" name="ntarea">
+      </div>
+
+      <div class="c-name" *ngIf="mostrarNombre">
+        <label for="name" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="name" placeholder="Nombre" [(ngModel)]="nombre" name="nombre">
+      </div>
+
+      <div class="c-address" *ngIf="mostrarDireccion">
+        <label for="address" class="form-label">{{ thirdTextTitle }}:</label>
+        <input type="text" class="form-control" id="address" [placeholder]="placeholderThirdTextTitle" [(ngModel)]="direccion" name="direccion">
+      </div>
+
+      <div class="c-phone" *ngIf="mostrarTelefono">
+        <label for="telephone" class="form-label">Teléfono:</label>
+        <input type="tel" class="form-control" id="telephone" placeholder="Teléfono de contacto" [(ngModel)]="telefono" name="telefono">
+      </div>
+
+      <div class="c-email" *ngIf="mostrarEmail">
+        <label for="email" class="form-label">Email de contacto:</label>
+        <input type="email" class="form-control" id="email" placeholder="example@gmail.com" [(ngModel)]="email" name="email">
+      </div>
+
+      <div class="c-password" *ngIf="mostrarPassword">
+        <label for="em-password" class="form-label">Contraseña:</label>
+        <input type="password" class="form-control" id="em-password" placeholder="*******" [(ngModel)]="password" name="password">
+      </div>
+
+      <div class="c-input" *ngIf="mostrarGrupoTexto">
+        <label for="RolPlaceh" class="form-label">{{ fourTextTitle }}:</label>
+        <input type="text" class="form-control" id="RolPlaceh" [placeholder]="placeholderFourTextTitle" [(ngModel)]="capacidad" name="capacidad">
+      </div>
+
+      <div class="c-province" *ngIf="mostrarProvincia">
+        <label for="province" class="form-label">{{ firstSelectTextTitle }}:</label>
+        <select class="form-select" id="province" [(ngModel)]="provincia" name="provincia">
+          <option selected>{{ selectedFromFirstSelector }}</option>
+          <option value="Festival">Festival</option>
+          <option value="Gira">Gira</option>
+          <option value="Concierto único">Concierto único</option>
+        </select>
+      </div>
+
+      <div class="c-group" *ngIf="mostrarGrupoSelect">
+        <label for="group" class="form-label">{{ secondSelectTextTitle }}:</label>
+        <select class="form-select" id="group" [(ngModel)]="grupoSeleccionado" name="grupoSeleccionado">
+          <option selected>{{ selectedFromSecondSelector }}</option>
+          <option value="Grupo 1">Grupo 1</option>
+          <option value="Grupo 2">Grupo 2</option>
+          <option value="Grupo 3">Grupo 3</option>
+        </select>
+      </div>
+
+      <div class="date-div" *ngIf="mostrarFecha">
+        <label for="fecha" class="form-label">Selecciona una fecha:</label>
+        <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="fecha">
+      </div>
+
+      <div class="buttons" *ngIf="mostrarBotones">
+        <button type="submit" class="button">Confirmar</button>
+        <img id="delete-icon" class="delete-icon" src="../resources/images/delete-icon.png" (click)="eliminarRecinto()" alt="Eliminar">
+      </div>
+
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

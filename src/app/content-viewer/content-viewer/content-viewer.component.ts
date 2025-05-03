@@ -160,6 +160,6 @@ export class ContentViewerComponent {
 
 
   goTo() {
-    this.router.navigate(['/'+this.titulo.toLowerCase().slice(0,-1)]);
+    let a = this.router.navigate(['/crud/crud_'+this.titulo.toLowerCase()]);
   }
 }
