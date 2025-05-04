@@ -22,6 +22,11 @@ export class HeaderComponent {
     }
   }
 
+  async ngAfterViewInit() {
+    this.userRole = await this.authService.comprobarRol();
+  }
+
   protected readonly localStorage = localStorage;
+
 
 }

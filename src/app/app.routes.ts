@@ -29,6 +29,7 @@ export const routes: Routes = [
     component: DashboardComponent,
     canActivate: [authGuard]
   },
+  { path: 'personal-profile', component: CrudComponent, canActivate: [authGuard] },
 
   { path: 'crud/:tipo/:id', component: CrudComponent,
     canActivate: [authGuard] },
@@ -41,4 +42,5 @@ export const routes: Routes = [
     canActivate: [authGuard] },
   { path: ':crud/:id', component: DashboardComponent,
     canActivate: [authGuard] },
+
 ];

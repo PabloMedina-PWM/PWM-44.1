@@ -247,6 +247,32 @@ export class CrudComponent implements OnInit, AfterViewInit {
         });
       }
 
+    } else if (currentPath.includes("personal-profile")) {
+      this.mostrarCamposPorNombre(['nombre', 'direccion', 'telefono', 'email', 'password', 'grupoTexto', 'botones']);
+      this.crudTitle = 'Empleado';
+      this.thirdTextTitle = 'Apellidos';
+      this.placeholderThirdTextTitle = 'Apellidos';
+      this.fourTextTitle = 'Rol';
+      this.placeholderFourTextTitle = 'Rol';
+
+      const email: string | null = JSON.parse(<string>localStorage.getItem("user")).email;
+      if (email) {
+        this.empleadoService.getEmpleadoByEmail(email).then(empleado => {
+          if (empleado) {
+            this.nombre = empleado['nombre'] || '';
+            this.direccion = empleado['apellidos'] || '';
+            this.telefono = empleado['teléfono'] || '';
+            this.email = empleado['correo electrónico'] || '';
+            this.capacidad = empleado['rol'] || '';
+            this.password = empleado['contraseña'] || '';
+            this.id = empleado['id'];
+          } else {
+            console.error('No se encontró la tarea con ID:', email);
+          }
+        }).catch((err) => {
+          console.error('Error al obtener la tarea:', err);
+        });
+      }
     }
 
 
@@ -305,6 +331,22 @@ export class CrudComponent implements OnInit, AfterViewInit {
       capacidad: this.capacidad
     };
 
+    if (this.route.snapshot.paramMap.get("id")) {
+      const id: string = <string>this.route.snapshot.paramMap.get("id");
+      const data2 = {
+        nombre: this.nombre,
+        direccion: {
+          nombre: this.direccion,
+          provincia: this.provincia
+        },
+        contacto: this.email,
+        capacidad: this.capacidad,
+        id: id
+      }
+      this.firestoreService.updateDocument("recintos", data2);
+      return;
+    }
+
     this.recintoService.addRecinto(data)
       .then((docRef) => {
         const id = docRef.id;
@@ -344,6 +386,20 @@ export class CrudComponent implements OnInit, AfterViewInit {
       grupo: this.capacidad
     };
 
+    if (this.route.snapshot.paramMap.get("id")) {
+      const id: string = <string>this.route.snapshot.paramMap.get("id");
+      const data2 = {
+        nombre: this.nombre,
+        direccion: this.direccion,
+        teléfono: this.telefono,
+        email: this.email,
+        grupo: this.capacidad,
+        id: id
+      }
+      this.firestoreService.updateDocument("artistas", data2);
+      return;
+    }
+
     this.artistaService.addArtista(data)
       .then((docRef) => {
         const id = docRef.id;
@@ -366,6 +422,21 @@ export class CrudComponent implements OnInit, AfterViewInit {
       empleado: this.grupoSeleccionado
     };
 
+    if (this.route.snapshot.paramMap.get("id")) {
+      const id: string = <string>this.route.snapshot.paramMap.get("id");
+      const data2 = {
+        nombre: this.nombre,
+        descripcion: this.direccion,
+        prioridad: this.capacidad,
+        idTarea: this.ntarea,
+        fecha: this.fecha,
+        empleado: this.grupoSeleccionado,
+        id: id
+      }
+      this.firestoreService.updateDocument("tareas", data2);
+      return;
+    }
+
     this.tareaService.addTarea(data)
       .then((docRef) => {
         const id = docRef.id;
@@ -387,6 +458,21 @@ export class CrudComponent implements OnInit, AfterViewInit {
       rol: this.capacidad,
       contraseña: this.password
     };
+
+    if (this.route.snapshot.paramMap.get("id")) {
+      const id: string = <string>this.route.snapshot.paramMap.get("id");
+      const data2 = {
+        nombre: this.nombre,
+        apellidos: this.direccion,
+        teléfono: this.telefono,
+        "correo electrónico": this.email,
+        rol: this.capacidad,
+        contraseña: this.password,
+        id: id
+      }
+      this.firestoreService.updateDocument("empleados", data2);
+      return;
+    }
 
     this.empleadoService.addEmpleado(data)
       .then((docRef) => {
@@ -412,6 +498,21 @@ export class CrudComponent implements OnInit, AfterViewInit {
       artistas: this.artistasSeleccionados
     };
 
+    if (this.route.snapshot.paramMap.get("id")) {
+      const id: string = <string>this.route.snapshot.paramMap.get("id");
+      const data2 = {
+        nombre: this.nombre,
+        contacto: this.email,
+        fecha: this.fecha,
+        tipo: this.capacidad,
+        recinto: this.grupoSeleccionado,
+        artistas: this.artistasSeleccionados,
+        id: id
+      }
+      this.firestoreService.updateDocument("eventos", data2);
+      return;
+    }
+
     this.eventoService.addEvento(data)
       .then((docRef) => {
         const id = docRef.id;
@@ -428,15 +529,15 @@ export class CrudComponent implements OnInit, AfterViewInit {
   onSubmit() {
     const currentUrl = this.router.url;
 
-    if (currentUrl === '/crud/crud_recintos') {
+    if (currentUrl.includes('/crud/crud_recintos')) {
       this.guardarRecinto();
-    } else if (currentUrl === '/crud/crud_artistas') {
+    } else if (currentUrl.includes('/crud/crud_artistas')) {
       this.guardarArtista();
-    }else if(currentUrl === '/crud/crud_tareas') {
+    }else if(currentUrl.includes('/crud/crud_tareas')) {
       this.guardarTarea();
-    } else if(currentUrl === '/crud/crud_empleados') {
+    } else if(currentUrl.includes('/crud/crud_empleados')) {
       this.guardarEmpleado();
-    } else if(currentUrl === '/crud/crud_eventos') {
+    } else if(currentUrl.includes('/crud/crud_eventos')) {
       this.guardarEvento();
     }
     else {

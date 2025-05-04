@@ -33,9 +33,9 @@
         }
 
       </div>
-      @if (this.authService.loggedIn) {
+      @if (localStorage.getItem("user")) {
         <button id="hamburger" onclick="toggleMenu()">&#9776;</button>
-        <a class="unauthhide" id="userPhoto" href="../html/cuenta_usuario.html"><img src = "/images/icon.png"></a>
+        <a class="unauthhide" id="userPhoto" [routerLink]="'personal-profile'"><img src = "/images/icon.png"></a>
       }
 
 
