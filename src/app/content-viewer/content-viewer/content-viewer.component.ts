@@ -124,6 +124,7 @@ export class ContentViewerComponent {
 
     this.applyFilters();
   }
+
     applyFilters() {
       this.collection = this.originalCollection.filter(row =>
         Object.entries(this.appliedFilters).every(([key, filterValue]) => {
@@ -156,8 +157,6 @@ export class ContentViewerComponent {
         })
       );
   }
-
-
 
   goTo() {
     let a = this.router.navigate(['/crud/crud_'+this.titulo.toLowerCase()]);

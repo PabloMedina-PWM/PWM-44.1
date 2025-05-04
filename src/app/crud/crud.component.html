@@ -96,18 +96,13 @@
 
       <div class="c-new-selector" *ngIf="mostrarSelectorMultiple">
         <label for="new-select" class="form-label">Selecciona opciones:</label>
-        <select [(ngModel)]="artistasSeleccionados" class="form-select choices" id="new-select" multiple>
-          <option value="opcion1">Opción 1</option>
-          <option value="opcion2">Opción 2</option>
-          <option value="opcion3">Opción 3</option>
-          <option value="opcion4">Opción 4</option>
-          <option value="opcion5">Opción 5</option>
+        <select [(ngModel)]="artistasSeleccionados" name="artistasSeleccionados" class="form-select choices" id="new-select" multiple>
         </select>
       </div>
 
       <div class="buttons" *ngIf="mostrarBotones">
         <button type="submit" class="button">Confirmar</button>
-        <img id="delete-icon" class="delete-icon" src="../resources/images/delete-icon.png" (click)="eliminarRecinto()" alt="Eliminar">
+        <img id="delete-icon" class="delete-icon" src="../resources/images/delete-icon.png" (click)="eliminarDocumento()" alt="Eliminar">
       </div>
 
 

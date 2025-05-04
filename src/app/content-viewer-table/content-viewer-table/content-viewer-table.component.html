@@ -6,7 +6,7 @@
   </thead>
 
   @for (row of filteredRows(); track $index) {
-    <tr>
+    <tr (click)="goToCrud(row.id)">
       @for (field of fields; track $index) {
         @if (field !== button) {
           @if (typeof row[field] === 'object') {

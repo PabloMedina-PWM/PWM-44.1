@@ -102,4 +102,8 @@ export class ContentViewerTableComponent {
       this.router.navigate([this.router.url.slice(0,-1) + "/" + rowElement[this.buttonField]]);
     }
   }
+
+  goToCrud(id:string) {
+      this.router.navigate(['/crud/crud_'+this.router.url.slice(1)+"/"+id]);
+  }
 }

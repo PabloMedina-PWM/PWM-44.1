@@ -9,7 +9,7 @@
       <input type="text" [placeholder]="placeholderEmail" id="email" name="email" required>
 
       <h2 id="text-main-inferior">{{ textInferior }}</h2>
-      <input type="text" [placeholder]="placeholderPassword" id="password" name="password" required>
+      <input type="password" [placeholder]="placeholderPassword" id="password" name="password" required>
 
       <a class="link_password" *ngIf="!isSupportPage && !isEmailPage && !isNewPassword" routerLink="/recuperacion_correo">¿Has olvidado la contraseña?</a>
     </div>

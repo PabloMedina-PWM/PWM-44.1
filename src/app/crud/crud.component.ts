@@ -7,8 +7,9 @@ import { EmpleadoService } from '../empleado.service';
 import { EventoService } from '../evento.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {collection, collectionData, Firestore} from '@angular/fire/firestore';
+import {collection, collectionData, DocumentData, Firestore} from '@angular/fire/firestore';
 import Choices from 'choices.js';
+import {FirestoreService} from '../firestore.service';
 
 
 @Component({
@@ -66,6 +67,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
   nombresRecintos: string[] = [];
   artistasSeleccionados: string[] = [];
   choicesInstance: any;
+  id:string = "";
 
   constructor(
     private router: Router,
@@ -75,7 +77,8 @@ export class CrudComponent implements OnInit, AfterViewInit {
     private artistaService: ArtistaService,
     private tareaService: TareaService,
     private empleadoService: EmpleadoService,
-    private eventoService: EventoService
+    private eventoService: EventoService,
+    private firestoreService: FirestoreService,
   ) {}
 
   ngOnInit() {
@@ -107,6 +110,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
             this.capacidad = tarea['prioridad'] || '';
             this.fecha = tarea['fecha'] || '';
             this.grupoSeleccionado = tarea['empleado'] || '';
+            this.id = tarea['id'];
           } else {
             console.error('No se encontró la tarea con ID:', id);
           }
@@ -136,12 +140,13 @@ export class CrudComponent implements OnInit, AfterViewInit {
         this.recintoService.getRecintoById(id).then((docSnap) => {
           if (docSnap.exists()) {
             const recinto = docSnap.data();
-            console.log('Datos recibidos:', recinto);
             this.nombre = recinto['nombre'] || '';
             this.direccion = recinto['direccion']?.nombre || '';
             this.provincia = recinto['direccion']?.provincia || '';
             this.email = recinto['contacto'] || '';
             this.capacidad = recinto['capacidad'] || '';
+            this.grupoSeleccionado = recinto['recinto'];
+            this.id = recinto['id'];
           } else {
             console.error('No se encontró el recinto con ID:', id);
           }
@@ -172,8 +177,9 @@ export class CrudComponent implements OnInit, AfterViewInit {
             this.email = evento['contacto'] || '';
             this.fecha = evento['fecha'] || '';
             this.capacidad = evento['tipo'] || '';
-            this.grupoSeleccionado = evento['recinto'] || '';
+            this.grupoSeleccionado = evento['recinto'].nombre || '';
             this.artistasSeleccionados = evento['artistas'] || [];
+            this.id = evento['id'];
 
           } else {
             console.error('No se encontró el evento con ID:', id);
@@ -203,7 +209,8 @@ export class CrudComponent implements OnInit, AfterViewInit {
             this.direccion = artista['dirección'] || '';
             this.email = artista['email'] || '';
             this.telefono = artista['teléfono'] || '';
-            this.capacidad = artista['Rol'] || '';
+            this.capacidad = artista['grupo'] || '';
+            this.id = artista['id'];
           } else {
             console.error('No se encontró el recinto con ID:', id);
           }
@@ -231,6 +238,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
             this.email = empleado['correo electrónico'] || '';
             this.capacidad = empleado['rol'] || '';
             this.password = empleado['contraseña'] || '';
+            this.id = empleado['id'];
           } else {
             console.error('No se encontró la tarea con ID:', id);
           }
@@ -309,9 +317,22 @@ export class CrudComponent implements OnInit, AfterViewInit {
       .catch(err => console.error('Error al agregar:', err));
   }
 
-  eliminarRecinto(): void {
-    console.log('Lógica para eliminar recinto (a implementar)');
-    // Aquí puedes agregar lógica real para eliminar
+  eliminarDocumento(): void {
+    if (this.crudTitle && this.route.snapshot.paramMap.get("id")) {
+      const id:string = <string>this.route.snapshot.paramMap.get("id")?.toString();
+      let titulo = this.crudTitle.toLowerCase();
+      if (this.crudTitle.charAt(-1) !== "s") {
+        if (titulo !== "empleado") {
+          titulo = titulo + "s";
+        }
+      }
+      this.firestoreService.deleteDocument(titulo, id);
+      if (titulo === "empleado") {
+        titulo = "empleados";
+      }
+      this.router.navigate(['/'+titulo]);
+      alert("Eliminado correctamente");
+    }
   }
 
   guardarArtista(): void {

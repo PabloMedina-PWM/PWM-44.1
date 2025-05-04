@@ -9,3 +9,11 @@
   font-size: 1rem;
   padding: 0.2rem;
 }
+
+tr {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
