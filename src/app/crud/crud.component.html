@@ -63,11 +63,10 @@
 
       <div class="c-group" *ngIf="mostrarGrupoSelect">
         <label for="group" class="form-label">{{ secondSelectTextTitle }}:</label>
-        <select class="form-select" id="group" [(ngModel)]="grupoSeleccionado" name="grupoSeleccionado">
-          <option selected>{{ selectedFromSecondSelector }}</option>
-          <option value="Grupo 1">Grupo 1</option>
-          <option value="Grupo 2">Grupo 2</option>
-          <option value="Grupo 3">Grupo 3</option>
+        <select [(ngModel)]="grupoSeleccionado" class="form-select" name="grupoSeleccionado" id="group">
+          <option *ngFor="let p of nombresRecintos" [value]="p">
+            {{ p }}
+          </option>
         </select>
       </div>
 
@@ -76,10 +75,22 @@
         <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="fecha">
       </div>
 
+      <div class="c-new-selector" *ngIf="mostrarSelectorMultiple">
+        <label for="new-select" class="form-label">Selecciona opciones:</label>
+        <select [(ngModel)]="artistasSeleccionados" class="form-select choices" id="new-select" multiple>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+          <option value="opcion3">Opción 3</option>
+          <option value="opcion4">Opción 4</option>
+          <option value="opcion5">Opción 5</option>
+        </select>
+      </div>
+
       <div class="buttons" *ngIf="mostrarBotones">
         <button type="submit" class="button">Confirmar</button>
         <img id="delete-icon" class="delete-icon" src="../resources/images/delete-icon.png" (click)="eliminarRecinto()" alt="Eliminar">
       </div>
+
 
     </form>
   </div>

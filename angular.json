@@ -28,9 +28,12 @@
               "src/resources/images/"
             ],
             "styles": [
+              "node_modules/choices.js/public/assets/styles/choices.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/choices.js/public/assets/scripts/choices.min.js"
+            ]
           },
           "configurations": {
             "production": {

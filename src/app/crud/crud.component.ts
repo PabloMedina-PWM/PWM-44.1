@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecintoService } from '../recinto.service';
 import { ArtistaService } from '../artista.service';
+import { TareaService } from '../tarea.service';
+import { EmpleadoService } from '../empleado.service';
+import { EventoService } from '../evento.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Firestore } from '@angular/fire/firestore';
+import {collection, collectionData, Firestore} from '@angular/fire/firestore';
+import Choices from 'choices.js';
+
 
 @Component({
   selector: 'app-crud',
@@ -17,7 +22,7 @@ import { Firestore } from '@angular/fire/firestore';
   styleUrls: ['./crud.component.css']
 })
 
-export class CrudComponent implements OnInit {
+export class CrudComponent implements OnInit, AfterViewInit {
 
   // Flags para mostrar campos dinámicamente
   mostrarNTarea = false;
@@ -31,6 +36,7 @@ export class CrudComponent implements OnInit {
   mostrarGrupoSelect = false;
   mostrarFecha = false;
   mostrarBotones = false;
+  mostrarSelectorMultiple = false;
 
   // Textos dinámicos
   crudTitle: string | undefined;
@@ -55,19 +61,26 @@ export class CrudComponent implements OnInit {
   grupoSeleccionado: string = '';
   fecha: string = '';
   provinciasDisponibles: string[] = [];
+  nombresEmpleados: string[] = [];
+  nombresRecintos: string[] = [];
+  artistasSeleccionados: string[] = [];
+  choicesInstance: any;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private recintoService: RecintoService,
     private firestore: Firestore,
-    private artistaService: ArtistaService
+    private artistaService: ArtistaService,
+    private tareaService: TareaService,
+    private empleadoService: EmpleadoService,
+    private eventoService: EventoService
   ) {}
 
   ngOnInit() {
     const currentPath = this.router.url;
 
-    if (currentPath.includes('crud_tarea')) {
+    if (currentPath.includes('crud_tareas')) {
       this.mostrarCamposPorNombre(['ntarea', 'nombre', 'direccion', 'grupotexto', 'gruposelect', 'fecha', 'botones']);
       this.crudTitle = 'Tarea';
       this.thirdTextTitle = 'Descripción';
@@ -76,6 +89,29 @@ export class CrudComponent implements OnInit {
       this.placeholderFourTextTitle = 'Prioridad';
       this.secondSelectTextTitle = 'Empleado';
       this.selectedFromSecondSelector = 'Buscar empleado';
+
+      this.tareaService.getNombresEmpleados().then(nombres => {
+        this.nombresEmpleados = nombres;
+      }).catch(err => console.error('Error al cargar empleados:', err));
+
+      const id = this.route.snapshot.paramMap.get('id');
+      if (id) {
+        this.tareaService.getTareaById(id).then((docSnap) => {
+          if (docSnap.exists()) {
+            const tarea = docSnap.data();
+            this.ntarea = tarea['idTarea'] || '';
+            this.nombre = tarea['nombre'] || '';
+            this.direccion = tarea['descripcion'] || '';
+            this.capacidad = tarea['prioridad'] || '';
+            this.fecha = tarea['fecha'] || '';
+            this.grupoSeleccionado = tarea['empleado'] || '';
+          } else {
+            console.error('No se encontró la tarea con ID:', id);
+          }
+        }).catch((err) => {
+          console.error('Error al obtener la tarea:', err);
+        });
+      }
 
     } else if (currentPath.includes('crud_recintos')) {
       this.mostrarCamposPorNombre(['nombre', 'direccion', 'email', 'grupotexto', 'provincia', 'botones']);
@@ -111,15 +147,39 @@ export class CrudComponent implements OnInit {
           console.error('Error al obtener recinto:', err);
         });
       }
-
-
     } else if (currentPath.includes('crud_evento')) {
-      this.mostrarCamposPorNombre(['nombre', 'email', 'provincia', 'grupoSelect', 'fecha', 'botones']);
+      this.mostrarCamposPorNombre(['nombre', 'email', 'grupotexto', 'grupoSelect', 'fecha', 'c-new-selector', 'botones']);
       this.crudTitle = 'Evento';
-      this.firstSelectTextTitle = 'Tipo de evento';
-      this.selectedFromFirstSelector = 'Festival/Gira/Concierto';
+      this.fourTextTitle = 'Tipo de evento';
+      this.placeholderFourTextTitle = 'Tipo';
       this.secondSelectTextTitle = 'Recinto';
       this.selectedFromSecondSelector = 'Buscar recinto';
+
+      this.eventoService.getNombresRecintos().then(nombres => {
+        this.nombresRecintos = nombres;
+      }).catch(err => console.error('Error al cargar empleados:', err));
+
+      this.cargarArtistas();
+
+      const id = this.route.snapshot.paramMap.get('id');
+      if (id) {
+        this.eventoService.getEventoById(id).then((docSnap) => {
+          if (docSnap.exists()) {
+            const evento = docSnap.data();
+            this.nombre = evento['nombre'] || '';
+            this.email = evento['contacto'] || '';
+            this.fecha = evento['fecha'] || '';
+            this.capacidad = evento['tipo'] || '';
+            this.grupoSeleccionado = evento['recinto'] || '';
+            this.artistasSeleccionados = evento['artistas'] || [];
+
+          } else {
+            console.error('No se encontró el evento con ID:', id);
+          }
+        }).catch((err) => {
+          console.error('Error al obtener el evento:', err);
+        });
+      }
 
     } else if (currentPath.includes('crud_artista')) {
       this.mostrarCamposPorNombre(['nombre', 'direccion', 'telefono', 'email', 'grupoTexto', 'botones']);
@@ -141,7 +201,7 @@ export class CrudComponent implements OnInit {
             this.direccion = artista['dirección'] || '';
             this.email = artista['email'] || '';
             this.telefono = artista['teléfono'] || '';
-            this.capacidad = artista['grupo'] || '';
+            this.capacidad = artista['Rol'] || '';
           } else {
             console.error('No se encontró el recinto con ID:', id);
           }
@@ -157,8 +217,53 @@ export class CrudComponent implements OnInit {
       this.placeholderThirdTextTitle = 'Apellidos';
       this.fourTextTitle = 'Rol';
       this.placeholderFourTextTitle = 'Rol';
+
+      const id = this.route.snapshot.paramMap.get('id');
+      if (id) {
+        this.empleadoService.getEmpleadoById(id).then((docSnap) => {
+          if (docSnap.exists()) {
+            const empleado = docSnap.data();
+            this.nombre = empleado['nombre'] || '';
+            this.direccion = empleado['apellidos'] || '';
+            this.telefono = empleado['teléfono'] || '';
+            this.email = empleado['correo electrónico'] || '';
+            this.capacidad = empleado['rol'] || '';
+            this.password = empleado['contraseña'] || '';
+          } else {
+            console.error('No se encontró la tarea con ID:', id);
+          }
+        }).catch((err) => {
+          console.error('Error al obtener la tarea:', err);
+        });
+      }
+
     }
+
+
   }
+
+  ngAfterViewInit(): void {
+    // Inicializar Choices una vez el DOM esté listo
+    this.choicesInstance = new Choices('#new-select', {
+      removeItemButton: true,
+      placeholder: true,
+      placeholderValue: 'Selecciona artistas',
+      noResultsText: 'No hay coincidencias',
+      noChoicesText: 'No hay artistas disponibles'
+    });
+  }
+
+  cargarArtistas(): void {
+    const artistasRef = collection(this.firestore, 'artistas');
+    collectionData(artistasRef, { idField: 'id' }).subscribe((artistas: any[]) => {
+      const opciones = artistas.map(a => ({ value: a.nombre, label: a.nombre }));
+
+      if (this.choicesInstance) {
+        this.choicesInstance.setChoices(opciones, 'value', 'label', true);
+      }
+    });
+  }
+
 
   mostrarCamposPorNombre(campos: string[]) {
     campos.forEach((campo) => {
@@ -174,6 +279,7 @@ export class CrudComponent implements OnInit {
         case 'gruposelect': this.mostrarGrupoSelect = true; break;
         case 'fecha': this.mostrarFecha = true; break;
         case 'botones': this.mostrarBotones = true; break;
+        case 'c-new-selector': this.mostrarSelectorMultiple = true; break;
       }
     });
   }
@@ -227,6 +333,75 @@ export class CrudComponent implements OnInit {
       .catch(err => console.error('Error al agregar artista:', err));
   }
 
+  guardarTarea(): void {
+    const data = {
+      nombre: this.nombre,
+      descripcion: this.direccion,
+      prioridad: this.capacidad,
+      idTarea: this.ntarea,
+      fecha: this.fecha,
+      empleado: this.grupoSeleccionado
+    };
+
+    this.tareaService.addTarea(data)
+      .then((docRef) => {
+        const id = docRef.id;
+        return this.tareaService.updateTareaId(id);
+      })
+      .then(() => {
+        console.log('Recinto agregado con dirección anidada e ID');
+        this.router.navigate(['/crud_tareas']);
+      })
+      .catch(err => console.error('Error al agregar:', err));
+  }
+
+  guardarEmpleado(): void {
+    const data = {
+      nombre: this.nombre,
+      apellidos: this.direccion,
+      teléfono: this.telefono,
+      "correo electrónico": this.email,
+      rol: this.capacidad,
+      contraseña: this.password
+    };
+
+    this.empleadoService.addEmpleado(data)
+      .then((docRef) => {
+        const id = docRef.id;
+        return this.empleadoService.updateEmpleadoId(id);
+      })
+      .then(() => {
+        console.log('Recinto agregado con dirección anidada e ID');
+        this.router.navigate(['/crud_empleados']);
+      })
+      .catch(err => console.error('Error al agregar:', err));
+  }
+
+  guardarEvento(): void {
+    this.artistasSeleccionados = this.choicesInstance.getValue(true); // obtiene solo los valores seleccionados (nombres)
+
+    const data = {
+      nombre: this.nombre,
+      contacto: this.email,
+      fecha: this.fecha,
+      tipo: this.capacidad,
+      recinto: this.grupoSeleccionado,
+      artistas: this.artistasSeleccionados
+    };
+
+    this.eventoService.addEvento(data)
+      .then((docRef) => {
+        const id = docRef.id;
+        return this.eventoService.updateEventoId(id);
+      })
+      .then(() => {
+        console.log('Evento agregado con artistas seleccionados');
+        this.router.navigate(['/crud_eventos']);
+      })
+      .catch(err => console.error('Error al agregar evento:', err));
+  }
+
+
   onSubmit() {
     const currentUrl = this.router.url;
 
@@ -234,7 +409,14 @@ export class CrudComponent implements OnInit {
       this.guardarRecinto();
     } else if (currentUrl === '/crud/crud_artistas') {
       this.guardarArtista();
-    } else {
+    }else if(currentUrl === '/crud/crud_tareas') {
+      this.guardarTarea();
+    } else if(currentUrl === '/crud/crud_empleados') {
+      this.guardarEmpleado();
+    } else if(currentUrl === '/crud/crud_eventos') {
+      this.guardarEvento();
+    }
+    else {
       console.warn('Ruta no reconocida:', currentUrl);
     }
   }
