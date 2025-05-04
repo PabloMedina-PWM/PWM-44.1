@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import {collection, collectionData, DocumentData, Firestore} from '@angular/fire/firestore';
 import Choices from 'choices.js';
 import {FirestoreService} from '../firestore.service';
+import {AuthService} from '../auth.service';
 
 
 @Component({
@@ -69,6 +70,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
   choicesInstance: any;
   id:string = "";
 
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -79,6 +81,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
     private empleadoService: EmpleadoService,
     private eventoService: EventoService,
     private firestoreService: FirestoreService,
+    private authService: AuthService,
   ) {}
 
   ngOnInit() {
@@ -254,6 +257,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
       this.placeholderThirdTextTitle = 'Apellidos';
       this.fourTextTitle = 'Rol';
       this.placeholderFourTextTitle = 'Rol';
+      this.mostrarCerrarSesion = true;
 
       const email: string | null = JSON.parse(<string>localStorage.getItem("user")).email;
       if (email) {
@@ -543,5 +547,11 @@ export class CrudComponent implements OnInit, AfterViewInit {
     else {
       console.warn('Ruta no reconocida:', currentUrl);
     }
+  }
+
+  logOut() {
+    this.authService.cerrarSesion();
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }

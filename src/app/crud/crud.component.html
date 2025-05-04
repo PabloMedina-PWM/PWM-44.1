@@ -10,7 +10,7 @@
 <div class="container-box">
   <div class="image-box">
     <img src="../resources/images/add-photo.jpg" class="profile-photo">
-    <button *ngIf="mostrarCerrarSesion" class="logout-button" id="Cerrar sesión">Cerrar sesión</button>
+    <button *ngIf="mostrarCerrarSesion" class="logout-button" id="Cerrar sesión" (click)="logOut()">Cerrar sesión</button>
   </div>
 
   <div class="form-box">
