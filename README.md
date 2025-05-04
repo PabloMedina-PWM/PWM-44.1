@@ -44,7 +44,7 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
 (También pueden encontrarse en la carpeta /pdfs de este mismo repositorio.)
 
 ## Presentación
-- **Archivo PDF:** [Presentación](https://drive.google.com/file/d/1dNxQBhGbq_D47FEYHuwpF0ThRdCUfiMQ/view?usp=sharing)
+- **Archivo PDF:** [Presentación](https://drive.google.com/file/d/1x8_WDskXWhiMbMTMPsKa2qKbWSj1N49Q/view?usp=drive_link)
 
 ## Componentes
 Durante este tercer sprint se ha empleado Angular para el front-end de la web y firebase para el backend, por lo que el listado de templates y archivos en los que se cargan no aplica a esta entrega.
