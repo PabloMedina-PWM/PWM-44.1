@@ -37,6 +37,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
   mostrarFecha = false;
   mostrarBotones = false;
   mostrarSelectorMultiple = false;
+  mostrarCerrarSesion = false;
 
   // Textos dinámicos
   crudTitle: string | undefined;
@@ -92,6 +93,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
 
       this.tareaService.getNombresEmpleados().then(nombres => {
         this.nombresEmpleados = nombres;
+        console.log(this.nombresEmpleados);
       }).catch(err => console.error('Error al cargar empleados:', err));
 
       const id = this.route.snapshot.paramMap.get('id');
@@ -243,7 +245,7 @@ export class CrudComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Inicializar Choices una vez el DOM esté listo
+
     this.choicesInstance = new Choices('#new-select', {
       removeItemButton: true,
       placeholder: true,

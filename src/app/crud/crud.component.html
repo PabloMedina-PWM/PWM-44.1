@@ -10,7 +10,7 @@
 <div class="container-box">
   <div class="image-box">
     <img src="../resources/images/add-photo.jpg" class="profile-photo">
-    <button class="logout-button" id="Cerrar sesión">Cerrar sesión</button>
+    <button *ngIf="mostrarCerrarSesion" class="logout-button" id="Cerrar sesión">Cerrar sesión</button>
   </div>
 
   <div class="form-box">
@@ -61,11 +61,30 @@
         </select>
       </div>
 
-      <div class="c-group" *ngIf="mostrarGrupoSelect">
-        <label for="group" class="form-label">{{ secondSelectTextTitle }}:</label>
-        <select [(ngModel)]="grupoSeleccionado" class="form-select" name="grupoSeleccionado" id="group">
-          <option *ngFor="let p of nombresRecintos" [value]="p">
-            {{ p }}
+      <!-- SELECTOR DE EMPLEADO (para crud_tareas) -->
+      <div *ngIf="crudTitle === 'Tarea'" class="c-group">
+        <label for="empleadoSelect">{{ secondSelectTextTitle }}:</label>
+        <select [(ngModel)]="grupoSeleccionado"
+                class="form-select"
+                name="grupoSeleccionado"
+                id="empleadoSelect">
+          <option value="" disabled>{{ selectedFromSecondSelector }}</option>
+          <option *ngFor="let e of nombresEmpleados" [value]="e">
+            {{ e }}
+          </option>
+        </select>
+      </div>
+
+      <!-- SELECTOR DE RECINTO (para crud_evento) -->
+      <div *ngIf="crudTitle === 'Evento'" class="c-group">
+        <label for="recintoSelect">{{ secondSelectTextTitle }}:</label>
+        <select [(ngModel)]="grupoSeleccionado"
+                class="form-select"
+                name="grupoSeleccionado"
+                id="recintoSelect">
+          <option value="" disabled>{{ selectedFromSecondSelector }}</option>
+          <option *ngFor="let r of nombresRecintos" [value]="r">
+            {{ r }}
           </option>
         </select>
       </div>
