@@ -24,11 +24,13 @@ h1 {
   border-radius: 0;
   background-color: #f0f0f0;
   width: 13rem;
+  height: 3.2rem;
 }
 
 #search {
   width: 100%;
   border-radius: 10px 0 0 10px;
+  height: 3.2rem;
 }
 
 .table-container{
@@ -115,12 +117,11 @@ input[type=date] {
   }
 
   #search-button {
-    width: 30%;
-    height: 100%;
+    display: none;
   }
 
   .inputs-content {
-    height: 2rem;
+    height: auto;
   }
 
   #filter-button {
@@ -128,9 +129,25 @@ input[type=date] {
     align-items: center;
   }
 
+  #filters {
+    flex-direction: column;
+    select {
+      width: 8rem;
+    }
+  }
+
+  #capacidadSearch {
+    width: 8rem
+  }
+
+  #search {
+    height: auto;
+  }
+
   #filter-image {
     width: 1.5rem;
     height: 1.5rem;
+    display: none;
   }
   #add-button {
     width: 40%;
@@ -140,6 +157,7 @@ input[type=date] {
     display: block;
     width: 100%;
   }
+
 }
 
 @media (min-width: 767px) and (max-width: 900px) {

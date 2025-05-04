@@ -14,7 +14,7 @@
         </select>
       }
       @if (titulo === "Recintos") {
-        <input type="number" placeholder="Capacidad máx" [(ngModel)]="capacidadMax" class="search-filter">
+        <input type="number" placeholder="Capacidad máx" [(ngModel)]="capacidadMax" class="search-filter" id="capacidadSearch">
       }
     </div>
     <button id="filter-button"><img id="filter-image" src="images/filtro.png" onclick="filters()"></button>
