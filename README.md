@@ -1,5 +1,8 @@
 # ProdAndFests - Gestión interna de eventos culturales.
 
+# IMPORTANTE SPRINT 3: cuenta administrador: ana@prodandfests.com, contraseña: prueba1234-
+# cuenta no administradora: marcos@prodandfests.com, contraseña: prueba1234-
+
 ## Integrantes del grupo
 - Suliman Hassan El Boutaybi  
 - Kevin José Falcón Armas  
@@ -40,9 +43,24 @@ de manera eficiente próximos eventos y planificar aquellos que aún no se han i
 
 (También pueden encontrarse en la carpeta /pdfs de este mismo repositorio.)
 
-## Presentación y vídeo
+## Presentación
 - **Archivo PDF:** [Presentación](https://drive.google.com/file/d/1dNxQBhGbq_D47FEYHuwpF0ThRdCUfiMQ/view?usp=sharing)
-- **Vídeo MP4:** [Vídeo](https://drive.google.com/file/d/1655nbYBS4x_qw2IuD5TyXoYkigKoo-kN/view?usp=sharing)
+
+## Componentes
+Durante este tercer sprint se ha empleado Angular para el front-end de la web y firebase para el backend, por lo que el listado de templates y archivos en los que se cargan no aplica a esta entrega.
+En esta entrega existen diversos componentes:
+- button
+- content-viewer
+- content-viewer-table
+- crud
+- dashboard
+- footer
+- header
+- main
+- table
+Correspondiéndose todos con los templates del mismo nombre, excepto content-viewer-table, button y table que han sido creados para completar content-viewer y dashboard.
+
+
 
 ## Listado de archivos templates y archivos en los que se cargan
 - main.html
